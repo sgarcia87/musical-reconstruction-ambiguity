@@ -1,36 +1,39 @@
 # Relational Geometry and Observability (RGO)
 
-**Sergi Garcia Mecinas · v0.2 · 25 November 2026**
+**Sergi Garcia Mecinas · v0.3 · 25 November 2026**
 
 🌐 **[Explore the RGO website — interactive demonstrations (Spanish)](https://sgarcia87.github.io/relational-geometry-observability/)**
 
-**How much information is needed to reconstruct a relational structure, while discarding differences that are irrelevant to the task?**
+[Spanish introduction](docs/INVESTIGACION.md) · [Phase ambiguity and reconstruction](docs/AMBIGUEDAD_ESPECTRAL.md) · [Robust observation note](docs/rgo_fase11_nota.md) · [Corrections and scope](docs/CORRECCIONES.md)
 
-No knowledge of the author's previous projects is required. RGO is an open research notebook about finite structures, symmetry, phase retrieval, conditional identifiability and information-preserving observations. Music is a concrete test domain, not an assumption about the nature of reality.
+**How much information is required to reconstruct a structure when measurements are partial, ambiguous or erroneous, and how does the answer change with prior knowledge?**
 
-[Standalone introduction (Spanish)](docs/INVESTIGACION.md) · [Technical note and proofs (Spanish)](docs/OBSERVABILIDAD_TEMPORAL.md)
+Different objects can share the same Fourier magnitudes. RGO studies the resulting ambiguity, invariant phase relations, conditional reconstruction, and robust selection of observations. Music is a concrete finite test domain; quantum phase observability is a related mathematical application. No knowledge of the author's earlier projects is needed.
 
 ## Main findings
 
-- **Static observations:** the 4,096 binary pitch-class sets on Z₁₂ form 224 transposition/inversion classes. Power spectra distinguish 201. Two selected real cubic Fourier products, combined with the power spectrum, separate all 224 classes. Minimality is restricted to the tested dictionary of 12 nonconstant cubic products.
-- **A small structured example:** Q48 contains exactly the six-element sets satisfying F₄ = 0 and squared modulus of F₃ = 4. This is equivalent to the balanced, pairwise orthogonal sign rows of a 3 × 4 CRT array. A single bispectrum coefficient identifies the four Q48 set classes.
-- **Temporal identifiability:** given local translation orbits and selected complex cross-Fourier products, construct graphs at each prime-power divisor of n. Their connected components determine the exact number of compatible reconstructions modulo a common translation. The technical note states and proves the criterion.
-- **Corpus illustration:** among 382 JSB chorales, using four-quarter-note sliding unions, 377 pitch-class sequences are determined by consecutive full cross-correlations and known local orbits. Six additional nonconsecutive edges suffice for the remaining five pieces; the graph lower bound is attained. This does not reconstruct audio, register, voice leading or performance.
-- **Conditional observability:** a common diffusion can increase coherence while losing information about its source. When a channel is equivariant and the target is invariant, the appropriate orbit statistic can instead remove nuisance orientation without additional loss of target information.
+- **Phase ambiguity as a quotient:** for a fixed Fourier support and magnitudes, observed invariant phase monomials generate an integer relation lattice. Reconstruction modulo translations is equivalent to completeness of that lattice. Smith normal form characterizes finite and continuous ambiguities. This is a mathematical formulation, not a priority claim.
+- **Prior information changes the required order:** of 4,096 binary indicators on Z₁₂, 262 require order four when arbitrary real signals are admissible. Among binary candidates only 24 do. Of the 262 cases, 190 are resolved by order at most two and 48 by order three. Exact enumeration also covers cyclic groups of sizes 2 through 16.
+- **Prior certification:** complete moments through order three (nonnegative signals) or four (real signals) certify binarity and provide quantitative distance bounds to some binary indicator. They do not certify the identity of the original structure.
+- **Robust query design:** given exact second-order information, consider scalar counts of 19 translated three-point patterns and 43 translated four-point patterns. The minimum universal fixed list length for within-family Hamming distance h is 8h if repetitions are allowed. Thus 8(2e+1) queries correct e arbitrary reading errors in this protocol. A context-dependent four-candidate family needs three fixed queries or two adaptive queries. A good diversified fixed strategy is competitive in exploratory Gaussian-noise simulations.
+- **Temporal identifiability:** prime-power connectivity graphs yield an exact count of relative reconstructions, assuming local translation orbits and selected cross-Fourier products are known. On 382 Bach chorales, 377 four-quarter-window pitch-class sequences are identifiable from consecutive relations; six further links resolve the remaining five. This is not audio reconstruction or cover-song recognition.
 
-Phase retrieval, homometry, bispectral invariants and synchronization have extensive prior literature. Priority of the particular results reported here has not been established. Quantum phase synchronization is a mathematical analogue, not a demonstrated physical mechanism or quantum advantage. Testing semantic graphs is future work.
+The 48-state example Q48, bent-function quotient, GF(4) correspondence and two-copy quantum expectation are retained as case studies. The Walsh homometry of the set Q48 is distinct from the pitch-class homometry of an individual subset of Z₁₂. The two-copy result is theoretical and requires estimation of expectation values.
 
 ## Reproduce
 
-Python 3.10+.
+Python 3.10+:
 
 ```bash
-python audits/phase_temporal.py
-python audits/temporal_corpus.py jsb-chorales-quarter.json
-pip install numpy
-python audits/conditional_observability.py
+pip install -r requirements-research.txt
+python audits/rgo_fase9_audit.py
+python audits/rgo_fase10_audit.py
+python audits/rgo_fase11_audit.py
+python audits/verify_robustness.py
 ```
 
-The external corpus is not bundled. Recorded outputs and provenance are under `results/`. The historical experiments and earlier work are retained in [the appendix](docs/ANTECEDENTES.md) and [v0.1](docs/INVESTIGACION-v0.1.md), not presented as the main scientific claim.
+The three recent audit outputs were reproduced byte for byte for v0.3. The independent robustness checker uses direct enumeration of actual subsets rather than translated-pattern signatures. Stored outputs are under `results/`. The external Bach dataset is not bundled; its provenance is recorded in the temporal-corpus results.
 
-**Status:** working research, not peer-reviewed. License pending author decision.
+[Technical documentation](docs/AMBIGUEDAD_ESPECTRAL.md) · [Temporal reconstruction](docs/OBSERVABILIDAD_TEMPORAL.md) · [Research agenda](docs/ROADMAP.md) · [Historical background](docs/ANTECEDENTES.md).
+
+**Status:** open research notebook, not peer-reviewed. Homometry, higher-order correlations, group-action recovery, bent functions, adaptive queries and error-correcting codes are established research areas. Priority of the specific results remains unresolved. No claim of quantum advantage, theory of consciousness, or validated semantic-graph performance. License pending author decision.

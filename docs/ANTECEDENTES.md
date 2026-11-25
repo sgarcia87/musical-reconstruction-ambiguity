@@ -34,3 +34,14 @@ La dualidad, el equilibrio, la relación entre partes y totalidad y el papel de 
 - [El observador](../demos/q12_observador.html): distinción entre estados y difusión.
 
 Para las afirmaciones actuales, consultar el [informe principal](INVESTIGACION.md) y la [nota técnica](OBSERVABILIDAD_TEMPORAL.md).
+
+## Evolución del cuaderno RGO
+
+- [Informe v0.1 — geometría y equilibrio](INVESTIGACION-v0.1.md).
+- [Informe v0.2 — fase y observabilidad temporal](INVESTIGACION-v0.2.md).
+- [Web archivada v0.2](https://sgarcia87.github.io/relational-geometry-observability/archive/v0.2/).
+- [Informe vigente v0.3 — ambigüedad y reconstrucción robusta](INVESTIGACION.md).
+- [Nota histórica X](rgo_fase10_nota.md) y [nota histórica XI](rgo_fase11_nota.md): se conservan como fueron redactadas antes de la publicación de v0.3. Las referencias a no haber actualizado GitHub describen su estado de entonces.
+- [Registro de correcciones y alcance](CORRECCIONES.md): especifica las precisiones vigentes respecto a las notas históricas.
+
+Los casos Walsh, bent y cuánticos son ejemplos matemáticos; el criterio general de fase y el efecto de los priors son el centro del informe actual.

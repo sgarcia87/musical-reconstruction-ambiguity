@@ -1,193 +1,220 @@
 # Geometría relacional y observabilidad
 
-**RGO · Introducción e informe principal · v0.2 · Sergi Garcia Mecinas · 25 de noviembre de 2026**
+**RGO · Informe principal v0.3 · Sergi Garcia Mecinas · 25 de noviembre de 2026**
 
-[Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [Nota técnica](OBSERVABILIDAD_TEMPORAL.md) · [Agenda](ROADMAP.md) · [Apéndice](ANTECEDENTES.md)
+[Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [Nota de ambigüedad espectral](AMBIGUEDAD_ESPECTRAL.md) · [Robustez](rgo_fase11_nota.md) · [Agenda](ROADMAP.md) · [Correcciones](CORRECCIONES.md)
 
 ## Resumen
 
-Una medición puede ser correcta y, aun así, insuficiente para distinguir dos objetos. El objetivo de RGO es estudiar qué información conserva una observación, qué ambigüedad deja y qué observaciones adicionales son necesarias para recuperar las relaciones que interesan. Se emplean conjuntos finitos, transformadas de Fourier, grafos y teoría de la información. La música constituye un ejemplo calculable; la recuperación de fases cuánticas es un problema relacionado. Se presentan una caracterización exacta de 48 conjuntos de clases de altura, una separación de ambigüedades mediante productos de Fourier de orden tres y un criterio general de reconstrucción temporal por conectividad en grupos cíclicos. Los resultados no implican una teoría física unificada ni prioridad científica establecida.
+Este proyecto estudia cómo reconstruir estructuras finitas a partir de observaciones que conservan algunas relaciones y pierden otras. El espacio de candidatos admisibles, las simetrías, el orden de las observaciones y su fiabilidad determinan la ambigüedad residual. Se utiliza la música como laboratorio discreto: las doce clases de altura forman un grupo cíclico de doce posiciones, y cada conjunto de notas puede representarse mediante doce bits. Los resultados incluyen una formulación de la ambigüedad de fase mediante retículos, una comparación exacta del orden de reconstrucción con diferentes conocimientos previos, un diseño mínimo de consultas resistentes a errores y un criterio de reconstrucción temporal por conectividad. Se distingue lo demostrado de las simulaciones, los resultados condicionados y las preguntas abiertas.
 
-## 1. Empezar desde cero: observar no es conocerlo todo
+El informe es independiente de los proyectos anteriores del autor. No requiere conocer IA_m ni aceptar una premisa filosófica.
 
-Imaginemos un reloj de doce posiciones. Encendemos seis puntos y dejamos seis apagados. Conocer que hay seis luces encendidas no permite saber dónde están: hay 924 posibilidades. Medir las distancias entre todos los pares de luces aporta información, pero tampoco siempre basta. Dos figuras distintas pueden compartir exactamente las mismas distancias.
+## 1. Estructura: un reloj de doce posiciones
 
-Llamamos **estado** a la configuración completa, **observación** a una función que extrae información y **ambigüedad** al conjunto de estados que producen el mismo resultado. En música las posiciones del reloj representan las doce clases de altura, numeradas de 0 a 11 (Do, Do♯, Re, ..., Si). Una clase agrupa todas las notas separadas por octavas; esta simplificación no conserva registro ni timbre.
+Imaginemos doce luces en círculo. Cada una puede estar encendida o apagada. Existen 2¹² = 4096 configuraciones posibles. Si sabemos que hay seis luces encendidas, quedan 924 candidatos. Si además conocemos todas las distancias entre las luces, reducimos las posibilidades, pero no necesariamente a una.
 
-Si el objetivo es reconocer la forma de una figura, girar todo el reloj no debería importar. Sin embargo, girar una parte respecto a otra sí puede modificar la estructura. Esta diferencia entre transformación global irrelevante y cambio interno relevante es esencial.
+En música, cada posición representa una clase de altura: Do=0, Do♯=1, ..., Si=11. Dos notas separadas por octavas se identifican. Un conjunto $A$ queda representado por un indicador $f(x)$, igual a 1 si $x$ pertenece a $A$ y 0 en caso contrario. No representa timbre, registro ni dinámica.
 
-Formalmente, para una observación $O:X\to Y$, los estados $x,x'$ son indistinguibles cuando $O(x)=O(x')$. Si un grupo $G$ expresa las transformaciones que decidimos ignorar, queremos identificar las órbitas de $G$, no necesariamente los estados absolutos. Una observación invariante no es automáticamente completa.
+El grupo $\mathbb Z_{12}$ describe las posiciones y su suma modular. Girar todas las luces equivale a transponer todas las notas. Si buscamos la forma relativa, tratamos todas las transposiciones como equivalentes. Este conjunto de estados equivalentes se llama órbita. Una reflexión no se ignora salvo que se especifique.
 
-## 2. De doce signos a un modelo musical
+Formalmente, una observación $O$ produce información $O(x)$ sobre un estado $x$. La fibra de candidatos compatible con un resultado $y$ y un conocimiento previo $\mathcal A$ es
 
-El espacio de estados es $X=\{0,1\}^{12}$, con $2^{12}=4096$ configuraciones. Se interpreta el bit 1 como presencia de una clase de altura y el bit 0 como ausencia. Esta correspondencia es una codificación; no afirma que toda la música sea binaria.
+$$\mathcal F(y;\mathcal A)=\{x\in\mathcal A:O(x)=y\}.$$
 
-Las doce posiciones forman el grupo cíclico $\mathbb Z_{12}$. El teorema chino del resto permite organizarlas en una tabla usando simultáneamente el resto módulo 3 (fila) y módulo 4 (columna):
+Si el objetivo es identificar la órbita, contamos las órbitas compatibles, no las posiciones absolutas. Una observación invariante puede ser correcta pero incompleta.
 
-| | 0 | 1 | 2 | 3 |
-|---|---:|---:|---:|---:|
-| 0 | 0 | 9 | 6 | 3 |
-| 1 | 4 | 1 | 10 | 7 |
-| 2 | 8 | 5 | 2 | 11 |
+## 2. Ambigüedad: magnitud y fase
 
-Al convertir presencia/ausencia en signos +1/−1, cada fila tiene cuatro componentes. Exigimos que su suma sea cero (dos positivos y dos negativos) y que los productos internos entre filas distintas sean cero. Esto produce exactamente 48 estados, denominados **Q48**. Hay tres direcciones equilibradas ortogonales, cada una con dos orientaciones: $3!2^3=48$.
+Para una señal sobre $\mathbb Z_n$ se define
 
-Esta construcción sirve como ejemplo pequeño y completamente auditable. No presupone que Q48 sea privilegiado en la percepción o en las composiciones.
+$$F_k=\sum_{x=0}^{n-1} f(x)e^{-2\pi ikx/n}.$$
 
-## 3. Fourier: por qué las magnitudes no bastan
+El coeficiente complejo contiene módulo y fase. El espectro de potencia $|F_k|^2$ equivale a la autocorrelación; para un indicador codifica los recuentos de pares de posiciones a cada distancia. La traslación multiplica $F_k$ por un factor de módulo uno, por lo que las magnitudes no cambian.
 
-Para un conjunto de notas $A\subseteq\mathbb Z_{12}$ definimos
+Dos conjuntos distintos pueden compartir todas esas magnitudes. Son homométricos. En teoría musical, la relación Z suele distinguir conjuntos no equivalentes por transposición ni inversión. Esta es una cuestión conocida en teoría de conjuntos musicales y cristalografía.
 
-$$F_k(A)=\sum_{a\in A}e^{-2\pi i ka/12}.$$
+Las correlaciones de orden $r$ describen relaciones entre $r$ posiciones:
 
-Cada coeficiente es un número complejo. Su módulo indica la intensidad de un patrón; su fase expresa información sobre su orientación. El espectro de potencia $|F_k|^2$ equivale a la autocorrelación mediante Fourier, por lo que contiene el contenido interválico, pero no toda la configuración.
+$$C_r(t_1,\ldots,t_{r-1})=\sum_x f(x)f(x+t_1)\cdots f(x+t_{r-1}).$$
 
-Una transposición de $s$ semitonos multiplica $F_k$ por $e^{-2\pi i ks/12}$. Por eso el módulo no cambia. Tampoco cambia bajo reflexión cromática (inversión). Sin embargo, existen conjuntos con idénticos módulos que no se relacionan por esas transformaciones: se denominan homométricos o Z-relacionados en teoría musical.
+El orden 1 mide la suma; el 2 las relaciones por pares; el 3 las relaciones triples y el 4 las cuádruples. En este informe se conocen las correlaciones de todos los órdenes hasta el indicado, incluidos desplazamientos repetidos, salvo en el protocolo explícito de consultas escalares.
 
-No se trata de una idea nueva: Mandereau y colaboradores conectaron explícitamente la relación Z con la recuperación de fase y la homometría; Amiot y Yust estudiaron la información de fase invariante mediante productos de Fourier (véase bibliografía).
+En Fourier, un producto $F_aF_b\overline{F_{a+b}}$ conserva información sobre la combinación de fases $\theta_a+\theta_b-\theta_{a+b}$ y es invariante bajo traslación. Se denomina coeficiente del biespectro. No garantiza por sí solo reconstrucción única.
 
-### 3.1 Un resultado exacto sobre Q48
+### Un ejemplo que necesita el cuarto orden
 
-Para un conjunto de seis clases de altura, la condición de equilibrio y ortogonalidad de las tres filas es equivalente a
+Los conjuntos
 
-$$F_4=0,\qquad |F_3|^2=4.$$
+- A = {0,1,3,4,5,8}
+- B = {0,3,4,5,7,8}
 
-$F_4=0$ obliga a que haya dos notas en cada fila. Entre las configuraciones así equilibradas, el módulo de $F_3$ selecciona exactamente las que utilizan las tres direcciones ortogonales distintas. La demostración está en la [nota técnica](OBSERVABILIDAD_TEMPORAL.md#1-caracterización-exacta-de-q48).
+son reflejos, pero no transposiciones. Sus correlaciones completas de orden 2 y 3 son idénticas. Una observación de orden 4, $F_1^3\overline{F_3}$, los distingue: toma los valores −8+24i y −8−24i, respectivamente. Alternativamente, contar el patrón trasladado {0,3,4,8} produce 1 y 2.
 
-Los 48 conjuntos pertenecen a cuatro clases de Forte, 12 transposiciones por clase. Basta el producto cúbico $B=F_1^2\overline{F_2}$, invariante bajo transposición, para identificarlas:
+Ambos conjuntos se complementan al trasladarlos seis posiciones. Esto anula los coeficientes pares no constantes; tres frecuencias impares no pueden sumar cero módulo 12. El fallo de las correlaciones triples se explica por el soporte espectral.
 
-| Clase | B (real y exacto) |
+Cuando también se identifica la reflexión, esa pareja deja de ser una ambigüedad relevante. En las 224 clases por transposición e inversión, el espectro distingue 201; dos productos cúbicos reales específicos completan las 224. Los 23 pares Z en sentido T/I se distinguen por el contenido de tricordos.
+
+## 3. Qué revela el conocimiento previo
+
+Una observación puede admitir muchas señales reales y, al mismo tiempo, solo un conjunto binario. El prior cambia el espacio de candidatos: no aporta una medición nueva, sino una restricción sobre qué soluciones son admisibles.
+
+Se enumeraron los 4096 indicadores de $\mathbb Z_{12}$ comparando dos problemas: recuperar el indicador entre señales reales cualesquiera con las magnitudes dadas, o recuperarlo entre indicadores. Ambos identifican traslaciones, no reflexiones, y agrupan en «hasta 2» los casos resueltos por cardinalidad o por información de segundo orden.
+
+| Orden necesario | Señales reales | Indicadores binarios |
+|---|---:|---:|
+| Hasta 2 | 4 | 796 |
+| 3 | 3830 | 3276 |
+| 4 | 262 | 24 |
+| Total | 4096 | 4096 |
+
+Entre los 262 casos que requieren orden 4 en el espacio real, 190 se resuelven hasta orden 2 al exigir binariedad, 48 con orden 3 y 24 conservan la necesidad de orden 4. Es decir, el orden disminuye en 238 de 262 (90,84%).
+
+Esta comparación se extendió por enumeración exacta a los grupos cíclicos de tamaños 2 a 16. No es un teorema para todos los tamaños. La distinción entre conjuntos y funciones y la reconstrucción por k-decks ya se estudian en la literatura; véanse Jaming, Keleti y Kolountzakis.
+
+### Certificar el prior, no solo asumirlo
+
+Sea $m_j=\sum_x g(x)^j$. Para un indicador de cardinalidad $m$, todos los momentos $m_j$ valen $m$. Si $g$ es no negativa,
+
+$$D_3=m_3-2m_2+m_1=\sum_x g(x)(g(x)-1)^2.$$
+
+Si $g$ es real arbitraria,
+
+$$D_4=m_4-2m_3+m_2=\sum_x g(x)^2(g(x)-1)^2.$$
+
+En ambos casos, la suma no negativa se anula si y solo si la señal es binaria. Así, correlaciones completas de orden 3 pueden certificar binariedad entre señales no negativas, y las de orden 4 entre señales reales. Esto se relaciona con la proposición 2.7 de Jaming y Kolountzakis (2003).
+
+Si $r_B$ es el orden mínimo para identificar un indicador entre indicadores, $r_+$ entre no negativas y $r_R$ entre reales, se obtienen las cotas:
+
+$$r_B\le r_+\le\max(3,r_B),\qquad r_B\le r_R\le\max(4,r_B).$$
+
+También se puede acotar la distancia cuadrática a algún indicador:
+
+$$d_B(g)^2=\sum_x\min\{g(x)^2,(g(x)-1)^2\}.$$
+
+Para señales no negativas, $d_B^2\le2D_3$; para señales reales, $d_B^2\le4D_4$. Las constantes se alcanzan en $g(x)=1/2$. Si cada momento requerido difiere de $m$ en a lo sumo $\varepsilon$, las cotas correspondientes son $8\varepsilon$ y $16\varepsilon$. Esto certifica proximidad a **algún** indicador, no identidad con el objeto verdadero.
+
+## 4. Criterio general: la geometría de las fases desconocidas
+
+Fijemos el soporte espectral $S$ de una señal real sobre un grupo abeliano finito, las magnitudes de sus coeficientes y el coeficiente constante. Las relaciones de fase invariantes imponen ecuaciones lineales enteras módulo $2\pi$.
+
+Sea $H$ el subgrupo generado por $S$. La aplicación $\pi:\mathbb Z^S\to H$ asigna a cada coordenada formal su frecuencia. Las relaciones observadas, junto a la condición de realidad y DC conocido, generan un retículo $L_r\subseteq\ker\pi$.
+
+La ambigüedad de fase módulo traslaciones es el grupo dual de $\ker\pi/L_r$. Por tanto:
+
+$$\text{Reconstrucción única hasta traslación}\iff L_r=\ker\pi.$$
+
+La forma normal de Smith permite calcular el rango libre (ambigüedad continua) y la torsión (ambigüedad finita). Este criterio presupone magnitudes exactas y admite señales reales arbitrarias. Restricciones como binariedad pueden reducir adicionalmente las soluciones compatibles. La [nota técnica](AMBIGUEDAD_ESPECTRAL.md) desarrolla la prueba, el caso binario y los antecedentes.
+
+La conexión entre grupos, invariantes y recuperación de fase no es nueva en sí misma. El objetivo de RGO es convertirla en un criterio explícito de conteo y selección de observaciones para problemas concretos.
+
+## 5. Elegir las observaciones: reconstrucción robusta
+
+Con el espectro exacto, la componente constante conocida y el objetivo de distinguir órbitas de indicadores sobre $\mathbb Z_{12}$, quedan 125 familias ambiguas que contienen 276 órbitas, con 189 pares a separar.
+
+El diccionario de consultas consta de 19 clases de patrones de tres posiciones y 43 de cuatro, hasta traslación. Cada consulta devuelve un recuento escalar de ocurrencias. Cada candidato tiene una firma de respuestas.
+
+Si las firmas de dos candidatos de la misma familia difieren en al menos $h$ posiciones, la distancia de Hamming mínima es al menos $h$. Esto permite identificar sin errores ($h=1$), detectar un error arbitrario o corregir un borrado conocido ($h=2$), o corregir un error arbitrario desconocido ($h=3$).
+
+### Un mínimo exacto para este protocolo
+
+$$M_{\min}(h)=8h,\quad h\ge1.$$
+
+Hipótesis: lista fija universal, espectro/DC exactos, diccionario anterior y repeticiones permitidas. La cota inferior procede de ocho restricciones disjuntas de separación: siete pares de tricordos reflejados y el par de seis posiciones que requiere orden 4. Una lista de ocho consultas separa los 189 pares; repetirla $h$ veces alcanza la cota. Véase [la demostración y los testigos](rgo_fase11_nota.md#6-selección-fija-robusta-como-código-de-observación).
+
+| Objetivo | Distancia mínima | Consultas |
+|---|---:|---:|
+| Identificar sin error | 1 | 8 |
+| Detectar un error / recuperar un borrado | 2 | 16 |
+| Corregir un error | 3 | 24 |
+
+En general, para corregir $e$ errores arbitrarios, se requieren $8(2e+1)$ lecturas. Las repeticiones cuentan como lecturas distintas: no corrigen un sesgo que corrompa todas las repeticiones más allá del presupuesto de errores. Sin repetición, la distancia mínima de todo el diccionario de 62 consultas es 2, por lo que no garantiza corregir un error.
+
+No se trata de una cota universal sobre mediciones físicas, bits de información ni recuperación a partir de audio.
+
+### Perspectivas adaptativas
+
+Cuando ya se conoce la familia ambigua, puede elegirse un protocolo específico. De las 125 familias, 112 necesitan una consulta fija, 12 necesitan dos y una necesita tres. En esa última, un árbol adaptativo necesita solo dos. El peor caso baja de tres a dos consultas.
+
+En simulaciones de recuentos con ruido gaussiano independiente, se compara una estrategia adaptativa de varianza posterior, una fija diversa, una fija repetida y una aleatoria informativa. Con desviación típica 1 y seis consultas, las tasas de identificación son aproximadamente 89,71%, 89,32%, 85,88% y 85,91%. La estrategia fija diversa es competitiva. No se afirma una ventaja adaptativa general ni significación estadística de diferencias pequeñas.
+
+## 6. Ruido y orden de observación
+
+Un segundo modelo estadístico observa una señal trasladada uniformemente al azar y perturbada por ruido gaussiano. Para dos candidatos fijos, si el primer momento invariante que los distingue es de orden $r$, una distancia cuadrática ponderada entre sus distribuciones decrece asintóticamente como $\sigma^{-2r}$ en ruido alto.
+
+La teoría de recuperación de órbitas relaciona el orden con el coste muestral asintótico. Duplicar el ruido multiplica la escala de muestras por $2^{2r}$: 16, 64 o 256 para órdenes 2, 3 o 4, respectivamente, bajo las hipótesis correspondientes. No son factores exactos para un número finito de mediciones ni resultados perceptuales de música real.
+
+La [nota XI](rgo_fase11_nota.md) calcula las constantes para dos pares de indicadores mediante sumas exactas de solapamientos. El ruido sobre muestras trasladadas y el ruido sobre consultas escalares son modelos distintos; no se mezclan sus resultados.
+
+## 7. Añadir el tiempo: reconstruir una secuencia
+
+Conocer la forma local de cada ventana salvo transposición no determina sus desplazamientos relativos. Dos secuencias de acordes mayores pueden ser idénticas tras normalizar cada acorde de manera independiente, aunque una cambie de tonalidad y otra no.
+
+Al medir $F_k(A_j)\overline{F_k(A_i)}$ se conserva la diferencia de fase entre dos ventanas y se elimina la transposición común. Los ceros espectrales limitan qué desplazamientos se pueden recuperar.
+
+Para cada potencia prima que divide el tamaño $n$ del grupo cíclico, construimos un grafo de relaciones capaces de determinar ese nivel. Si $c_{p^j}$ es el número de componentes conexas, el número de reconstrucciones relativas compatibles es
+
+$$N=\prod_{p^j\mid n}p^{\max(0,c_{p^j}-1)},$$
+
+donde el producto recorre las potencias de primos con $j\ge1$. La [nota temporal](OBSERVABILIDAD_TEMPORAL.md) demuestra esta fórmula con períodos locales y relaciones parciales conocidos.
+
+En 382 corales de Bach, con uniones de clases de altura en ventanas de cuatro negras y sus órbitas locales conocidas, 377 secuencias son identificables usando correlaciones cruzadas completas entre ventanas consecutivas. Seis conexiones no consecutivas resuelven las cinco restantes, alcanzando una cota inferior para ese corpus y protocolo. No se recuperan grabaciones, octavas, voces ni la secuencia interna de cada ventana. Los resultados se conservaron de la ejecución anterior sobre el corpus original.
+
+## 8. Casos de estudio: equilibrio, Walsh y cuántica
+
+Q48 es una familia de 48 indicadores de doce posiciones definida por tres filas equilibradas y ortogonales. Sobre las clases de altura en $\mathbb Z_{12}$, coincide con los hexacordos que satisfacen $F_4=0$ y $|F_3|^2=4$. Es una caracterización exacta.
+
+Otro problema diferente considera el **conjunto de esos 48 estados** como un subconjunto del hipercubo $\mathbb F_2^{12}$ y aplica la transformada de Walsh. Tras separar restricciones y simetrías, se obtiene un cociente de cuatro bits y seis puntos, relacionado con una función bent cuadrática y con las formas alternantes no degeneradas.
+
+Entre señales reales con las magnitudes Walsh de Q48 hay 502 bits de ambigüedad relativa (DC positivo fijado); entre indicadores, 28 clases de traslación, equivalentes a $\log_2(28)$ bits con prior uniforme. El conteo de formas simplécticas es clásico. Seis consultas cúbicas binarias fijas o cinco adaptativas distinguen las 28 clases en ese ejemplo.
+
+La transformación Walsh es algebraicamente la operación Hadamard sobre un registro cuántico. En el caso reducido de cuatro qubits, una copia promediada sobre una traslación uniforme desconocida es indistinguible entre las 28 clases. Con dos copias que comparten la traslación, ciertas esperanzas de observables revelan signos cúbicos. Es una predicción teórica dentro de un modelo, no discriminación perfecta con dos ejecuciones ni ventaja cuántica demostrada.
+
+Estos casos se documentan en [la nota X](rgo_fase10_nota.md) y [el registro de correcciones](CORRECCIONES.md). La homometría Walsh del conjunto Q48 no equivale a la homometría musical de cada hexacordo. No se reivindica una excepcionalidad universal del número cuatro.
+
+## 9. Coherencia, observabilidad y conocimiento previo equivocado
+
+Una auditoría basada exclusivamente en la similitud entre perspectivas puede premiar que sus distribuciones se vuelvan indistinguibles. Una difusión común puede aumentar $1-\operatorname{JSD}$ mientras reduce la información sobre el origen. No significa que cualquier aumento de coherencia en cualquier contexto destruya información.
+
+Si el objetivo $T$ es invariante y el canal y el prior respetan las simetrías apropiadas, el estadístico de órbita puede conservar la información sobre $T$ y eliminar la orientación irrelevante. De ahí la necesidad de especificar qué diferencias importan antes de optimizar una métrica.
+
+El siguiente reto es la **fragilidad del conocimiento previo**: un conjunto de candidatos incorrecto puede generar una solución única y coherente que no contiene la estructura verdadera. Los certificados de la sección 3 son un primer paso, pero no bastan para garantizar identidad. Se investigarán detección de modelos incompatibles, errores en las magnitudes iniciales, ruido y selección de perspectivas con objetivos verificados externamente. Aún no se ha validado este marco sobre grafos semánticos reales.
+
+## 10. Evidencia y límites
+
+| Tipo | Resultado |
 |---|---|
-| 6-Z37 | $8+4\sqrt3$ |
-| 6-Z4 | $-8-4\sqrt3$ |
-| 6-Z48 | $8-4\sqrt3$ |
-| 6-Z26 | $-8+4\sqrt3$ |
+| Demostración algebraica | Retículo de relaciones de fase; cota de certificación; fórmula temporal; mínimo 8h bajo el diccionario establecido. |
+| Enumeración exacta | Órdenes en los 4096 indicadores de Z₁₂ y censo hasta n=16; testigos de consultas; caso Walsh. |
+| Simulación | Consultas escalares gaussianas; comparación de estrategias. |
+| Resultado empírico condicionado | Identificabilidad temporal en el corpus de Bach. |
+| Predicción teórica | Observables de dos copias cuánticas bajo traslación compartida. |
+| Pendiente | Prioridad bibliográfica, costes físicos de adquisición, validación semántica y pruebas con prior/espectro erróneos. |
 
-Complementar un hexacordo de Q48 cambia el signo de $B$, pero no su potencia espectral. Su magnitud separa los dos perfiles interválicos y su signo distingue los complementarios.
+No se postula una teoría física de la realidad ni de la consciencia. No se afirma que Q48 sea musicalmente privilegiado. El objetivo es preciso: **cuantificar lo que una observación deja indeterminado y elegir las relaciones necesarias para resolverlo.**
 
-### 3.2 Fuera de Q48: todas las configuraciones cromáticas
-
-Se enumeraron los 4096 conjuntos, identificando transposición e inversión. Los resultados:
-
-| Información disponible | Clases distinguibles |
-|---|---:|
-| Cardinalidad (número de notas) | 13 |
-| Espectro de potencia completo | 201 |
-| Espectro más dos productos cúbicos reales | 224 de 224 |
-
-Hay 23 pares Z entre las 224 clases (15 de seis notas). Las partes reales de $F_1^2\overline{F_2}$ y $F_1F_2\overline{F_3}$ completan la distinción. Ninguno de los 12 tipos de productos cúbicos no constantes examinados la completa individualmente; hay 14 parejas suficientes. Se trata de minimalidad dentro de un diccionario concreto, no entre todas las observaciones posibles.
-
-Los cálculos se realizan con aritmética exacta en el anillo ciclotómico $\mathbb Z[\zeta_{12}]$. La teoría general de correlaciones de orden superior y biespectro es conocida. La prioridad de estas selecciones concretas no se ha determinado.
-
-## 4. Introducir el tiempo: una canción no es solo una colección de figuras
-
-Do mayor → Re mayor y Do mayor → Do mayor contienen la misma clase de acorde en cada instante, si se elimina su transposición individual. Sin embargo, en la primera secuencia hay desplazamiento y en la segunda no. Por ello, la invariancia deseada es ante una transposición **común a toda la secuencia**, no una independiente por ventana.
-
-Suponiendo conocida la órbita por transposición de cada ventana musical, podemos medir un producto cruzado
-
-$$R_{ij,k}=F_k(A_j)\overline{F_k(A_i)}.$$
-
-La transposición común se cancela. Los desplazamientos relativos aparecen en la fase del producto. Si alguno de los coeficientes es cero, esa frecuencia deja de informar sobre la relación.
-
-Dentro de Q48, $B$ identifica la órbita local y $F_1$ nunca se anula. Conocer los productos de $F_1$ entre instantes consecutivos permite reconstruir una secuencia completa de estados Q48 salvo una transposición global. Se comprobaron los 2304 pares ordenados, con 192 órbitas globales distintas y 192 firmas.
-
-Fuera de Q48, **el conocimiento de la clase local por transposición es una hipótesis adicional**. La clasificación de la sección 3.2 identifica hasta transposición e inversión, no hasta transposición solamente. No debe utilizarse esa clasificación como sustituto automático de las órbitas locales necesarias para el teorema temporal.
-
-## 5. Resultado central: contar las reconstrucciones compatibles
-
-Consideramos una secuencia de conjuntos de un grupo cíclico $\mathbb Z_n$. Cada conjunto tiene un período mínimo $p_i$ (número de transposiciones distintas). Para cada par observado, sea $d_{ij}$ el mínimo común múltiplo de los órdenes de las frecuencias medidas no nulas en ambos estados. Si no hay ninguna, $d_{ij}=1$.
-
-Dos reconstrucciones que coinciden en sus observaciones solo pueden diferir por desplazamientos locales $s_i$ que cumplen las congruencias $s_i\equiv s_j\pmod{d_{ij}}$.
-
-Para cada potencia prima $\ell=p^e$ que divide a $n$, se construye un grafo: se incluyen los instantes con $p_i$ múltiplo de $\ell$ y las relaciones con $d_{ij}$ múltiplo de $\ell$. Denotamos por $c_\ell$ su número de componentes conexas. El número de reconstrucciones compatibles, salvo una transposición global, es
-
-$$\boxed{N=\prod_{p^e\mid n}p^{\max(0,c_{p^e}-1)}}.$$
-
-Para $n=12$ hay niveles 2, 4 y 3:
-
-$$N=2^{(c_2-1)_++(c_4-1)_+}3^{(c_3-1)_+}.$$
-
-**Hay reconstrucción única si todos los grafos activos están conectados.** Cada componente desconectada aporta una libertad relativa. La demostración descompone las congruencias en dígitos de potencias primas y elimina la transposición común; véase [nota técnica](OBSERVABILIDAD_TEMPORAL.md#4-teorema-de-ambigüedad-temporal-para-grupos-cíclicos-finitos).
-
-Ejemplo: los conjuntos {0,1} y {0,2,4,6,8,10} no comparten frecuencias no constantes no nulas. Cambiar el segundo por {1,3,5,7,9,11} deja todas las correlaciones cruzadas iguales. Hay dos reconstrucciones relativas posibles. Una tercera figura que comparta las frecuencias necesarias con ambas puede revelar la diferencia.
-
-**Verificación:** 352 órbitas locales por transposición; 1.398.500 clases de pares ordenados por transposición global, de las que 1.393.108 son identificables bajo el protocolo. Otras 5.392 pertenecen a fibras ambiguas. La fórmula se contrastó también con 300 secuencias de tres estados y grafos aleatorios mediante enumeración de desplazamientos.
-
-La sincronización de fase es un área consolidada. Lo que se estudia aquí es el criterio explícito de ambigüedad discreta con períodos locales heterogéneos y relaciones de orden parcial; su originalidad bibliográfica está pendiente.
-
-## 6. Experimento en 382 corales de Bach
-
-Se utiliza el [corpus JSB Chorales](https://github.com/czhuang/JSB-Chorales-dataset), discretizado en negras. En cada ventana deslizante se toma la unión de las clases de altura presentes. Se conoce la órbita local por transposición de cada ventana y se presupone acceso a toda la correlación cruzada de cada par seleccionado. La pregunta es cuántas relaciones son necesarias para identificar esa secuencia binaria hasta una transposición común.
-
-| Ventana | Ventanas analizadas | Piezas identificables con relaciones consecutivas | Con relaciones adicionales | Aristas adicionales mínimas (suma sobre corpus) |
-|---:|---:|---:|---:|---:|
-| 1 negra | 23.134 | 225 | 382 | 299 |
-| 2 negras | 22.752 | 356 | 382 | 41 |
-| 4 negras | 21.988 | 377 | 382 | 6 |
-| 8 negras | 20.460 | 370 | 382 | 16 |
-
-Con cuatro negras, cinco piezas presentan ambigüedad bajo observaciones consecutivas. Un algoritmo que conecta los niveles desconectados añade seis aristas en total (cuatro piezas requieren una, una requiere dos). Una arista reduce como máximo en uno el número de componentes de cada nivel; la cota inferior es el mayor déficit de conectividad. En este corpus el algoritmo alcanza la cota para todas las piezas y longitudes probadas. No se afirma que sea óptimo para cualquier instancia.
-
-**Qué no significa:** no se reconstruye una grabación, ni una partitura completa, ni se reconoce una canción desconocida. Se pierden octavas, voces, timbre, dinámica y orden interno de las notas de cada ventana. Los resultados dependen de la representación y de las hipótesis de acceso a información local. Se trata de una auditoría de identificabilidad, no de una comparación de sistemas de reconocimiento de versiones.
-
-Los experimentos anteriores de aparición y proximidad de Q48 en Bach no establecieron un privilegio musical independiente de la tonalidad; se conservan en el apéndice, no como argumento principal.
-
-## 7. Observabilidad condicionada: conservar lo que importa
-
-Sea $X$ el estado, $T=t(X)$ la variable objetivo e $Y$ el resultado de observarlo. Buscamos conservar información sobre $T$ y eliminar, cuando sea pertinente, información sobre el estado que no hace falta para identificar $T$. Con un prior explícito, se pueden medir
-
-$$R=I(T;Y)/H(T),\qquad L=I(X;Y\mid T)/H(X\mid T),$$
-
-si los denominadores son positivos. Son dos medidas distintas, no una única puntuación universal.
-
-Una auditoría previa utilizaba $C=1-\operatorname{mean}(\mathrm{JSD})$ para comparar distribuciones obtenidas bajo diferentes perspectivas. Si se aplica un canal de difusión común, la desigualdad de procesamiento de datos explica por qué las divergencias pueden disminuir mientras se pierde información sobre su origen. Eso no implica que cualquier aumento de $C$ en cualquier sistema cause pérdida informativa.
-
-En un experimento PPR sobre el hipercubo de 12 bits, tomando como objetivo las cuatro familias Q48 y como diferencia irrelevante la transposición, se observa algo distinto. Con difusión 0,85, reducir la observación a su órbita conserva los 0,51335 bits disponibles sobre la familia y reduce la información condicional sobre la orientación de 1,72014 bits a cero. La coherencia dentro de familia pasa de 0,42989 a 1. El resultado usa simetría del canal, prior uniforme sobre Q48 y una sola muestra. No demuestra éxito sobre otros grafos.
-
-La razón: cuando un canal es equivariante bajo las transformaciones y el prior condicionado a cada objetivo es uniforme en su órbita, la distribución marginal de observaciones para cada objetivo es invariante. La probabilidad posterior del objetivo depende únicamente de la órbita observada. Por tanto, la órbita es un estadístico suficiente para ese objetivo. Este mecanismo conserva información útil en lugar de borrar todas las diferencias por difusión.
-
-En grafos semánticos, el reto pendiente es definir objetivos y perturbaciones mediante validación externa. No se puede declarar irrelevante una modificación que cambie el significado. La [agenda de investigación](ROADMAP.md) establece un protocolo y criterios de comparación.
-
-## 8. Relación con la física cuántica: un límite preciso
-
-Un estado cuántico puro puede escribirse como $\sum_i\alpha_i|i\rangle$. Medir en la base computacional proporciona probabilidades $|\alpha_i|^2$, que no determinan las fases relativas. Si se conocen coherencias complejas $\alpha_i\overline{\alpha_j}$, un grafo conectado sobre las amplitudes no nulas permite recuperar esas fases salvo una fase global. Si está desconectado, queda una fase libre por componente, menos una global.
-
-Esto es el análogo continuo de la sincronización de desplazamientos en secuencias cromáticas. No identifica la fase de una nota con la fase de una amplitud cuántica, ni modela la consciencia. Requiere estados puros, magnitudes conocidas y observaciones sensibles a fase; los estados mixtos y el coste experimental de obtener tales coherencias constituyen otros problemas. Las simulaciones antiguas del Hamiltoniano Q48 se mantienen como material de contexto.
-
-## 9. Qué se sabe y qué falta
-
-| Estado | Resultado |
-|---|---|
-| Demostración | Equivalencia Fourier/Q48 y fórmula de ambigüedad bajo hipótesis explícitas. |
-| Enumeración exacta | Separación de las 224 clases y auditoría de pares y secuencias. |
-| Empírico condicionado | Reconstrucción cromática en las corales y mínimo de aristas para el protocolo probado. |
-| Numérico | Ejemplo PPR y observabilidad condicionada. |
-| Pendiente | Prioridad bibliográfica, ruido, comparaciones con referencias musicales, prueba en grafos semánticos y costes de adquisición. |
-
-RGO no parte de una afirmación acerca de la naturaleza de la realidad. Parte de un problema comprobable: **conocer la estructura a partir de relaciones parciales, y saber qué sigue siendo desconocido**.
-
-## 10. Reproducibilidad y referencias
+## 11. Reproducibilidad y bibliografía
 
 Ejecutar desde la raíz:
 
 ~~~bash
-python audits/phase_temporal.py
-python audits/temporal_corpus.py jsb-chorales-quarter.json
-pip install numpy
-python audits/conditional_observability.py
+pip install -r requirements-research.txt
+python audits/rgo_fase9_audit.py
+python audits/rgo_fase10_audit.py
+python audits/rgo_fase11_audit.py
+python audits/verify_robustness.py
 ~~~
 
-Los resultados están en [results](../results/). El corpus externo tiene Git blob SHA-1 ff93746647d1f5af2f719d235329c294267f3088. Se conserva el origen de los cálculos, no el corpus de terceros. Las auditorías algebraicas de las fases VII y VIII se volvieron a ejecutar al preparar v0.2; los resultados del corpus proceden de la ejecución documentada sobre la fuente original.
+Las salidas de las tres auditorías recientes coinciden byte por byte con los JSON registrados. El verificador independiente calcula los recuentos por enumeración directa de subconjuntos y confirma la cota de 8h. No se ha repetido el análisis completo de Bach en v0.3.
 
-Lecturas esenciales:
+Referencias de entrada:
 
+- P. Jaming y M. N. Kolountzakis, *Reconstruction of functions from their triple correlations* (2003), https://nyjm.albany.edu/j/2003/9-12.pdf.
+- T. Keleti y M. N. Kolountzakis, *On the determination of sets by their triple correlation in finite cyclic groups* (2006), https://doi.org/10.61091/ojac-104.
 - E. Amiot, *Music Through Fourier Space* (2016), https://doi.org/10.1007/978-3-319-45581-5.
-- J. Mandereau et al., *Z-relation and homometry in musical distributions* (2011), https://doi.org/10.1080/17459737.2011.608819.
-- J. Mandereau et al., *Discrete phase retrieval in musical structures* (2011), https://doi.org/10.1080/17459737.2011.608820.
 - J. Yust y E. Amiot, *Non-Spectral Transposition-Invariant Information in Pitch-Class Sets and Distributions* (2022), https://sites.bu.edu/jyust/files/2022/09/nonSpectralrevFin.pdf.
-- A. Singer, *Angular synchronization by eigenvectors and semidefinite programming* (2011), https://doi.org/10.1016/j.acha.2010.02.001.
-- D. Tymoczko, *The Geometry of Musical Chords* (2006), https://pubmed.ncbi.nlm.nih.gov/16825563/.
-- J. Foote, *Visualizing Music and Audio Using Self-Similarity* (1999), https://doi.org/10.1145/319463.319472.
-- V. Callet-Feltz, [trabajos sobre Fourier y homología persistente](https://victoriacallet.github.io/recherche.html).
+- A. S. Bandeira et al., *Estimation under group actions: Recovering orbits from invariants* (2023), https://doi.org/10.1016/j.acha.2023.06.001.
+- A. Agulnick y T. Busick-Warner, *Higher-Order Autocorrelations on Finite Abelian Groups* (preprint 2026), https://arxiv.org/abs/2604.13310.
+- W. R. Casper y B. Orozco, *Reconstructing rational functions on finite Abelian groups with higher autocorrelations*, https://arxiv.org/abs/2503.21022.
 
-La [nota técnica](OBSERVABILIDAD_TEMPORAL.md) amplía las demostraciones y la bibliografía. El [apéndice histórico](ANTECEDENTES.md) recoge los antecedentes propios, la motivación filosófica y las líneas aparcadas. No se requiere su lectura para entender los resultados.
+Los antecedentes y las correcciones de alcance quedan en [CORRECCIONES.md](CORRECCIONES.md). Las notas [X](rgo_fase10_nota.md), [XI](rgo_fase11_nota.md) y [temporal](OBSERVABILIDAD_TEMPORAL.md) contienen demostraciones y bibliografía ampliada. La [agenda](ROADMAP.md) establece las pruebas pendientes.

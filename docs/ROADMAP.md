@@ -1,32 +1,36 @@
-# Agenda de investigación · RGO v0.2
+# Agenda de investigación · RGO v0.3
 
-La cuestión principal es la observabilidad condicionada de estructuras relacionales. Priorizar pruebas que puedan fallar, resultados comparables y justificación matemática. No ampliar la investigación por analogías visuales.
+La prioridad es identificar estructuras bajo observaciones parciales, simetrías, priors y errores. Cada nueva hipótesis debe especificar el objeto, objetivo, espacio de candidatos, transformaciones irrelevantes, protocolo de medición, coste, referencia y criterio de rechazo.
 
-## Prioridad 1. Validación bibliográfica
+## Prioridad 1 — Fragilidad del conocimiento previo
 
-Contrastar el criterio de ambigüedad mediante congruencias con sincronización sobre grupos finitos, restricciones de cosets y recuperación de fase multicanal. Revisar si la caracterización Fourier de Q48 y los dos productos cúbicos mínimos ya se conocen. Si ya existen, citar y presentar como reproducción o caso particular, no como nuevos teoremas.
+Hasta ahora los protocolos principales conocen el espectro inicial y admiten el objeto verdadero dentro de su espacio de candidatos. Probar qué sucede cuando alguna de esas hipótesis es incorrecta.
 
-## Prioridad 2. Observabilidad condicionada en grafos
+- Definir compatibilidad exacta y aproximada con la imagen del modelo observado.
+- Distinguir una fibra vacía, una fibra ambigua y una solución única dentro de un modelo equivocado.
+- Introducir candidatos no binarios, errores de magnitudes y soporte espectral incorrecto; medir rechazo correcto de modelos inválidos y falsas certezas.
+- Contrastar identificación posterior con certificados de distancia al modelo. Una distancia pequeña a algún candidato no es prueba de identidad.
+- Diseñar observaciones de validación no utilizadas en la reconstrucción; evaluar con casos independientes.
+- Comparar rechazo, cobertura, precisión y coste de consultas con referencias fijas sencillas y sin prior restrictivo.
 
-Definir T como el objetivo conceptual mediante anotaciones externas y N como perturbaciones verificadas que no cambian ese objetivo. Construir pares de perturbaciones equivalentes y cambios genuinos, separando entrenamiento/selección y evaluación. Comparar centralidad, PPR, métodos de representación del grafo y, si son pertinentes y accesibles, embeddings. Medir información mutua, error de identificación, estabilidad y sensibilidad. La puntuación deberá aportar una ventaja verificable frente a referencias sencillas; si no, se descarta o reformula. No clasificar por defecto las aristas aleatorias como perturbaciones irrelevantes.
+No se declara aún ninguna garantía frente a priors erróneos. La futura v0.4 dependerá de los resultados.
 
-## Prioridad 3. Extender el criterio temporal
+## Prioridad 2 — Selección robusta y observabilidad condicionada
 
-- Estudiar qué observaciones locales identifican órbitas por transposición sin confundir inversión.
-- Probar congruencias incompatibles, ruido, coeficientes próximos a cero y medidas parciales.
-- Comparar selección voraz de aristas con soluciones óptimas fuera del corpus y probar contraejemplos.
-- Distinguir coste de medir una correlación cruzada completa, un coeficiente complejo y un bit; la minimalidad actual cuenta aristas, no coste de adquisición.
-- Estudiar generalización a otros grupos finitos solo mediante definiciones y pruebas explícitas.
+Generalizar el problema de cobertura de pares a otros tamaños, otros diccionarios y costes por consulta. Buscar testigos de minimalidad, casos donde la repetición sea ineficiente, protocolos con borrados y errores simultáneos y contraejemplos a la selección voraz. Comparar adaptación con una referencia fija diversa y evaluar incertidumbre estadística, no solo aciertos medios.
 
-## Prioridad 4. Caso musical independiente
+En grafos semánticos: definir el objetivo mediante etiquetas externas; verificar que las perturbaciones conservan el significado. Comparar PPR convencional, centralidad y otros métodos pertinentes con el mismo presupuesto. Medir información sobre el objetivo, estabilidad ante perturbaciones irrelevantes y capacidad de detectar cambios reales. Separar selección y evaluación. Si no hay ventaja robusta, reformular o descartar el método. No hay validación sobre grafos semánticos en v0.3.
 
-Definir T como identidad de la obra y N como transposición, tempo o instrumentación cuando preserve el objetivo. Usar conjuntos de entrenamiento y prueba sin fuga entre versiones de una misma obra; comparar con chroma, DTW y métodos publicados de reconocimiento de versiones. Distinguir el reconocimiento desde audio del resultado de identificabilidad condicionada de v0.2. No repetir búsquedas de frecuencia Q48 como objetivo principal sin hipótesis independiente.
+## Prioridad 3 — Teoremas y revisión de antecedentes
 
-## Aparcado
+Estudiar el cociente de retículos y las cotas de orden con ceros espectrales, priors discretos y mediciones parciales. Contrastar con Jaming–Kolountzakis, Keleti–Kolountzakis, Bandeira et al., Agulnick–Busick-Warner y Casper–Orozco. Determinar si los mínimos 8h y los recuentos de Z₁₂ se conocen. Publicar como reproducción cuando corresponda; no inferir novedad por falta de coincidencias de terminología.
 
-- Interpretación física o de consciencia.
-- Ventaja cuántica sin protocolo dinámico, recursos y referencia clásica.
-- Conexión con Cubo64/GF(4) sin una aplicación explícita.
-- Nuevos experimentos de penalización sin utilidad que exceda el diseño de la función.
+## Prioridad 4 — Tiempo y aplicaciones independientes
 
-Para cada hipótesis nueva registrar estado, objetivo, transformaciones irrelevantes, observaciones, predicción falsable, protocolo, datos, referencia y criterio de rechazo. Distinguir siempre pruebas, enumeraciones, simulaciones y resultados empíricos.
+Extender el criterio temporal a medidas de correlación incompletas y ruidosas, órbitas locales desconocidas y costes no uniformes. Buscar contraejemplos a optimalidad de la selección voraz de aristas. En música, comparar reconocimiento de versiones con métodos establecidos, manteniendo separadas la identificación condicionada y la reconstrucción desde audio.
+
+## Secundario
+
+Q48, Cubo64, funciones bent y predicciones cuánticas son ejemplos que permiten comprobar la teoría, no objetivos de unificación por sí solos. No ampliar la interpretación física ni simbólica sin una predicción verificable. Una prueba de hardware solo tendría sentido con protocolo, presupuesto y comparación claros.
+
+[Correcciones](CORRECCIONES.md) · [Informe v0.3](INVESTIGACION.md).

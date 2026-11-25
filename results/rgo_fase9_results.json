@@ -1,0 +1,841 @@
+{
+  "z12": {
+    "translation_classes": 352,
+    "full_triple_classes": 351,
+    "ambiguous_pair": [
+      [
+        0,
+        1,
+        3,
+        4,
+        5,
+        8
+      ],
+      [
+        0,
+        3,
+        4,
+        5,
+        7,
+        8
+      ]
+    ],
+    "quartic_coefficients": [
+      [
+        -8,
+        0,
+        0,
+        -24
+      ],
+      [
+        -8,
+        0,
+        0,
+        24
+      ]
+    ],
+    "quartic_complex": [
+      "-8+24i",
+      "-8-24i"
+    ],
+    "ambient_identifiable_count": 3834,
+    "ambient_ambiguous_count": 262,
+    "support_types": 22,
+    "support_analysis": [
+      {
+        "support": [],
+        "indicator_count": 1,
+        "period": 1,
+        "variables": [],
+        "distinct_cubic_rows": 0,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [],
+        "torus_kernel_components": 1,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0
+        ],
+        "indicator_count": 1,
+        "period": 1,
+        "variables": [],
+        "distinct_cubic_rows": 0,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [],
+        "torus_kernel_components": 1,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "indicator_count": 2592,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_cubic_rows": 12,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "indicator_count": 552,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "distinct_cubic_rows": 9,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11
+        ],
+        "indicator_count": 192,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "distinct_cubic_rows": 6,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          7,
+          9,
+          10,
+          11
+        ],
+        "indicator_count": 24,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "distinct_cubic_rows": 4,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11
+        ],
+        "indicator_count": 168,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "distinct_cubic_rows": 7,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          7,
+          8,
+          10,
+          11
+        ],
+        "indicator_count": 120,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "distinct_cubic_rows": 5,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          2,
+          5,
+          6,
+          7,
+          10,
+          11
+        ],
+        "indicator_count": 24,
+        "period": 12,
+        "variables": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "distinct_cubic_rows": 3,
+        "free_phase_dimensions": 1,
+        "smith_diagonal": [
+          1,
+          1,
+          2
+        ],
+        "torus_kernel_components": 2,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        "indicator_count": 96,
+        "period": 12,
+        "variables": [
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        "distinct_cubic_rows": 6,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          11
+        ],
+        "indicator_count": 120,
+        "period": 12,
+        "variables": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "distinct_cubic_rows": 4,
+        "free_phase_dimensions": 1,
+        "smith_diagonal": [
+          1,
+          1,
+          3
+        ],
+        "torus_kernel_components": 3,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          1,
+          3,
+          5,
+          6,
+          7,
+          9,
+          11
+        ],
+        "indicator_count": 24,
+        "period": 12,
+        "variables": [
+          1,
+          3,
+          5,
+          6
+        ],
+        "distinct_cubic_rows": 2,
+        "free_phase_dimensions": 1,
+        "smith_diagonal": [
+          1,
+          1,
+          4
+        ],
+        "torus_kernel_components": 4,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          1,
+          3,
+          5,
+          7,
+          9,
+          11
+        ],
+        "indicator_count": 60,
+        "period": 12,
+        "variables": [
+          1,
+          3,
+          5
+        ],
+        "distinct_cubic_rows": 0,
+        "free_phase_dimensions": 3,
+        "smith_diagonal": [],
+        "torus_kernel_components": 1,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          1,
+          4,
+          5,
+          7,
+          8,
+          11
+        ],
+        "indicator_count": 24,
+        "period": 12,
+        "variables": [
+          1,
+          4,
+          5
+        ],
+        "distinct_cubic_rows": 2,
+        "free_phase_dimensions": 1,
+        "smith_diagonal": [
+          1,
+          3
+        ],
+        "torus_kernel_components": 3,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          2,
+          3,
+          4,
+          6,
+          8,
+          9,
+          10
+        ],
+        "indicator_count": 24,
+        "period": 12,
+        "variables": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "distinct_cubic_rows": 4,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          1,
+          12
+        ],
+        "torus_kernel_components": 12,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "indicator_count": 36,
+        "period": 6,
+        "variables": [
+          2,
+          4,
+          6
+        ],
+        "distinct_cubic_rows": 3,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          1,
+          6
+        ],
+        "torus_kernel_components": 6,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          2,
+          4,
+          8,
+          10
+        ],
+        "indicator_count": 12,
+        "period": 6,
+        "variables": [
+          2,
+          4
+        ],
+        "distinct_cubic_rows": 2,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          6
+        ],
+        "torus_kernel_components": 6,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          2,
+          6,
+          10
+        ],
+        "indicator_count": 6,
+        "period": 6,
+        "variables": [
+          2,
+          6
+        ],
+        "distinct_cubic_rows": 0,
+        "free_phase_dimensions": 1,
+        "smith_diagonal": [
+          2
+        ],
+        "torus_kernel_components": 2,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          3,
+          6,
+          9
+        ],
+        "indicator_count": 8,
+        "period": 4,
+        "variables": [
+          3,
+          6
+        ],
+        "distinct_cubic_rows": 1,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          1,
+          4
+        ],
+        "torus_kernel_components": 4,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          3,
+          9
+        ],
+        "indicator_count": 4,
+        "period": 4,
+        "variables": [
+          3
+        ],
+        "distinct_cubic_rows": 0,
+        "free_phase_dimensions": 1,
+        "smith_diagonal": [],
+        "torus_kernel_components": 1,
+        "ambient_identifiable_up_to_translation": false
+      },
+      {
+        "support": [
+          0,
+          4,
+          8
+        ],
+        "indicator_count": 6,
+        "period": 3,
+        "variables": [
+          4
+        ],
+        "distinct_cubic_rows": 1,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          3
+        ],
+        "torus_kernel_components": 3,
+        "ambient_identifiable_up_to_translation": true
+      },
+      {
+        "support": [
+          0,
+          6
+        ],
+        "indicator_count": 2,
+        "period": 2,
+        "variables": [
+          6
+        ],
+        "distinct_cubic_rows": 0,
+        "free_phase_dimensions": 0,
+        "smith_diagonal": [
+          2
+        ],
+        "torus_kernel_components": 2,
+        "ambient_identifiable_up_to_translation": true
+      }
+    ],
+    "Q48_support": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11
+    ],
+    "Q48_minimal_complex_cubic_constraints": {
+      "terms": 4,
+      "number_of_minimal_row_sets": 8,
+      "examples": [
+        [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            3,
+            3,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            3,
+            3,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            3,
+            3,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            5,
+            7
+          ]
+        ],
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            3,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            3,
+            6
+          ]
+        ],
+        [
+          [
+            1,
+            5,
+            6
+          ],
+          [
+            2,
+            3,
+            5
+          ],
+          [
+            2,
+            5,
+            7
+          ],
+          [
+            3,
+            3,
+            6
+          ]
+        ]
+      ]
+    }
+  },
+  "walsh": {
+    "Q48_size": 48,
+    "coefficient_histogram": {
+      "-16": 288,
+      "0": 3584,
+      "16": 192,
+      "48": 32
+    },
+    "support_size": 512,
+    "support_span_dimension": 9,
+    "translation_stabilizer": [
+      0,
+      585,
+      1170,
+      1755,
+      2340,
+      2925,
+      3510,
+      4095
+    ],
+    "nonconstant_sign_variables": 511,
+    "distinct_triple_constraints": 43435,
+    "GF2_rank": 502,
+    "sign_ambiguity_bits_mod_translation": 502,
+    "remaining_bits_after_full_bispectrum": 0
+  }
+}

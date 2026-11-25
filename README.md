@@ -1,52 +1,58 @@
 # RGO — Geometría relacional y observabilidad
 
-**Relational Geometry and Observability** · Sergi Garcia Mecinas · v0.2 · 25 de noviembre de 2026
+**Relational Geometry and Observability · Sergi Garcia Mecinas · v0.3 · 25 de noviembre de 2026**
 
 🌐 **[Abrir la web oficial de RGO — demostraciones interactivas](https://sgarcia87.github.io/relational-geometry-observability/)**
 
-> ¿Qué información debemos observar para reconstruir una estructura, sin confundir las diferencias relevantes con las que solo dependen de la perspectiva?
+[English overview](README.en.md) · [Informe desde cero](docs/INVESTIGACION.md) · [Nota técnica de fase y reconstrucción](docs/AMBIGUEDAD_ESPECTRAL.md) · [Nota de robustez](docs/rgo_fase11_nota.md)
 
-Dos objetos pueden tener las mismas magnitudes medidas y, sin embargo, estar organizados de forma diferente. RGO estudia cómo detectar esa ambigüedad y qué relaciones adicionales permiten resolverla. El punto de partida es la geometría de conjuntos finitos; la música proporciona un laboratorio concreto y la reconstrucción de fases cuánticas ofrece un problema matemático relacionado.
+> ¿Cuánta información hace falta para reconstruir una estructura cuando las observaciones son parciales, ambiguas o contienen errores? ¿Cómo cambia la respuesta cuando conocemos su naturaleza de antemano?
 
-**No se necesita conocer IA_m, los trabajos anteriores del autor ni teoría musical para comenzar.**
+Dos objetos distintos pueden tener exactamente el mismo patrón de magnitudes. La música ofrece un ejemplo: dos conjuntos de notas pueden compartir todas sus distancias por parejas sin tener la misma forma. RGO estudia cómo cuantificar esta ambigüedad, seleccionar relaciones adicionales y distinguir las diferencias relevantes de las simetrías que no importan para la tarea.
 
-[Introducción e informe en español](docs/INVESTIGACION.md) · [English overview](README.en.md) · [Nota técnica y demostraciones](docs/OBSERVABILIDAD_TEMPORAL.md)
+**No hace falta conocer los proyectos anteriores del autor.** La investigación utiliza grupos finitos, Fourier, teoría de la información y diseño de observaciones. No presupone una teoría de la realidad o de la consciencia.
 
 ## Resultados principales
 
-| Problema | Resultado | Evidencia |
-|---|---|---|
-| ¿Qué distingue dos estructuras con el mismo espectro? | En los 4096 conjuntos de la escala cromática hay 224 clases por transposición e inversión; el espectro distingue 201. Dos productos cúbicos concretos completan la distinción. | Enumeración exacta; enmarcada en literatura de homometría y biespectro. |
-| ¿Cómo se relacionan equilibrio, geometría y Fourier? | Q48 son exactamente los hexacordos con F₄=0 y módulo de F₃ al cuadrado igual a 4. Un producto cúbico separa sus cuatro familias. | Demostración y enumeración. |
-| ¿Qué se pierde al observar una secuencia? | Fórmula de ambigüedad a partir de componentes conexas de grafos de potencias primas, válida para grupos cíclicos finitos bajo hipótesis explícitas. | Demostración y verificaciones finitas. |
-| ¿Cuántas observaciones adicionales hacen falta? | En 382 corales de Bach, con ventanas de cuatro negras, 377 secuencias quedan determinadas usando relaciones consecutivas; seis conexiones adicionales resuelven las cinco restantes. | Resultado empírico condicionado a conocer las órbitas locales y medir correlaciones cruzadas completas. |
-| ¿Es suficiente que dos perspectivas se parezcan? | No. La difusión común puede aumentar la similitud mientras reduce la información. Una reducción por simetría, en cambio, puede conservar toda la información sobre el objetivo. | Procesamiento de datos y ejemplo PPR numérico. |
+| Resultado | Alcance y evidencia |
+|---|---|
+| Criterio de reconstrucción de fase mediante retículos | La ambigüedad de señales reales con magnitudes dadas y observaciones invariantes queda descrita por un grupo cociente. La forma normal de Smith permite calcular su parte libre y finita. Formulación y prueba, sin prioridad bibliográfica establecida. |
+| El conocimiento previo cambia el orden necesario | En los 4096 indicadores sobre Z₁₂, 262 requieren orden 4 entre señales reales; entre indicadores, solo 24 requieren ese orden. De los 262, 190 se resuelven hasta orden 2 y 48 con orden 3. Enumeración exacta; censo adicional de n=2 a 16. |
+| Certificación de un modelo binario | Momentos de orden 3 (señales no negativas) o 4 (reales) permiten certificar binariedad y acotar la distancia a algún indicador. No certifican por sí solos su identidad. |
+| Reconstrucción robusta | Con el espectro y DC exactos, 19 tipos de tricordos y 43 de tetracordos como consultas escalares, se necesitan 8h consultas fijas universales para distancia mínima h si se permiten repeticiones. Para corregir e lecturas erróneas: 8(2e+1). Prueba inferior y construcción explícita. |
+| Elección de observaciones | Si se conoce la familia ambigua, existe un caso de cuatro candidatos con mínimo fijo 3 y adaptativo 2. Las simulaciones ruidosas muestran una ventaja pequeña frente a una buena referencia fija; no se afirma superioridad general. |
+| Reconstrucción temporal | Los componentes conexos de grafos por potencias primas cuentan la ambigüedad relativa. En 382 corales, con ventanas de cuatro negras y órbitas locales conocidas, 377 quedan determinadas por relaciones consecutivas; seis conexiones adicionales resuelven las cinco restantes. |
 
-La originalidad bibliográfica de los resultados particulares todavía debe contrastarse. No se propone una teoría física de la realidad ni se afirma ventaja cuántica, reconstrucción de grabaciones, relevancia perceptual especial de Q48 o superioridad frente a métodos musicales existentes.
+Q48 (48 configuraciones equilibradas y ortogonales), sus cocientes bent, la correspondencia con Cubo64 y la predicción cuántica de una/dos copias se mantienen como **casos de estudio**, no como prueba de una teoría física unificada.
+
+## Cómo leerlo
+
+- [Informe principal](docs/INVESTIGACION.md): explicación autónoma, desde intuiciones hasta resultados y límites.
+- [Ambigüedad espectral](docs/AMBIGUEDAD_ESPECTRAL.md): criterio de fase, conocimiento previo y órdenes de observación.
+- [Robustez y selección de consultas](docs/rgo_fase11_nota.md): demostraciones, censo y simulaciones.
+- [Reconstrucción temporal](docs/OBSERVABILIDAD_TEMPORAL.md): criterio exacto y corpus musical.
+- [Casos de estudio Q48 y Walsh](docs/rgo_fase10_nota.md): derivaciones algebraicas y predicción cuántica, con las precisiones del registro de correcciones.
+- [Correcciones y alcance](docs/CORRECCIONES.md) · [Agenda de investigación](docs/ROADMAP.md) · [Antecedentes](docs/ANTECEDENTES.md).
 
 ## Reproducir
 
-Python ≥ 3.10. La auditoría de Fourier y reconstrucción temporal usa únicamente la biblioteca estándar.
+Python 3.10 o posterior. Para las auditorías recientes:
 
 ```bash
-python audits/phase_temporal.py
-python audits/temporal_corpus.py jsb-chorales-quarter.json
-# Experimento de observabilidad condicionada (requiere NumPy)
-pip install numpy
-python audits/conditional_observability.py
+pip install -r requirements-research.txt
+python audits/rgo_fase9_audit.py
+python audits/rgo_fase10_audit.py
+python audits/rgo_fase11_audit.py
 ```
 
-Los datos originales del corpus externo no se redistribuyen. Se indica su fuente y la huella Git en la documentación y en los resultados. Las ventanas son deslizantes y la identificabilidad es condicional, no una prueba de reconocimiento de obras desde audio.
+Los resultados originales están en `results/`. Las tres auditorías se ejecutaron nuevamente para v0.3 y sus salidas coinciden exactamente con los JSON guardados. Una comprobación independiente por enumeración directa de subconjuntos verifica también los testigos de minimalidad de la fase XI: [audits/verify_robustness.py](audits/verify_robustness.py).
 
-## Lectura y organización
+Para la reconstrucción temporal: `python audits/phase_temporal.py` y `python audits/temporal_corpus.py jsb-chorales-quarter.json`. El corpus externo no se redistribuye; su fuente y huella Git se registran en los resultados. Los datos de Bach son los de la ejecución anterior.
 
-- [Introducción desde cero](docs/INVESTIGACION.md): problema, definiciones, resultados, límites y ejemplos.
-- [Nota técnica](docs/OBSERVABILIDAD_TEMPORAL.md): Fourier, biespectro, demostración de la fórmula temporal y protocolo del corpus.
-- [Agenda](docs/ROADMAP.md): preguntas abiertas, comparaciones y criterios de rechazo.
-- [Apéndice histórico](docs/ANTECEDENTES.md): geometría discreta, energía, cuántica, grafos semánticos y motivación de los trabajos previos.
-- `audits/`, `results/`: código y resultados con procedencia.
-- `demos/`: laboratorios de etapas anteriores; no sustituyen las demostraciones.
+## Explorar desde el navegador
 
-El [informe v0.1](docs/INVESTIGACION-v0.1.md) se conserva como registro histórico. La versión actual lo sustituye como referencia principal.
+[Web principal](https://sgarcia87.github.io/relational-geometry-observability/) · [Laboratorio XI: reconstrucción robusta](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase11.html) · [Laboratorio X: la fase invisible](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase10.html) · [Web v0.2: fase y tiempo](https://sgarcia87.github.io/relational-geometry-observability/archive/v0.2/)
 
-**Estado:** cuaderno de investigación abierto, no revisado por pares. Licencia pendiente de decisión del autor. Se conservan las condiciones de uso de las fuentes externas.
+**Estado científico:** investigación abierta, no revisada por pares. La homometría, recuperación de órbitas, biespectro, funciones bent y códigos tienen extensa literatura previa. Los resultados particulares deben contrastarse bibliográficamente; no se reclama prioridad, ventaja cuántica ni validación semántica externa.
+
+La v0.1 y la v0.2 se conservan en el historial y en [informes históricos](docs/ANTECEDENTES.md). La licencia sigue pendiente de decisión del autor.
