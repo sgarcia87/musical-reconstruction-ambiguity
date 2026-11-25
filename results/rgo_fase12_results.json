@@ -1,0 +1,2001 @@
+{
+  "source": "https://github.com/sgarcia87/Semantic-Diffraction-in-Conceptual-Graphs/blob/main/red_fractal_sample.json",
+  "source_git_blob_sha": "f5f9c2d2652d3b6bda5e8c1e799631233f2161c1",
+  "nodes": 42,
+  "structural_edges": 158,
+  "all": {
+    "n": 27,
+    "rank_accuracy": {
+      "diffraction": 17,
+      "PPR_sum": 16,
+      "PPR_min": 18,
+      "direct_out_weight": 10,
+      "degree": 5
+    },
+    "strict_rank_accuracy": {
+      "diffraction": 0,
+      "PPR_sum": 0,
+      "PPR_min": 0,
+      "direct_out_weight": 0,
+      "degree": 0
+    },
+    "wrong_stable": 18,
+    "valid_stable": 18,
+    "valid_stable_wrong": 5,
+    "wrong_stable_rejected": 17,
+    "valid_prior_status": {
+      "corroborated": 17,
+      "ranking_disagreement": 7,
+      "inconclusive": 3
+    },
+    "wrong_prior_status": {
+      "prior_rejected": 24,
+      "inconclusive": 3
+    },
+    "unique_validator_correct": 24
+  },
+  "nonautomatic": {
+    "n": 11,
+    "rank_accuracy": {
+      "diffraction": 3,
+      "PPR_sum": 2,
+      "PPR_min": 4,
+      "direct_out_weight": 2,
+      "degree": 0
+    },
+    "strict_rank_accuracy": {
+      "diffraction": 0,
+      "PPR_sum": 0,
+      "PPR_min": 0,
+      "direct_out_weight": 0,
+      "degree": 0
+    },
+    "wrong_stable": 4,
+    "valid_stable": 5,
+    "valid_stable_wrong": 4,
+    "wrong_stable_rejected": 3,
+    "valid_prior_status": {
+      "corroborated": 3,
+      "ranking_disagreement": 5,
+      "inconclusive": 3
+    },
+    "wrong_prior_status": {
+      "prior_rejected": 8,
+      "inconclusive": 3
+    },
+    "unique_validator_correct": 8
+  },
+  "automatically_discovered": {
+    "n": 16,
+    "rank_accuracy": {
+      "diffraction": 14,
+      "PPR_sum": 14,
+      "PPR_min": 14,
+      "direct_out_weight": 8,
+      "degree": 5
+    },
+    "strict_rank_accuracy": {
+      "diffraction": 0,
+      "PPR_sum": 0,
+      "PPR_min": 0,
+      "direct_out_weight": 0,
+      "degree": 0
+    },
+    "wrong_stable": 14,
+    "valid_stable": 13,
+    "valid_stable_wrong": 1,
+    "wrong_stable_rejected": 14,
+    "valid_prior_status": {
+      "corroborated": 14,
+      "ranking_disagreement": 2
+    },
+    "wrong_prior_status": {
+      "prior_rejected": 16
+    },
+    "unique_validator_correct": 16
+  },
+  "deletion_model": [
+    {
+      "deletion_probability": 0,
+      "inconclusive": 0.1111111111111111,
+      "unique_correct": 0.8888888888888888,
+      "unique_incorrect": 0.0,
+      "wrong_prior_rejected": 0.8888888888888888,
+      "valid_prior_false_alarm": 0.0
+    },
+    {
+      "deletion_probability": 0.1,
+      "inconclusive": 0.26859999999999973,
+      "unique_correct": 0.7257,
+      "unique_incorrect": 0.0056999999999999985,
+      "wrong_prior_rejected": 0.7257,
+      "valid_prior_false_alarm": 0.0056999999999999985
+    },
+    {
+      "deletion_probability": 0.25,
+      "inconclusive": 0.4817708333333333,
+      "unique_correct": 0.5091145833333334,
+      "unique_incorrect": 0.009114583333333334,
+      "wrong_prior_rejected": 0.5091145833333334,
+      "valid_prior_false_alarm": 0.009114583333333334
+    },
+    {
+      "deletion_probability": 0.5,
+      "inconclusive": 0.7638888888888888,
+      "unique_correct": 0.22916666666666666,
+      "unique_incorrect": 0.006944444444444444,
+      "wrong_prior_rejected": 0.22916666666666666,
+      "valid_prior_false_alarm": 0.006944444444444444
+    },
+    {
+      "deletion_probability": 0.75,
+      "inconclusive": 0.9401041666666666,
+      "unique_correct": 0.05772569444444445,
+      "unique_incorrect": 0.002170138888888889,
+      "wrong_prior_rejected": 0.05772569444444445,
+      "valid_prior_false_alarm": 0.002170138888888889
+    }
+  ],
+  "shared_bias_example": {
+    "poles": [
+      "calor",
+      "frío"
+    ],
+    "reference": "tibio",
+    "wrong_winner": "temperatura",
+    "before": "prior_rejected",
+    "after": "corroborated",
+    "altered_validation_candidates": [
+      "temperatura"
+    ],
+    "perturbation": "remove both held-out tibio-to-poles equilibrium edges; add both temperatura-to-poles edges",
+    "evidence_is_simulated": true
+  },
+  "perspective_groups": [
+    {
+      "reference": "aceleración",
+      "perspectives": [
+        [
+          "velocidad",
+          "tiempo"
+        ],
+        [
+          "derivada de velocidad",
+          "fuerza neta"
+        ],
+        [
+          "derivada de velocidad",
+          "acarreo"
+        ],
+        [
+          "derivada de velocidad",
+          "contingencia"
+        ]
+      ],
+      "coherence": 0.44278989674751035,
+      "valid_prior": [
+        "aceleración",
+        "flecha del tiempo",
+        "espacio",
+        "duración",
+        "pasado"
+      ],
+      "wrong_prior": [
+        "flecha del tiempo",
+        "espacio",
+        "duración",
+        "pasado",
+        "futuro"
+      ],
+      "valid_winners": [
+        "flecha del tiempo",
+        "aceleración",
+        "aceleración",
+        "aceleración"
+      ],
+      "wrong_winners": [
+        "flecha del tiempo",
+        "espacio",
+        "espacio",
+        "espacio"
+      ],
+      "validation_best": [
+        "aceleración"
+      ],
+      "validation_pairs": 4
+    },
+    {
+      "reference": "centro focal",
+      "perspectives": [
+        [
+          "arriba",
+          "abajo"
+        ],
+        [
+          "izquierda",
+          "derecha"
+        ],
+        [
+          "delante",
+          "detrás"
+        ]
+      ],
+      "coherence": 0.9690423284115395,
+      "valid_prior": [
+        "centro focal",
+        "espacio",
+        "tiempo",
+        "presente",
+        "pasado"
+      ],
+      "wrong_prior": [
+        "espacio",
+        "tiempo",
+        "presente",
+        "pasado",
+        "futuro"
+      ],
+      "valid_winners": [
+        "espacio",
+        "espacio",
+        "espacio"
+      ],
+      "wrong_winners": [
+        "espacio",
+        "espacio",
+        "espacio"
+      ],
+      "validation_best": [
+        "centro focal"
+      ],
+      "validation_pairs": 1
+    },
+    {
+      "reference": "espacio",
+      "perspectives": [
+        [
+          "realidad",
+          "distancia"
+        ],
+        [
+          "realidad",
+          "espacio vectorial"
+        ],
+        [
+          "realidad",
+          "métrica"
+        ],
+        [
+          "realidad",
+          "dimensión"
+        ],
+        [
+          "realidad",
+          "coordenadas"
+        ]
+      ],
+      "coherence": 0.9121231182092624,
+      "valid_prior": [
+        "espacio",
+        "tiempo",
+        "derecha",
+        "delante",
+        "abajo"
+      ],
+      "wrong_prior": [
+        "tiempo",
+        "derecha",
+        "delante",
+        "abajo",
+        "izquierda"
+      ],
+      "valid_winners": [
+        "espacio",
+        "espacio",
+        "tiempo",
+        "espacio",
+        "espacio"
+      ],
+      "wrong_winners": [
+        "tiempo",
+        "tiempo",
+        "tiempo",
+        "tiempo",
+        "tiempo"
+      ],
+      "validation_best": [
+        "espacio"
+      ],
+      "validation_pairs": 5
+    },
+    {
+      "reference": "tiempo",
+      "perspectives": [
+        [
+          "realidad",
+          "flecha del tiempo"
+        ],
+        [
+          "realidad",
+          "duración"
+        ],
+        [
+          "realidad",
+          "intervalo temporal"
+        ],
+        [
+          "realidad",
+          "tiempo propio"
+        ],
+        [
+          "realidad",
+          "dilatación temporal"
+        ],
+        [
+          "flecha del tiempo",
+          "signo negativo"
+        ],
+        [
+          "flecha del tiempo",
+          "bien fundado"
+        ]
+      ],
+      "coherence": 0.9132073944573033,
+      "valid_prior": [
+        "tiempo",
+        "espacio",
+        "pasado",
+        "futuro",
+        "presente"
+      ],
+      "wrong_prior": [
+        "espacio",
+        "pasado",
+        "futuro",
+        "presente",
+        "centro focal"
+      ],
+      "valid_winners": [
+        "tiempo",
+        "tiempo",
+        "tiempo",
+        "tiempo",
+        "tiempo",
+        "tiempo",
+        "tiempo"
+      ],
+      "wrong_winners": [
+        "espacio",
+        "espacio",
+        "espacio",
+        "espacio",
+        "espacio",
+        "espacio",
+        "espacio"
+      ],
+      "validation_best": [
+        "tiempo"
+      ],
+      "validation_pairs": 7
+    }
+  ],
+  "rows": [
+    {
+      "poles": [
+        "velocidad",
+        "tiempo"
+      ],
+      "reference": "aceleración",
+      "nonautomatic": true,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "aceleración"
+      ],
+      "held_edges": 13,
+      "pole_similarity": 0.6893127806102204,
+      "valid_prior": {
+        "candidates": [
+          "aceleración",
+          "flecha del tiempo",
+          "espacio",
+          "fuerza neta",
+          "derivada de velocidad"
+        ],
+        "winner": "aceleración",
+        "correct": true,
+        "ratio": 1.4734023971260326,
+        "balance": 0.678714552019699,
+        "stable": true,
+        "mass": 0.41384411338432886,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "flecha del tiempo",
+          "espacio",
+          "fuerza neta",
+          "derivada de velocidad",
+          "duración"
+        ],
+        "winner": "flecha del tiempo",
+        "correct": false,
+        "ratio": 1.0908564178682232,
+        "balance": 0.4968175212281416,
+        "stable": false,
+        "mass": 0.3332575594908706,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "derivada de velocidad",
+        "fuerza neta"
+      ],
+      "reference": "aceleración",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "aceleración"
+      ],
+      "held_edges": 2,
+      "pole_similarity": 0.9822708263050651,
+      "valid_prior": {
+        "candidates": [
+          "aceleración",
+          "tiempo",
+          "velocidad",
+          "acarreo",
+          "contingencia"
+        ],
+        "winner": "aceleración",
+        "correct": true,
+        "ratio": 1.8836530137051612,
+        "balance": 0.0,
+        "stable": true,
+        "mass": 0.6450271394596279,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "velocidad",
+          "acarreo",
+          "contingencia",
+          "espacio"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 1.7075693763107214,
+        "balance": 0.0,
+        "stable": true,
+        "mass": 0.39941178070838435,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "derivada de velocidad",
+        "acarreo"
+      ],
+      "reference": "aceleración",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "aceleración"
+      ],
+      "held_edges": 2,
+      "pole_similarity": 0.8322945095803987,
+      "valid_prior": {
+        "candidates": [
+          "aceleración",
+          "fuerza neta",
+          "tiempo",
+          "velocidad",
+          "contingencia"
+        ],
+        "winner": "aceleración",
+        "correct": true,
+        "ratio": 1.8452690371231333,
+        "balance": 0.14563106796112377,
+        "stable": true,
+        "mass": 0.6754505083263612,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "fuerza neta",
+          "tiempo",
+          "velocidad",
+          "contingencia",
+          "espacio"
+        ],
+        "winner": "fuerza neta",
+        "correct": false,
+        "ratio": 1.020801290115311,
+        "balance": 0.4472851550592695,
+        "stable": false,
+        "mass": 0.45088590440532045,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "derivada de velocidad",
+        "contingencia"
+      ],
+      "reference": "aceleración",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "aceleración"
+      ],
+      "held_edges": 2,
+      "pole_similarity": 0.8322945095803987,
+      "valid_prior": {
+        "candidates": [
+          "aceleración",
+          "fuerza neta",
+          "tiempo",
+          "velocidad",
+          "acarreo"
+        ],
+        "winner": "aceleración",
+        "correct": true,
+        "ratio": 1.845269037123133,
+        "balance": 0.14563106796112385,
+        "stable": true,
+        "mass": 0.6754505083263613,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "fuerza neta",
+          "tiempo",
+          "velocidad",
+          "acarreo",
+          "espacio"
+        ],
+        "winner": "fuerza neta",
+        "correct": false,
+        "ratio": 1.0208012901153107,
+        "balance": 0.44728515505926975,
+        "stable": false,
+        "mass": 0.4508859044053205,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "arriba",
+        "abajo"
+      ],
+      "reference": "centro focal",
+      "nonautomatic": true,
+      "rank": 6,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "centro focal"
+      ],
+      "held_edges": 2,
+      "pole_similarity": 0.9590896781350319,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "derecha",
+          "delante",
+          "izquierda",
+          "centro focal"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.18062513126037,
+        "balance": 0.005014625545506894,
+        "stable": false,
+        "mass": 0.6394538007148498,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "derecha",
+          "delante",
+          "izquierda",
+          "detrás"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.18062513126037,
+        "balance": 0.005014625545506894,
+        "stable": false,
+        "mass": 0.6576491716194542,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "izquierda",
+        "derecha"
+      ],
+      "reference": "centro focal",
+      "nonautomatic": true,
+      "rank": 6,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [],
+      "held_edges": 1,
+      "pole_similarity": 0.959908717025836,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "abajo",
+          "delante",
+          "detrás",
+          "centro focal"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.181998947222062,
+        "balance": 0.003238175794851672,
+        "stable": false,
+        "mass": 0.6433844710088167,
+        "decision": "inconclusive"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "abajo",
+          "delante",
+          "detrás",
+          "arriba"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.181998947222062,
+        "balance": 0.003238175794851672,
+        "stable": false,
+        "mass": 0.6595954927013031,
+        "decision": "inconclusive"
+      }
+    },
+    {
+      "poles": [
+        "delante",
+        "detrás"
+      ],
+      "reference": "centro focal",
+      "nonautomatic": true,
+      "rank": 6,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [],
+      "held_edges": 0,
+      "pole_similarity": 0.9607767139330902,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "izquierda",
+          "derecha",
+          "abajo",
+          "centro focal"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.1814827965393346,
+        "balance": 0.004475232486874064,
+        "stable": false,
+        "mass": 0.6510734469760522,
+        "decision": "inconclusive"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "izquierda",
+          "derecha",
+          "abajo",
+          "arriba"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.1814827965393346,
+        "balance": 0.004475232486874064,
+        "stable": false,
+        "mass": 0.6618696318348118,
+        "decision": "inconclusive"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "distancia"
+      ],
+      "reference": "espacio",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "espacio"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.7353216422855211,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo"
+        ],
+        "winner": "espacio",
+        "correct": true,
+        "ratio": 1.5927987372420698,
+        "balance": 0.35441405708353874,
+        "stable": true,
+        "mass": 0.472906530676038,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo",
+          "izquierda"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 2.1790051510242496,
+        "balance": 0.4312938971585885,
+        "stable": true,
+        "mass": 0.33727889552361684,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "espacio vectorial"
+      ],
+      "reference": "espacio",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "espacio"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.7353216422855211,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo"
+        ],
+        "winner": "espacio",
+        "correct": true,
+        "ratio": 1.59279873724207,
+        "balance": 0.35441405708353885,
+        "stable": true,
+        "mass": 0.472906530676038,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo",
+          "izquierda"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 2.17900515102425,
+        "balance": 0.4312938971585885,
+        "stable": true,
+        "mass": 0.33727889552361684,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "métrica"
+      ],
+      "reference": "espacio",
+      "nonautomatic": false,
+      "rank": 2,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "espacio"
+      ],
+      "held_edges": 6,
+      "pole_similarity": 0.7759025227329521,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "derecha",
+          "delante",
+          "centro focal"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 1.0278511839697357,
+        "balance": 0.17578320132459438,
+        "stable": false,
+        "mass": 0.4589529167679891,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "derecha",
+          "delante",
+          "centro focal",
+          "abajo"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 3.532781156091805,
+        "balance": 0.17578320132459438,
+        "stable": true,
+        "mass": 0.3464607746373615,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "dimensión"
+      ],
+      "reference": "espacio",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "espacio"
+      ],
+      "held_edges": 5,
+      "pole_similarity": 0.7392827549128611,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo"
+        ],
+        "winner": "espacio",
+        "correct": true,
+        "ratio": 1.316432528800536,
+        "balance": 0.24670721203145676,
+        "stable": false,
+        "mass": 0.45692064378918396,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo",
+          "izquierda"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 2.624615771801134,
+        "balance": 0.347736654540084,
+        "stable": true,
+        "mass": 0.33287339399219884,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "coordenadas"
+      ],
+      "reference": "espacio",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "espacio"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.7353216422855211,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo"
+        ],
+        "winner": "espacio",
+        "correct": true,
+        "ratio": 1.5927987372420693,
+        "balance": 0.3544140570835388,
+        "stable": true,
+        "mass": 0.472906530676038,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "derecha",
+          "delante",
+          "abajo",
+          "izquierda"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 2.17900515102425,
+        "balance": 0.4312938971585885,
+        "stable": true,
+        "mass": 0.33727889552361684,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "calor",
+        "frío"
+      ],
+      "reference": "tibio",
+      "nonautomatic": true,
+      "rank": 2,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tibio"
+      ],
+      "held_edges": 3,
+      "pole_similarity": 0.9661350590686173,
+      "valid_prior": {
+        "candidates": [
+          "temperatura",
+          "tibio",
+          "presión",
+          "volumen",
+          "trabajo"
+        ],
+        "winner": "temperatura",
+        "correct": false,
+        "ratio": 2.0737265382480348,
+        "balance": 0.06419379294151811,
+        "stable": true,
+        "mass": 0.808714949069104,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "temperatura",
+          "presión",
+          "volumen",
+          "trabajo",
+          "energía interna"
+        ],
+        "winner": "temperatura",
+        "correct": false,
+        "ratio": 3.247103386803159,
+        "balance": 0.06419379294151811,
+        "stable": true,
+        "mass": 0.7120775223535154,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "trabajo",
+        "tiempo"
+      ],
+      "reference": "potencia",
+      "nonautomatic": true,
+      "rank": 2,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "potencia"
+      ],
+      "held_edges": 14,
+      "pole_similarity": 0.02354707903388209,
+      "valid_prior": {
+        "candidates": [
+          "calor",
+          "potencia",
+          "energía interna",
+          "temperatura",
+          "frío"
+        ],
+        "winner": "calor",
+        "correct": false,
+        "ratio": 1.3783436736402874,
+        "balance": 1.0,
+        "stable": false,
+        "mass": 0.42355040810536165,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "calor",
+          "energía interna",
+          "temperatura",
+          "frío",
+          "flecha del tiempo"
+        ],
+        "winner": "calor",
+        "correct": false,
+        "ratio": 1.4991621650398095,
+        "balance": 1.0,
+        "stable": false,
+        "mass": 0.3925449141720942,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "tiempo",
+        "métrica"
+      ],
+      "reference": "intervalo temporal",
+      "nonautomatic": false,
+      "rank": 10,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "intervalo temporal"
+      ],
+      "held_edges": 15,
+      "pole_similarity": 0.6311625703039361,
+      "valid_prior": {
+        "candidates": [
+          "espacio",
+          "flecha del tiempo",
+          "centro focal",
+          "derecha",
+          "intervalo temporal"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 2.8279448286809226,
+        "balance": 0.4386871012855184,
+        "stable": true,
+        "mass": 0.391143323316789,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "flecha del tiempo",
+          "centro focal",
+          "derecha",
+          "delante"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 2.8279448286809226,
+        "balance": 0.4386871012855184,
+        "stable": true,
+        "mass": 0.40584621928855147,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "flecha del tiempo"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": true
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 3,
+      "pole_similarity": 0.9031064051355432,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "duración",
+          "tiempo propio",
+          "pasado"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 2.175353533014604,
+        "balance": 0.0458730188216286,
+        "stable": true,
+        "mass": 0.48590052414856133,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "duración",
+          "tiempo propio",
+          "pasado",
+          "futuro"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.5192757817454843,
+        "balance": 0.31942452164069746,
+        "stable": true,
+        "mass": 0.30287764235121506,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "duración"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": true
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.8357451180968042,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "flecha del tiempo",
+          "espacio",
+          "tiempo propio",
+          "pasado"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 1.5258252709756808,
+        "balance": 0.08198524294177413,
+        "stable": true,
+        "mass": 0.5355353979910882,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "flecha del tiempo",
+          "espacio",
+          "tiempo propio",
+          "pasado",
+          "futuro"
+        ],
+        "winner": "flecha del tiempo",
+        "correct": false,
+        "ratio": 1.7651962859876895,
+        "balance": 0.30952790923787155,
+        "stable": true,
+        "mass": 0.35626576384556763,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "intervalo temporal"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": true
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 5,
+      "pole_similarity": 0.7904638764231329,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "flecha del tiempo",
+          "centro focal",
+          "derecha"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 1.3360214549544145,
+        "balance": 0.02109000568039268,
+        "stable": false,
+        "mass": 0.4502243735832311,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "flecha del tiempo",
+          "centro focal",
+          "derecha",
+          "delante"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 2.8764335307062048,
+        "balance": 0.02804448749517353,
+        "stable": true,
+        "mass": 0.3036260326103518,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "tiempo propio"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": true
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.8397578449644907,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "flecha del tiempo",
+          "espacio",
+          "duración",
+          "pasado"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 1.5852606681382095,
+        "balance": 0.10877298144140563,
+        "stable": true,
+        "mass": 0.5395288771364132,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "flecha del tiempo",
+          "espacio",
+          "duración",
+          "pasado",
+          "futuro"
+        ],
+        "winner": "flecha del tiempo",
+        "correct": false,
+        "ratio": 1.6613095752112828,
+        "balance": 0.24996416699031523,
+        "stable": true,
+        "mass": 0.36389098794938585,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "realidad",
+        "dilatación temporal"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": true
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.8133734934928518,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "flecha del tiempo",
+          "duración",
+          "pasado"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 2.3497290832689233,
+        "balance": 0.24005731712991601,
+        "stable": true,
+        "mass": 0.47136079218021243,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "flecha del tiempo",
+          "duración",
+          "pasado",
+          "futuro"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 1.3999375308634148,
+        "balance": 0.2700779087479612,
+        "stable": true,
+        "mass": 0.2888692039104676,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "flecha del tiempo",
+        "signo negativo"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 3,
+      "pole_similarity": 0.8046412823039965,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "pasado",
+          "futuro",
+          "duración"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 2.5054151605492962,
+        "balance": 0.2029691321619771,
+        "stable": true,
+        "mass": 0.4778929680979278,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "pasado",
+          "futuro",
+          "duración",
+          "presente"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 2.184167781292241,
+        "balance": 0.012443217476085866,
+        "stable": true,
+        "mass": 0.27280917412510486,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "flecha del tiempo",
+        "bien fundado"
+      ],
+      "reference": "tiempo",
+      "nonautomatic": false,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "tiempo"
+      ],
+      "held_edges": 3,
+      "pole_similarity": 0.8046412823039963,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "pasado",
+          "futuro",
+          "duración"
+        ],
+        "winner": "tiempo",
+        "correct": true,
+        "ratio": 2.5054151605492954,
+        "balance": 0.202969132161977,
+        "stable": true,
+        "mass": 0.4778929680979278,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "espacio",
+          "pasado",
+          "futuro",
+          "duración",
+          "presente"
+        ],
+        "winner": "espacio",
+        "correct": false,
+        "ratio": 2.1841677812922415,
+        "balance": 0.012443217476085866,
+        "stable": true,
+        "mass": 0.27280917412510486,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "pasado",
+        "futuro"
+      ],
+      "reference": "presente",
+      "nonautomatic": true,
+      "rank": 2,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "presente"
+      ],
+      "held_edges": 2,
+      "pole_similarity": 0.9701874121539988,
+      "valid_prior": {
+        "candidates": [
+          "tiempo",
+          "presente",
+          "espacio",
+          "centro focal",
+          "flecha del tiempo"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 2.390512787974045,
+        "balance": 0.0,
+        "stable": true,
+        "mass": 0.526858246161785,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "tiempo",
+          "espacio",
+          "centro focal",
+          "flecha del tiempo",
+          "derecha"
+        ],
+        "winner": "tiempo",
+        "correct": false,
+        "ratio": 2.8851813797169377,
+        "balance": 0.0,
+        "stable": true,
+        "mass": 0.46502858263371155,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "calor",
+        "trabajo"
+      ],
+      "reference": "energía interna",
+      "nonautomatic": true,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": false,
+        "PPR_min": true,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "energía interna"
+      ],
+      "held_edges": 4,
+      "pole_similarity": 0.06408595747150614,
+      "valid_prior": {
+        "candidates": [
+          "energía interna",
+          "temperatura",
+          "frío",
+          "tiempo",
+          "tibio"
+        ],
+        "winner": "energía interna",
+        "correct": true,
+        "ratio": 1.3187105104743206,
+        "balance": 0.38576169305809005,
+        "stable": false,
+        "mass": 0.6041480332950965,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "temperatura",
+          "frío",
+          "tiempo",
+          "tibio",
+          "potencia"
+        ],
+        "winner": "temperatura",
+        "correct": false,
+        "ratio": 1.1174483795987449,
+        "balance": 1.0,
+        "stable": false,
+        "mass": 0.497480838253045,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "presión",
+        "volumen"
+      ],
+      "reference": "temperatura",
+      "nonautomatic": true,
+      "rank": 1,
+      "baseline": {
+        "diffraction": true,
+        "PPR_sum": true,
+        "PPR_min": true,
+        "direct_out_weight": true,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "temperatura"
+      ],
+      "held_edges": 2,
+      "pole_similarity": 0.9822708263050651,
+      "valid_prior": {
+        "candidates": [
+          "temperatura",
+          "calor",
+          "frío",
+          "tibio",
+          "energía interna"
+        ],
+        "winner": "temperatura",
+        "correct": true,
+        "ratio": 1.3132377294930817,
+        "balance": 0.0,
+        "stable": false,
+        "mass": 0.9417026953729972,
+        "decision": "corroborated"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "calor",
+          "frío",
+          "tibio",
+          "energía interna",
+          "trabajo"
+        ],
+        "winner": "calor",
+        "correct": false,
+        "ratio": 1.165823085311508,
+        "balance": 0.0,
+        "stable": false,
+        "mass": 0.6580844197774375,
+        "decision": "prior_rejected"
+      }
+    },
+    {
+      "poles": [
+        "espacio",
+        "tiempo"
+      ],
+      "reference": "relatividad",
+      "nonautomatic": true,
+      "rank": 19,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "realidad",
+        "relatividad"
+      ],
+      "held_edges": 19,
+      "pole_similarity": 0.6745182408268182,
+      "valid_prior": {
+        "candidates": [
+          "flecha del tiempo",
+          "métrica",
+          "duración",
+          "intervalo temporal",
+          "relatividad"
+        ],
+        "winner": "flecha del tiempo",
+        "correct": false,
+        "ratio": 1.424652878428186,
+        "balance": 0.44795291015343713,
+        "stable": true,
+        "mass": 0.3529973854450179,
+        "decision": "inconclusive"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "flecha del tiempo",
+          "métrica",
+          "duración",
+          "intervalo temporal",
+          "realidad"
+        ],
+        "winner": "flecha del tiempo",
+        "correct": false,
+        "ratio": 1.424652878428186,
+        "balance": 0.44795291015343713,
+        "stable": true,
+        "mass": 0.3768248628315752,
+        "decision": "inconclusive"
+      }
+    },
+    {
+      "poles": [
+        "posición",
+        "tiempo"
+      ],
+      "reference": "velocidad",
+      "nonautomatic": true,
+      "rank": 2,
+      "baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "strict_baseline": {
+        "diffraction": false,
+        "PPR_sum": false,
+        "PPR_min": false,
+        "direct_out_weight": false,
+        "degree": false
+      },
+      "validation_candidates": [
+        "velocidad"
+      ],
+      "held_edges": 13,
+      "pole_similarity": 0.2635998749313868,
+      "valid_prior": {
+        "candidates": [
+          "aceleración",
+          "velocidad",
+          "fuerza neta",
+          "derivada de velocidad",
+          "acarreo"
+        ],
+        "winner": "aceleración",
+        "correct": false,
+        "ratio": 2.0116835529100103,
+        "balance": 0.7298586832642651,
+        "stable": true,
+        "mass": 0.6233560101461845,
+        "decision": "ranking_disagreement"
+      },
+      "wrong_prior": {
+        "candidates": [
+          "aceleración",
+          "fuerza neta",
+          "derivada de velocidad",
+          "acarreo",
+          "contingencia"
+        ],
+        "winner": "aceleración",
+        "correct": false,
+        "ratio": 2.4101307189593046,
+        "balance": 0.7298586832642651,
+        "stable": true,
+        "mass": 0.5416966990332591,
+        "decision": "prior_rejected"
+      }
+    }
+  ]
+}

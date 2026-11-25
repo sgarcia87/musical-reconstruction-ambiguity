@@ -1,6 +1,6 @@
 # Relational Geometry and Observability (RGO)
 
-**Sergi Garcia Mecinas · v0.3 · 25 November 2026**
+**Sergi Garcia Mecinas · v0.4 · 26 November 2026**
 
 🌐 **[Explore the RGO website — interactive demonstrations (Spanish)](https://sgarcia87.github.io/relational-geometry-observability/)**
 
@@ -20,6 +20,20 @@ Different objects can share the same Fourier magnitudes. RGO studies the resulti
 
 The 48-state example Q48, bent-function quotient, GF(4) correspondence and two-copy quantum expectation are retained as case studies. The Walsh homometry of the set Q48 is distinct from the pitch-class homometry of an individual subset of Z₁₂. The two-copy result is theoretical and requires estimation of expectation values.
 
+## New research line: semantic observability (phases XII–XVI)
+
+[Full synthesis and corrections (Spanish)](docs/SEMANTICA.md) · [Unanchored axes demo](demos/rgo_fase15.html) · [Second benchmark](docs/rgo_fase16_nota.md).
+
+| Phase | Evidence and scope |
+|---|---|
+| XII · Wrong priors | Rejection and agreement with the reference are circular in this setup. No independent semantic validation. |
+| XIII · External associations | With gold membership and same-scale edges removed, diffraction reaches 58.70% vs minimum PPR 65.22% (46 queries). |
+| XIV · Known anchors | Incoming-profile projection orders 26/28 internal pairs after a gold-membership-informed ablation. |
+| XV · No anchors | Incoming clustering recovers 50/96 annotated positive pairs; PC1 recovers only 19/106 triples end to end. |
+| XVI · Second benchmark | de Melo/Bansal: 87 half-scales, only 40/353 strict triples covered. Incoming PC1 39.17%, combined Fiedler 25.83%, chance 33.33%. No robust transfer. |
+
+Association, scale membership and ordinal betweenness are different targets. Structural coherence does not guarantee semantic truth. Phases XIII–XVI are exploratory and reuse the USF graph. No claim of superiority or semantic generalization.
+
 ## Reproduce
 
 Python 3.10+:
@@ -35,5 +49,7 @@ python audits/verify_robustness.py
 The three recent audit outputs were reproduced byte for byte for v0.3. The independent robustness checker uses direct enumeration of actual subsets rather than translated-pattern signatures. Stored outputs are under `results/`. The external Bach dataset is not bundled; its provenance is recorded in the temporal-corpus results.
 
 [Technical documentation](docs/AMBIGUEDAD_ESPECTRAL.md) · [Temporal reconstruction](docs/OBSERVABILIDAD_TEMPORAL.md) · [Research agenda](docs/ROADMAP.md) · [Historical background](docs/ANTECEDENTES.md).
+
+For semantic audits XII–XVI, see [commands and reproducibility limits](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad). Node.js 18+ and SciPy are required for the respective scripts.
 
 **Status:** open research notebook, not peer-reviewed. Homometry, higher-order correlations, group-action recovery, bent functions, adaptive queries and error-correcting codes are established research areas. Priority of the specific results remains unresolved. No claim of quantum advantage, theory of consciousness, or validated semantic-graph performance. License pending author decision.

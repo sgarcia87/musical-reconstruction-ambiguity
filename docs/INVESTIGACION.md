@@ -1,8 +1,10 @@
 # Geometría relacional y observabilidad
 
-**RGO · Informe principal v0.3 · Sergi Garcia Mecinas · 25 de noviembre de 2026**
+**RGO · Informe matemático v0.3 · Sergi Garcia Mecinas · 25 de noviembre de 2026**
 
 [Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [Nota de ambigüedad espectral](AMBIGUEDAD_ESPECTRAL.md) · [Robustez](rgo_fase11_nota.md) · [Agenda](ROADMAP.md) · [Correcciones](CORRECCIONES.md)
+
+> **Actualización v0.4 (26/11/2026):** este informe conserva la investigación matemática de v0.3 y sus condiciones. Las nuevas fases XII–XVI sobre fragilidad del prior y observabilidad semántica se encuentran en [SEMANTICA.md](SEMANTICA.md), incluidos los resultados negativos y las limitaciones. No se transfieren automáticamente los teoremas a grafos semánticos.
 
 ## Resumen
 

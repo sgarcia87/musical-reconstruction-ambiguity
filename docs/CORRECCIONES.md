@@ -1,6 +1,6 @@
 # Registro de correcciones y alcance científico
 
-**RGO v0.3 · 25 de noviembre de 2026**
+**RGO v0.4 · 26 de noviembre de 2026**
 
 Las notas de trabajo anteriores se conservan íntegras como registro histórico. La referencia vigente es [INVESTIGACION.md](INVESTIGACION.md). Las siguientes precisiones prevalecen sobre formulaciones informales o interpretaciones más amplias de versiones anteriores.
 
@@ -18,6 +18,16 @@ Las notas de trabajo anteriores se conservan íntegras como registro histórico.
 | Coherencia | La monotonía por procesamiento de datos se aplica bajo un canal común. No toda subida de coherencia destruye información en cualquier sistema. El objetivo y las simetrías deben definirse previamente. |
 | Bach | El resultado de frecuencia de Q48 no demuestra privilegio musical independiente de la tonalidad. La reconstrucción temporal presupone órbitas locales conocidas y relaciones completas; no reconstruye grabaciones. |
 | Originalidad y física | El problema de fase, homometría, k-decks, funciones bent, sincronización, códigos y aprendizaje activo tiene antecedentes. Falta comprobar la prioridad de los resultados particulares. No se ha demostrado una teoría física o de la consciencia. |
+
+## Correcciones de v0.4 (fases XII–XVI)
+
+- XII: «prior rechazado» coincide con la referencia reconstruida por el validador; las aristas y etiquetas tienen origen común. 17/18 rechazos de priors erróneos estables no constituyen detección externa.
+- XIII: difracción no supera consistentemente al baseline de mínimo PPR. El vocabulario abierto contiene candidatos no anotados, que no pueden declararse falsos.
+- XIV: 26/28 se obtuvo con extremos conocidos y una ablación que usa pertenencia anotada; no se aplica a ejes descubiertos libremente.
+- XV: 50/50 parejas predichas correctas se refiere a las parejas anotadas que se reúnen, no a toda la partición del vocabulario; el orden conjunto recupera 19/106 ternas. La coherencia de Robinson no es verdad ordinal.
+- XVI: el segundo banco emplea semiescalas de intensidad con cobertura baja, no exactamente el mismo problema de polos antónimos. No hay ventaja robusta ni una prueba con observaciones ordinales independientes.
+
+[Detalles y reproducción](SEMANTICA.md). XII se volvió a ejecutar y el objeto JSON coincide. Las salidas de XIII–XVI son registros de cálculos sobre los archivos originales vía conector; no se repitieron todos los scripts descargando los corpus desde el contenedor local. XV pasó su self-test local. El script de XVI contiene la misma función de cálculo que la ejecución y verifica la dimensión del grafo y las huellas de los archivos.
 
 ## Verificación de v0.3
 
