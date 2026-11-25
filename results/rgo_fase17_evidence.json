@@ -1,0 +1,279 @@
+{
+  "sources": [
+    [
+      "UniversalDependencies/UD_English-EWT",
+      "master",
+      "en_ewt-ud-dev.conllu",
+      "dcd6281e66995543249cacf98789cbe664a42ca0"
+    ],
+    [
+      "UniversalDependencies/UD_English-EWT",
+      "master",
+      "en_ewt-ud-test.conllu",
+      "de059e15c875a44adf2a738ac2a6ed2d6bdd2c73"
+    ],
+    [
+      "UniversalDependencies/UD_English-EWT",
+      "master",
+      "en_ewt-ud-train.conllu",
+      "e6202c973502063a42e7a1f114d5ae7a61f75ba8"
+    ],
+    [
+      "Coral-Lab/scales",
+      "master",
+      "ordering/ordering_gold_standard.csv",
+      "dc5ecb8805270be3fd135a2c1ff926b03926078d"
+    ],
+    [
+      "ainagari/scalar_adjs",
+      "master",
+      "multilingual_data/all_translations.csv",
+      "a281181b88078bfd858e77b2eda2cf36eaca94f8"
+    ]
+  ],
+  "corpus": {
+    "splits": [
+      {
+        "sentences": 2001,
+        "tokens": 25148,
+        "hits": 1,
+        "byPattern": {
+          "but not": 1
+        }
+      },
+      {
+        "sentences": 2077,
+        "tokens": 25094,
+        "hits": 0,
+        "byPattern": {}
+      },
+      {
+        "sentences": 12544,
+        "tokens": 204578,
+        "hits": 2,
+        "byPattern": {
+          "but not": 2
+        }
+      }
+    ],
+    "uniqueDirectedPairs": 3,
+    "matchedScalePairs": 0,
+    "matches": []
+  },
+  "ordinalTransfer": {
+    "sourceScales": 87,
+    "sourceUniqueTriples": 344,
+    "rows": [
+      {
+        "id": "a",
+        "words": [
+          "big",
+          "enormous",
+          "gigantic",
+          "huge",
+          "large",
+          "minuscule",
+          "small",
+          "tiny"
+        ],
+        "orders": 20160,
+        "compatible": 20160,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "b",
+        "words": [
+          "arid",
+          "damp",
+          "dry",
+          "moist",
+          "parched",
+          "wet"
+        ],
+        "orders": 360,
+        "compatible": 360,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "c",
+        "words": [
+          "dumb",
+          "idiotic",
+          "intelligent",
+          "smart",
+          "stupid"
+        ],
+        "orders": 60,
+        "compatible": 60,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "d",
+        "words": [
+          "awesome",
+          "awful",
+          "bad",
+          "good",
+          "great",
+          "horrible",
+          "terrible",
+          "wonderful"
+        ],
+        "orders": 20160,
+        "compatible": 20160,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "e",
+        "words": [
+          "ancient",
+          "fresh",
+          "new",
+          "old"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "f",
+        "words": [
+          "fast",
+          "quick",
+          "slow",
+          "speedy"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "g",
+        "words": [
+          "difficult",
+          "easy",
+          "hard",
+          "simple"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "h",
+        "words": [
+          "few",
+          "many",
+          "several",
+          "some"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "i",
+        "words": [
+          "bright",
+          "dark",
+          "dim",
+          "light"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "j",
+        "words": [
+          "alike",
+          "different",
+          "same",
+          "similar"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "k",
+        "words": [
+          "beautiful",
+          "gorgeous",
+          "hideous",
+          "pretty",
+          "ugly"
+        ],
+        "orders": 60,
+        "compatible": 60,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      },
+      {
+        "id": "p",
+        "words": [
+          "cold",
+          "freezing",
+          "hot",
+          "warm"
+        ],
+        "orders": 12,
+        "compatible": 12,
+        "patternMatches": [],
+        "observations": [],
+        "conflicts": [],
+        "certified": [],
+        "leaveOneOut": []
+      }
+    ],
+    "observed": 0,
+    "certified": 0,
+    "correct": 0,
+    "inferred": 0,
+    "inferredCorrect": 0,
+    "leaveOneOut": 0
+  }
+}

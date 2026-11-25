@@ -1,6 +1,6 @@
-# Observabilidad semántica: priors, pertenencia y orden (XII–XVI)
+# Observabilidad semántica: priors, pertenencia y orden (XII–XVII)
 
-**RGO v0.4 · Sergi Garcia Mecinas · 26 de noviembre de 2026**
+**RGO v0.5 · Sergi Garcia Mecinas · 26 de noviembre de 2026**
 
 [Informe matemático](INVESTIGACION.md) · [Correcciones](CORRECCIONES.md) · [Agenda](ROADMAP.md)
 
@@ -36,9 +36,17 @@ Se cambió la referencia a 87 semiescalas de de Melo y Bansal (2013), usando el 
 
 [Nota](rgo_fase16_nota.md) · [Auditoría](../audits/rgo_fase16_audit.mjs) · [Resultados](../results/rgo_fase16_resultados.json).
 
+## XVII. Un observador ordinal exacto y una prueba de cobertura
+
+El modelo ideal de órdenes estrictos salvo inversión permite contar fibras, seleccionar consultas y estudiar ruido. La distancia de la firma ternaria completa es n−2; para seis elementos se obtienen mínimos de 7/10/16 consultas fijas distintas (identificación/detección/corrección de una lectura) y seis adaptativas exactas. La prueba artificial de prior excluyente muestra 218/240 falsas unicidades y 240/240 rechazos al ampliar al universo correcto con un oráculo ideal; consultar directamente la restricción del prior es un control más simple en ese ejemplo. No son resultados sobre datos lingüísticos.
+
+Para acercarse a un oráculo real se buscaron siete patrones de intensidad en 16.622 enunciados (254.820 tokens) del English Web Treebank: tres ocurrencias, ninguna conecta dos términos de una misma escala objetivo. Se intentó también transferir las ternas estrictas anotadas en de Melo/Bansal a las escalas completas de Wilkinson: ninguna de 344 ternas fuente coincide con una terna objetivo. **No hay cobertura útil ni medida de precisión en este piloto.** La fuente de observaciones ordinales suficiente y contextualizada sigue pendiente. Se conserva el fracaso como resultado, no como corroboración.
+
+[Nota y demostraciones](rgo_fase17_nota.md) · [Laboratorio XVII](../demos/rgo_fase17.html) · [Auditoría matemática](../audits/rgo_fase17_audit.mjs) · [Extracción](../audits/rgo_fase17_evidence.mjs) · [Resultados exactos](../results/rgo_fase17_resultados.json) · [Resultados del piloto](../results/rgo_fase17_evidence.json).
+
 ## Conclusión científica y reproducibilidad
 
-La asociación semántica puede informar pertenencia a una dimensión, pero no garantiza su orden. La próxima hipótesis exige observaciones ordinales de una fuente distinta, con separación de datos de desarrollo y prueba. Esta línea no demuestra una teoría general del significado ni superioridad de un algoritmo. XII usa datos internos; XIII–XV reutilizan un banco externo y XVI cambia las etiquetas de referencia pero conserva el grafo. No se asume independencia de ternas, parejas ni perspectivas. Se publican también los resultados negativos.
+La asociación semántica puede informar pertenencia a una dimensión, pero no garantiza su orden. El observador ordinal ideal de XVII está verificado, pero obtener observaciones de una fuente distinta, suficientemente cubierta y con separación entre desarrollo y prueba, permanece pendiente. Esta línea no demuestra una teoría general del significado ni superioridad de un algoritmo. XII usa datos internos; XIII–XV reutilizan un banco externo y XVI cambia las etiquetas de referencia pero conserva el grafo. No se asume independencia de ternas, parejas ni perspectivas. Se publican también los resultados negativos.
 
 ```bash
 pip install -r requirements-research.txt
@@ -48,8 +56,10 @@ python audits/rgo_fase14_audit.py --data ./rgo_data
 node audits/rgo_fase15_audit.mjs --self-test
 node audits/rgo_fase15_audit.mjs --data ./rgo_data
 node audits/rgo_fase16_audit.mjs --data ./rgo_data
+node audits/rgo_fase17_audit.mjs
+node audits/rgo_fase17_evidence.mjs --data ./rgo_data
 ```
 
-XII se reprodujo localmente. XIII–XVI fueron calculadas sobre los corpus originales mediante JavaScript en el entorno de investigación; los scripts XIII/XIV de Python y XV de Node se comprobaron con datos sintéticos en sesiones anteriores; XV pasó nuevamente su self-test. Los JSON compactos de XIII–XV registran esas ejecuciones, no equivalencias byte a byte con las salidas de scripts locales. XVI comparte la misma función de cálculo con el script local. El acceso de red local no permitió volver a descargar los corpus y repetir los cuatro experimentos enteros localmente. Los corpus de terceros no se redistribuyen. Véanse las huellas, fuentes y limitaciones en las notas y resultados.
+XII se reprodujo localmente. XIII–XVI fueron calculadas sobre los corpus originales mediante JavaScript en el entorno de investigación; los scripts XIII/XIV de Python y XV de Node se comprobaron con datos sintéticos en sesiones anteriores; XV pasó nuevamente su self-test. Los JSON compactos de XIII–XV registran esas ejecuciones, no equivalencias byte a byte con las salidas de scripts locales. XVI comparte la misma función de cálculo con el script local. El acceso de red local no permitió volver a descargar los corpus y repetir los cuatro experimentos enteros localmente. XVII se ejecutó exhaustivamente y sus mínimos principales se comprobaron también por programación entera en Python. El piloto de evidencia se ejecutó sobre los archivos originales recuperados; no se repitió su descarga desde Node local. Los corpus de terceros no se redistribuyen. Véanse las huellas, fuentes y limitaciones en las notas y resultados.
 
-**Referencias principales:** USF (Nelson et al., 2004, DOI 10.3758/BF03195588); [Wilkinson y Oates, 2016](https://aclanthology.org/L16-1424/); [de Melo y Bansal, 2013](https://aclanthology.org/Q13-1023/); [Cocos et al., 2018](https://aclanthology.org/D18-1209/); [Garí Soler y Apidianaki, 2021](https://aclanthology.org/2021.naacl-main.370/).
+**Referencias principales:** USF (Nelson et al., 2004, DOI 10.3758/BF03195588); [Wilkinson y Oates, 2016](https://aclanthology.org/L16-1424/); [de Melo y Bansal, 2013](https://aclanthology.org/Q13-1023/); [Cocos et al., 2018](https://aclanthology.org/D18-1202/); [Garí Soler y Apidianaki, 2021](https://aclanthology.org/2021.naacl-main.370/).

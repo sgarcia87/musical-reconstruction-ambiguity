@@ -1,8 +1,8 @@
 # Registro de correcciones y alcance científico
 
-**RGO v0.4 · 26 de noviembre de 2026**
+**RGO v0.5 · 26 de noviembre de 2026**
 
-Las notas de trabajo anteriores se conservan íntegras como registro histórico. La referencia vigente es [INVESTIGACION.md](INVESTIGACION.md). Las siguientes precisiones prevalecen sobre formulaciones informales o interpretaciones más amplias de versiones anteriores.
+Las notas de trabajo anteriores se conservan íntegras como registro histórico. La referencia general vigente es [MARCO_GENERAL.md](MARCO_GENERAL.md); [INVESTIGACION.md](INVESTIGACION.md) conserva el fundamento matemático I–XI. Las siguientes precisiones prevalecen sobre formulaciones informales o interpretaciones más amplias de versiones anteriores.
 
 | Tema | Formulación vigente |
 |---|---|
@@ -28,6 +28,16 @@ Las notas de trabajo anteriores se conservan íntegras como registro histórico.
 - XVI: el segundo banco emplea semiescalas de intensidad con cobertura baja, no exactamente el mismo problema de polos antónimos. No hay ventaja robusta ni una prueba con observaciones ordinales independientes.
 
 [Detalles y reproducción](SEMANTICA.md). XII se volvió a ejecutar y el objeto JSON coincide. Las salidas de XIII–XVI son registros de cálculos sobre los archivos originales vía conector; no se repitieron todos los scripts descargando los corpus desde el contenedor local. XV pasó su self-test local. El script de XVI contiene la misma función de cálculo que la ejecución y verifica la dimensión del grafo y las huellas de los archivos.
+
+## Precisiones de v0.5 (XVII)
+
+- La consulta de mediana de tres tiene tres resultados; una respuesta sí/no de intermediación sería un protocolo distinto. El orden estricto módulo inversión presupone pertenencia conocida y ausencia de empates. No recupera orientación ni distancias.
+- Los mínimos 7/10/16 se refieren a seis elementos y listas fijas sin repetición, no al diccionario musical 8h. La distancia n−2 se demuestra para la firma de todas las ternas. Los seis pasos adaptativos requieren lecturas exactas.
+- Los 218/240 falsos únicos y 240/240 rechazos ampliando el universo se refieren a un prior artificial y oráculo ideal. Una consulta directa sobre la restricción del prior detecta el error con coste uno en ese ejemplo.
+- El piloto de patrones EWT y el de transferencia de ternas de otra anotación no tienen cobertura útil. No se ha demostrado extracción de ejes ordinales en lenguaje real; no se incorporan los tanteos WordNet/valencia como benchmarks reproducidos.
+- Se corrigen enlaces bibliográficos de Cocos et al. (ACL D18-1202) y de Melo/Bansal (ACL Q13-1023). La prioridad bibliográfica de XVII no está establecida.
+
+[Nota de XVII](rgo_fase17_nota.md). Se conserva v0.4 en el historial; se reorganiza el marco general y se añaden resultados, demostración, auditoría exacta y piloto externo.
 
 ## Verificación de v0.3
 

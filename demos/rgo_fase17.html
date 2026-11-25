@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f2eb"><title>RGO XVII · La estructura de un orden</title><style>
+:root{color-scheme:light;--bg:#f5f2eb;--paper:#fffdf8;--ink:#18313d;--muted:#53656a;--line:#d6dcd5;--teal:#087d76;--blue:#285481;--rust:#a75337}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,sans-serif}main,header,footer{max-width:1050px;padding:20px clamp(16px,4vw,34px);margin:auto}header{border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}a{color:var(--blue);text-underline-offset:3px}h1,h2{font-family:Georgia,serif;letter-spacing:-.035em;line-height:1.08;font-weight:normal}h1{font-size:clamp(43px,8vw,72px);margin:14px 0}h2{font-size:clamp(29px,5vw,43px);margin:0 0 14px}p{margin:8px 0 16px}.small{font-size:.85rem;color:var(--muted)}.kicker{font-size:.75rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}.lead{font-size:1.15rem;max-width:68ch;color:var(--muted)}.section{padding:24px 0;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:var(--paper);border:1px solid var(--line);padding:20px;border-radius:12px;min-width:0}.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}.metric{border-top:3px solid var(--teal);padding:9px 8px;background:#eaf0ec}.metric strong{display:block;font-family:Georgia,serif;font-size:clamp(28px,5vw,42px);font-weight:400}.metric span{font-size:.78rem;color:var(--muted)}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}button,select{font:inherit;padding:10px 12px;min-height:44px;border:1px solid var(--line);border-radius:6px;background:var(--paper);color:var(--ink)}button{cursor:pointer}button.primary{background:var(--blue);color:white;border-color:var(--blue)}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}label{display:block;font-weight:650;font-size:.85rem;margin:12px 0 5px}select{width:100%;max-width:100%}.status{background:#e5eee9;border-left:4px solid var(--teal);padding:12px;margin-top:10px}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{font:13px ui-monospace,monospace;background:#e9ede9;border-radius:4px;padding:7px 9px}.error{background:#f4dfd3;border:1px solid var(--rust)}ol{padding-left:23px;line-height:1.65}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:.9rem}th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}footer{color:var(--muted);border-top:1px solid var(--line);font-size:.85rem}@media(max-width:700px){.grid{grid-template-columns:1fr}.panel{padding:15px}.metric{padding:8px 6px}.metric span{font-size:.72rem}}
+</style></head><body>
+<header><strong><a href="../index.html">RGO · Inicio</a></strong><a href="https://github.com/sgarcia87/relational-geometry-observability/blob/main/docs/rgo_fase17_nota.md">Nota científica XVII</a></header>
+<main><div class="kicker">Fase XVII · modelo matemático exacto</div><h1>¿Quién está entre quién?</h1><p class="lead">Seis elementos, 360 órdenes distintos salvo inversión. Observa cómo las relaciones ternarias reducen las alternativas y cómo un conocimiento previo equivocado puede crear una falsa certeza.</p><p class="small">Laboratorio ideal de órdenes estrictos. Las mediciones se simulan mediante un orden secreto; no son juicios lingüísticos. El selector voraz de entropía no es necesariamente el árbol óptimo de seis consultas.</p>
+<section class="section"><h2>1. Observar y auditar</h2><div class="grid"><article class="panel"><label for="scenario">Tipo de prior: P exige que B esté entre A y C</label><select id="scenario"><option value="wrong">El orden secreto no cumple el prior</option><option value="right">El orden secreto cumple el prior</option></select><div class="buttons"><button id="start">Nuevo orden secreto</button><button id="reveal">Revelar orden secreto</button></div><p id="secret" class="small"></p><div class="metrics"><div class="metric"><strong id="u">360</strong><span>Compatibles en U</span></div><div class="metric"><strong id="p">120</strong><span>Compatibles en P</span></div><div class="metric"><strong id="bits">8.49</strong><span>Bits en U</span></div></div><p id="mode" class="kicker"></p><p id="question"></p><div class="buttons"><button class="primary" id="measure">Realizar consulta</button><button id="audit">Ampliar a U</button></div><p class="small">Consultas realizadas: <strong id="queries">0</strong>. Se elige una consulta con máxima entropía en el conjunto activo.</p></article><article class="panel"><h3>Qué sabemos realmente</h3><div id="status" class="status" role="status" aria-live="polite"></div><p id="answer"></p><p id="world" class="small"></p><h3>Historial de observaciones</h3><ol id="log"></ol></article></div></section>
+<section class="section"><h2>2. Cuando una lectura falla</h2><p>Prueba las listas fijas óptimas de seis elementos. Los números indican la distancia mínima de las firmas: h=1 distingue órdenes; h=2 detecta una sustitución; h=3 corrige una.</p><div class="grid"><article class="panel"><label for="protocol">Protocolo</label><select id="protocol"><option value="1">7 consultas · identificación exacta</option><option value="2">10 consultas · detección</option><option value="3" selected>16 consultas · corrección</option><option value="4">20 consultas · todas las ternas</option></select><label for="errors">Lecturas alteradas</label><select id="errors"><option value="0">0</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option></select><div class="metrics"><div class="metric"><strong id="rCount"></strong><span>Consultas</span></div><div class="metric"><strong id="rDist"></strong><span>Distancia mínima</span></div><div class="metric"><strong id="rMin"></strong><span>Distancia observada</span></div></div><div id="rResult" class="status" role="status"></div><p id="rGuarantee" class="small"></p></article><article class="panel"><h3>Firma observada</h3><div class="chips" id="readings"></div><p class="small">Las primeras respuestas se modifican para ilustrar sustituciones arbitrarias. La garantía matemática se aplica a cualquier posición y valor incorrecto dentro del presupuesto.</p></article></div></section>
+<section class="section"><h2>3. Resultados exactos</h2><div class="scroll"><table><thead><tr><th>Elementos</th><th>Órdenes</th><th>Fijo</th><th>Adaptativo</th><th>Detectar 1</th><th>Corregir 1</th></tr></thead><tbody><tr><td>3</td><td>3</td><td>1</td><td>1</td><td>—</td><td>—</td></tr><tr><td>4</td><td>12</td><td>3</td><td>3</td><td>4</td><td>—</td></tr><tr><td>5</td><td>60</td><td>5</td><td>4</td><td>8</td><td>10</td></tr><tr><td>6</td><td>360</td><td>7</td><td>6</td><td>10</td><td>16</td></tr></tbody></table></div><p class="small">Consultas fijas sin repetición, oráculo de tres respuestas, orden estricto módulo inversión. La distancia de la firma completa es n−2 para todo n≥3. <a href="https://github.com/sgarcia87/relational-geometry-observability/blob/main/docs/rgo_fase17_nota.md">Demostración y reproducibilidad</a>.</p></section>
+<section class="section"><h2>4. Del modelo a la semántica</h2><p>El observador está implementado, pero el piloto con 254.820 tokens de English Web Treebank solo encontró tres coincidencias del extractor de patrones; ninguna pertenece a las escalas de evaluación. El segundo intento de transferencia de ternas anotadas tampoco obtuvo cobertura. La validación lingüística sigue pendiente.</p><a href="https://github.com/sgarcia87/relational-geometry-observability/blob/main/results/rgo_fase17_evidence.json">Resultados del piloto independiente</a> · <a href="https://github.com/sgarcia87/relational-geometry-observability/blob/main/audits/rgo_fase17_audit.mjs">Auditoría exacta</a></section>
+<noscript><p>Activa JavaScript para interactuar. La tabla y los límites científicos se pueden consultar sin él.</p></noscript></main><footer>RGO v0.5 · Sergi Garcia Mecinas · investigación abierta, no revisada por pares.</footer><script>"use strict";
+function makeModel(){
+  const letters=["A","B","C","D","E","F"],indices=letters.map((_,i)=>i);
+  const comb=(a,k)=>k===0?[[]]:a.flatMap((x,i)=>comb(a.slice(i+1),k-1).map(t=>[x,...t]));
+  const perm=a=>a.length===0?[[]]:a.flatMap((x,i)=>perm(a.slice(0,i).concat(a.slice(i+1))).map(p=>[x,...p]));
+  const Q=comb(indices,3),P=perm(indices).filter(p=>p[0]<p.at(-1)),S=P.map(p=>Q.map(q=>[...q].sort((a,b)=>p.indexOf(a)-p.indexOf(b))[1]));
+  const U=P.map((_,i)=>i),prior=U.filter(i=>S[i][0]===1);
+  function choose(candidates){
+    if(candidates.length<=1)return -1;
+    return Q.map((q,j)=>{const counts=q.map(a=>candidates.filter(i=>S[i][j]===a).length),N=candidates.length;return {j,max:Math.max(...counts),H:counts.reduce((s,x)=>x?s-x/N*Math.log2(x/N):s,0)}}).filter(x=>x.max<candidates.length).sort((a,b)=>b.H-a.H||a.max-b.max||a.j-b.j)[0]?.j??-1;
+  }
+  const filter=(c,j,a)=>c.filter(i=>S[i][j]===a);
+  const decode=(js,reads)=>{const d=S.map(s=>js.reduce((sum,j,k)=>sum+Number(s[j]!==reads[k]),0)),min=Math.min(...d);return {min,ids:U.filter(i=>d[i]===min)}};
+  return {letters,Q,P,S,U,prior,choose,filter,decode};
+}
+const M=makeModel(),PROTOCOLS=[{"h":1,"ids":[0,5,8,9,10,12,13]},{"h":2,"ids":[0,1,5,8,9,12,13,15,16,17]},{"h":3,"ids":[0,2,3,4,6,7,8,9,10,11,13,14,15,16,17,18]},{"h":4,"ids":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]}],$=id=>document.getElementById(id);
+let truth=0,remaining=M.U.slice(),admitted=M.prior.slice(),history=[],auditing=false,revealed=false;
+const name=i=>M.P[i].map(x=>M.letters[x]).join(" — "),fmt=n=>n.toLocaleString("es-ES");
+function start(){
+ const useWrong=$("scenario").value==="wrong";
+ const pool=M.U.filter(i=>M.prior.includes(i)!==useWrong);
+ truth=pool[Math.floor(Math.random()*pool.length)];remaining=M.U.slice();admitted=M.prior.slice();history=[];auditing=false;revealed=false;render();robust();
+}
+function measure(){
+ const q=M.choose(auditing?remaining:admitted);if(q<0)return;
+ const answer=M.S[truth][q];remaining=M.filter(remaining,q,answer);admitted=M.filter(admitted,q,answer);
+ history.push({q,answer});render();
+}
+function audit(){auditing=true;render()}
+function render(){
+ $("u").textContent=fmt(remaining.length);$("p").textContent=fmt(admitted.length);$("bits").textContent=remaining.length?Math.log2(remaining.length).toFixed(2):"—";
+ $("queries").textContent=history.length;
+ const q=M.choose(auditing?remaining:admitted);
+ $("question").textContent=q<0?"Sin consultas pendientes en este modo":M.Q[q].map(x=>M.letters[x]).join(" · ")+" — ¿cuál está entre los otros dos?";
+ $("measure").disabled=q<0;
+ $("audit").disabled=auditing||remaining.length<=1;
+ $("mode").textContent=auditing?"Auditoría del universo U":"Observador restringido a P";
+ let status=admitted.length===0?"Prior incompatible con las lecturas.":admitted.length===1?(remaining.length===1?"Identificación en U y P, bajo el oráculo ideal.":"Unicidad condicionada en P; U conserva alternativas."):"Todavía hay ambigüedad dentro del prior.";
+ if(remaining.length===1&&admitted.length===0)status+=" Orden identificado fuera de P.";
+ $("status").textContent=status;
+ $("answer").textContent=admitted.length===1?"Candidato de P: "+name(admitted[0]):"";
+ $("world").textContent=remaining.length===1?"Identificado en U: "+name(remaining[0]):remaining.length>1?"Dos ejemplos compatibles: "+name(remaining[0])+" / "+name(remaining[1]):"";
+ $("secret").textContent=revealed?"Orden secreto (salvo inversión): "+name(truth):"Orden secreto oculto.";
+ $("reveal").textContent=revealed?"Ocultar orden secreto":"Revelar orden secreto";
+ $("log").replaceChildren();
+ history.forEach((x,k)=>{const li=document.createElement("li");li.textContent=(k+1)+". "+M.Q[x.q].map(y=>M.letters[y]).join(" · ")+" → "+M.letters[x.answer];$("log").appendChild(li)});
+}
+function robust(){
+ const h=Number($("protocol").value),e=Number($("errors").value),p=PROTOCOLS.find(x=>x.h===h);
+ let reads=p.ids.map(j=>M.S[truth][j]);
+ for(let k=0;k<e&&k<reads.length;k++)reads[k]=M.Q[p.ids[k]].find(x=>x!==reads[k]);
+ const d=M.decode(p.ids,reads);
+ $("rCount").textContent=p.ids.length;
+ $("rDist").textContent=h;
+ $("rMin").textContent=d.min;
+ $("rResult").textContent=(d.ids.length===1?"Candidato más próximo: "+name(d.ids[0]):d.ids.length+" candidatos igualmente próximos")+". "+(d.ids.length===1&&d.ids[0]===truth?"Coincide con el orden secreto.":"No hay reconstrucción correcta y única en este ensayo.");
+ $("rGuarantee").textContent=2*e<h?"Dentro de la garantía de corrección (2e < h).":e<h?"Dentro de la garantía de detección, no de corrección.":"Fuera del presupuesto garantizado.";
+ $("readings").replaceChildren();p.ids.forEach((j,k)=>{const x=document.createElement("span");x.className=k<e?"chip error":"chip";x.textContent=M.Q[j].map(a=>M.letters[a]).join("")+" → "+M.letters[reads[k]];$("readings").appendChild(x)});
+}
+$("start").onclick=start;$("measure").onclick=measure;$("audit").onclick=audit;$("reveal").onclick=()=>{revealed=!revealed;render()};$("protocol").onchange=robust;$("errors").onchange=robust;$("scenario").onchange=start;start();
+</script></body></html>

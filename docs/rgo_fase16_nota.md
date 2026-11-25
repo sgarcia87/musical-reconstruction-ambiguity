@@ -50,8 +50,8 @@ node audits/rgo_fase16_audit.mjs --data ./rgo_data > phase16_full.json
 Node.js 18+, sin dependencias. El script descarga o lee los diez archivos de origen y verifica las huellas de blobs Git. Los cálculos de esta fase se ejecutaron en JavaScript sobre los archivos recuperados a través de GitHub; la versión local incorpora la misma función y una comprobación explícita del tamaño del grafo. El contenedor local no tenía acceso a red, por lo que no se repitió el proceso completo desde Node local. No se redistribuyen los corpus.
 
 - [Auditoría](../audits/rgo_fase16_audit.mjs) · [Resultados](../results/rgo_fase16_resultados.json).
-- De Melo y Bansal (2013), *Good, Great, Excellent: Global Inference of Semantic Intensities*. https://doi.org/10.1162/tacl_a_00227
+- De Melo y Bansal (2013), *Good, Great, Excellent: Global Inference of Semantic Intensities*. https://aclanthology.org/Q13-1023/
 - Garí Soler y Apidianaki (2021), *Scalar Adjective Identification and Multilingual Ranking*. https://aclanthology.org/2021.naacl-main.370/
 - Datos: https://github.com/ainagari/scalar_adjs/tree/master/multilingual_data
 - Nelson, McEvoy y Schreiber (2004), *The University of South Florida Free Association, Rhyme, and Word Fragment Norms*. https://doi.org/10.3758/BF03195588
-- Cocos et al. (2018), *Learning Scalar Adjective Intensity from Paraphrases*. https://aclanthology.org/D18-1209/
+- Cocos et al. (2018), *Learning Scalar Adjective Intensity from Paraphrases*. https://aclanthology.org/D18-1202/
