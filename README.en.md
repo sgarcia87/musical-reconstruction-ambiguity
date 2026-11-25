@@ -2,11 +2,13 @@
 
 **Sergi Garcia Mecinas · v0.2 · 25 November 2026**
 
+🌐 **[Explore the RGO website — interactive demonstrations (Spanish)](https://sgarcia87.github.io/relational-geometry-observability/)**
+
 **How much information is needed to reconstruct a relational structure, while discarding differences that are irrelevant to the task?**
 
 No knowledge of the author's previous projects is required. RGO is an open research notebook about finite structures, symmetry, phase retrieval, conditional identifiability and information-preserving observations. Music is a concrete test domain, not an assumption about the nature of reality.
 
-[Interactive website (Spanish)](https://sgarcia87.github.io/relational-geometry-observability/) · [Standalone introduction (Spanish)](docs/INVESTIGACION.md) · [Technical note and proofs (Spanish)](docs/OBSERVABILIDAD_TEMPORAL.md)
+[Standalone introduction (Spanish)](docs/INVESTIGACION.md) · [Technical note and proofs (Spanish)](docs/OBSERVABILIDAD_TEMPORAL.md)
 
 ## Main findings
 

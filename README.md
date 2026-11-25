@@ -2,13 +2,15 @@
 
 **Relational Geometry and Observability** · Sergi Garcia Mecinas · v0.2 · 25 de noviembre de 2026
 
+🌐 **[Abrir la web oficial de RGO — demostraciones interactivas](https://sgarcia87.github.io/relational-geometry-observability/)**
+
 > ¿Qué información debemos observar para reconstruir una estructura, sin confundir las diferencias relevantes con las que solo dependen de la perspectiva?
 
 Dos objetos pueden tener las mismas magnitudes medidas y, sin embargo, estar organizados de forma diferente. RGO estudia cómo detectar esa ambigüedad y qué relaciones adicionales permiten resolverla. El punto de partida es la geometría de conjuntos finitos; la música proporciona un laboratorio concreto y la reconstrucción de fases cuánticas ofrece un problema matemático relacionado.
 
 **No se necesita conocer IA_m, los trabajos anteriores del autor ni teoría musical para comenzar.**
 
-[Web interactiva (GitHub Pages)](https://sgarcia87.github.io/relational-geometry-observability/) · [Introducción e informe en español](docs/INVESTIGACION.md) · [English overview](README.en.md) · [Nota técnica y demostraciones](docs/OBSERVABILIDAD_TEMPORAL.md)
+[Introducción e informe en español](docs/INVESTIGACION.md) · [English overview](README.en.md) · [Nota técnica y demostraciones](docs/OBSERVABILIDAD_TEMPORAL.md)
 
 ## Resultados principales
 
