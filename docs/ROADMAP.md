@@ -1,13 +1,32 @@
-# Agenda de investigación
+# Agenda de investigación · RGO v0.2
 
-1. **Auditar observabilidad condicionada.** Definir una variable objetivo T y una perturbación irrelevante N. Medir I(T;Y), I(N;Y|T) y error de reconstrucción; comparar con C y con la dominancia original. No maximizar C sobre perspectivas que deban distinguirse. Criterio: ventaja frente a referencias simples con evaluación fuera de muestra.
-2. **Música multigénero.** Corpus independiente, resolución temporal fijada antes del análisis, ventanas no solapadas y evaluación por pieza; modelos de referencia que conserven tonalidad, número de notas y estructura de conducción. Comparar contra otros conjuntos de 48 hexacordos de simetría equivalente. Criterio: mejora robusta y reproducible frente a controles tonales, no solo azar uniforme.
-3. **Firmas de composición.** Comparar matrices de autosimilitud, conducción de voces, Fourier complejo y persistencia. Probar transposición, cambio de tempo, instrumentación y versiones; contrastar contra chroma/DTW y métodos publicados de reconocimiento de versiones. Eliminar fuga entre conjuntos de entrenamiento y prueba. No confundir equivalencia espectral con identidad de obra.
-4. **Semántica.** Recuperar los grafos de Structural-Coherence-Audit y Semantic Diffraction; separar cambios irrelevantes de cambios semánticamente relevantes. Comparar PPR con difusión alternativa; analizar robustez frente a hubs, aristas puente y perturbaciones. Verificar si RIFD/FWRI añade información independiente.
-5. **Cuántica.** Medir brecha espectral y dinámica temporal de un protocolo de recocido especificado; comparar con búsqueda clásica, recocido simulado y Grover para las mismas restricciones. Costes de implementación, ruido y número de mediciones. No identificar el campo transversal con una ley física sin un modelo físico externo.
-6. **Geometría algebraica.** Investigar relación con GF(4), Walsh–Hadamard y Cubo64 mediante aplicaciones explícitas e invariantes; no inferir equivalencias por semejanza visual. Extender la construcción a bloques de tamaño múltiplo de cuatro.
-7. **Bibliografía y validación externa.** Revisar literatura de conjuntos musicales, marcos ajustados, códigos, diseños de Hadamard, tomografía y difusión de Markov; registrar si los resultados particulares se conocen. Publicar pruebas, versiones, datos autorizados y resultados negativos. Pedir revisión independiente.
+La cuestión principal es la observabilidad condicionada de estructuras relacionales. Priorizar pruebas que puedan fallar, resultados comparables y justificación matemática. No ampliar la investigación por analogías visuales.
 
-## Registro de una hipótesis nueva
+## Prioridad 1. Validación bibliográfica
 
-Cada hipótesis debe especificar estado, relación, observación, grupo de transformaciones, variable objetivo, predicción falsable, referencia de comparación, protocolo, datos y criterio de rechazo. Mantener separadas demostraciones, cálculos numéricos, resultados empíricos y analogías filosóficas.
+Contrastar el criterio de ambigüedad mediante congruencias con sincronización sobre grupos finitos, restricciones de cosets y recuperación de fase multicanal. Revisar si la caracterización Fourier de Q48 y los dos productos cúbicos mínimos ya se conocen. Si ya existen, citar y presentar como reproducción o caso particular, no como nuevos teoremas.
+
+## Prioridad 2. Observabilidad condicionada en grafos
+
+Definir T como el objetivo conceptual mediante anotaciones externas y N como perturbaciones verificadas que no cambian ese objetivo. Construir pares de perturbaciones equivalentes y cambios genuinos, separando entrenamiento/selección y evaluación. Comparar centralidad, PPR, métodos de representación del grafo y, si son pertinentes y accesibles, embeddings. Medir información mutua, error de identificación, estabilidad y sensibilidad. La puntuación deberá aportar una ventaja verificable frente a referencias sencillas; si no, se descarta o reformula. No clasificar por defecto las aristas aleatorias como perturbaciones irrelevantes.
+
+## Prioridad 3. Extender el criterio temporal
+
+- Estudiar qué observaciones locales identifican órbitas por transposición sin confundir inversión.
+- Probar congruencias incompatibles, ruido, coeficientes próximos a cero y medidas parciales.
+- Comparar selección voraz de aristas con soluciones óptimas fuera del corpus y probar contraejemplos.
+- Distinguir coste de medir una correlación cruzada completa, un coeficiente complejo y un bit; la minimalidad actual cuenta aristas, no coste de adquisición.
+- Estudiar generalización a otros grupos finitos solo mediante definiciones y pruebas explícitas.
+
+## Prioridad 4. Caso musical independiente
+
+Definir T como identidad de la obra y N como transposición, tempo o instrumentación cuando preserve el objetivo. Usar conjuntos de entrenamiento y prueba sin fuga entre versiones de una misma obra; comparar con chroma, DTW y métodos publicados de reconocimiento de versiones. Distinguir el reconocimiento desde audio del resultado de identificabilidad condicionada de v0.2. No repetir búsquedas de frecuencia Q48 como objetivo principal sin hipótesis independiente.
+
+## Aparcado
+
+- Interpretación física o de consciencia.
+- Ventaja cuántica sin protocolo dinámico, recursos y referencia clásica.
+- Conexión con Cubo64/GF(4) sin una aplicación explícita.
+- Nuevos experimentos de penalización sin utilidad que exceda el diseño de la función.
+
+Para cada hipótesis nueva registrar estado, objetivo, transformaciones irrelevantes, observaciones, predicción falsable, protocolo, datos, referencia y criterio de rechazo. Distinguir siempre pruebas, enumeraciones, simulaciones y resultados empíricos.

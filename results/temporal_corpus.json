@@ -1,0 +1,222 @@
+{
+  "git_blob_sha1": "ff93746647d1f5af2f719d235329c294267f3088",
+  "source": "https://github.com/czhuang/JSB-Chorales-dataset",
+  "provenance": "Computed on the original corpus with exact integer Fourier support and graph connectivity. Python equivalent tested on synthetic cases; full corpus not rerun locally.",
+  "results": [
+    {
+      "w": 1,
+      "pieces": 382,
+      "windows": 23134,
+      "nonzeroF1": 22791,
+      "period12": 22791,
+      "adjacent": {
+        "exact": 225,
+        "meanAmbiguityBits": 1.9905365840226044
+      },
+      "all": {
+        "exact": 382,
+        "meanAmbiguityBits": 0
+      },
+      "F1": {
+        "exact": 225,
+        "meanAmbiguityBits": 4.222643129295461
+      },
+      "anchor": {
+        "exact": 235,
+        "meanAmbiguityBits": 1.219533181047372
+      },
+      "repair": {
+        "exact": 382,
+        "additional_edges": 299,
+        "lower_bound_sum": 299,
+        "optimal_certified": 382,
+        "max_edges": 8,
+        "histogram": {
+          "0": 225,
+          "1": 86,
+          "2": 40,
+          "3": 10,
+          "4": 11,
+          "5": 5,
+          "6": 3,
+          "8": 2
+        }
+      },
+      "splits": {
+        "test": {
+          "pieces": 77,
+          "exactAdj": 49,
+          "exactAll": 77
+        },
+        "train": {
+          "pieces": 229,
+          "exactAdj": 132,
+          "exactAll": 229
+        },
+        "valid": {
+          "pieces": 76,
+          "exactAdj": 44,
+          "exactAll": 76
+        }
+      }
+    },
+    {
+      "w": 2,
+      "pieces": 382,
+      "windows": 22752,
+      "nonzeroF1": 22704,
+      "period12": 22707,
+      "adjacent": {
+        "exact": 356,
+        "meanAmbiguityBits": 0.24459316101553066
+      },
+      "all": {
+        "exact": 382,
+        "meanAmbiguityBits": 0
+      },
+      "F1": {
+        "exact": 354,
+        "meanAmbiguityBits": 0.6094162305175196
+      },
+      "anchor": {
+        "exact": 356,
+        "meanAmbiguityBits": 0.18710389404513203
+      },
+      "repair": {
+        "exact": 382,
+        "additional_edges": 41,
+        "lower_bound_sum": 41,
+        "optimal_certified": 382,
+        "max_edges": 6,
+        "histogram": {
+          "0": 356,
+          "1": 17,
+          "2": 7,
+          "4": 1,
+          "6": 1
+        }
+      },
+      "splits": {
+        "test": {
+          "pieces": 77,
+          "exactAdj": 72,
+          "exactAll": 77
+        },
+        "train": {
+          "pieces": 229,
+          "exactAdj": 215,
+          "exactAll": 229
+        },
+        "valid": {
+          "pieces": 76,
+          "exactAdj": 69,
+          "exactAll": 76
+        }
+      }
+    },
+    {
+      "w": 4,
+      "pieces": 382,
+      "windows": 21988,
+      "nonzeroF1": 21974,
+      "period12": 21979,
+      "adjacent": {
+        "exact": 377,
+        "meanAmbiguityBits": 0.030771956811946253
+      },
+      "all": {
+        "exact": 382,
+        "meanAmbiguityBits": 0
+      },
+      "F1": {
+        "exact": 374,
+        "meanAmbiguityBits": 0.18813920161221317
+      },
+      "anchor": {
+        "exact": 375,
+        "meanAmbiguityBits": 0.09429201572946039
+      },
+      "repair": {
+        "exact": 382,
+        "additional_edges": 6,
+        "lower_bound_sum": 6,
+        "optimal_certified": 382,
+        "max_edges": 2,
+        "histogram": {
+          "0": 377,
+          "1": 4,
+          "2": 1
+        }
+      },
+      "splits": {
+        "test": {
+          "pieces": 77,
+          "exactAdj": 77,
+          "exactAll": 77
+        },
+        "train": {
+          "pieces": 229,
+          "exactAdj": 226,
+          "exactAll": 229
+        },
+        "valid": {
+          "pieces": 76,
+          "exactAdj": 74,
+          "exactAll": 76
+        }
+      }
+    },
+    {
+      "w": 8,
+      "pieces": 382,
+      "windows": 20460,
+      "nonzeroF1": 20417,
+      "period12": 20417,
+      "adjacent": {
+        "exact": 370,
+        "meanAmbiguityBits": 0.13247254583606027
+      },
+      "all": {
+        "exact": 382,
+        "meanAmbiguityBits": 0
+      },
+      "F1": {
+        "exact": 370,
+        "meanAmbiguityBits": 0.2516592605297273
+      },
+      "anchor": {
+        "exact": 380,
+        "meanAmbiguityBits": 0.10150376311732288
+      },
+      "repair": {
+        "exact": 382,
+        "additional_edges": 16,
+        "lower_bound_sum": 16,
+        "optimal_certified": 382,
+        "max_edges": 2,
+        "histogram": {
+          "0": 370,
+          "1": 8,
+          "2": 4
+        }
+      },
+      "splits": {
+        "test": {
+          "pieces": 77,
+          "exactAdj": 74,
+          "exactAll": 77
+        },
+        "train": {
+          "pieces": 229,
+          "exactAdj": 222,
+          "exactAll": 229
+        },
+        "valid": {
+          "pieces": 76,
+          "exactAdj": 74,
+          "exactAll": 76
+        }
+      }
+    }
+  ]
+}

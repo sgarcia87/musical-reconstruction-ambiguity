@@ -1,13 +1,34 @@
 # Relational Geometry and Observability (RGO)
 
-Research by Sergi Garcia Mecinas · Working snapshot v0.1 · 25 November 2026
+**Sergi Garcia Mecinas · v0.2 · 25 November 2026**
 
-How much of a structure can be recovered from a limited set of observations? Which distinctions should remain visible when the observer changes perspective?
+**How much information is needed to reconstruct a relational structure, while discarding differences that are irrelevant to the task?**
 
-Q12 is the finite binary state space {−1,+1}^12, organized into three rows of four signs. Requiring zero row sums and pairwise orthogonality yields exactly 48 ordered triples (signed permutations of three orthogonal balanced rows). A Chinese-remainder indexing of the twelve pitch classes makes this family invariant under musical transposition, inversion and complementation. The same states match four established Forte hexachord classes and two interval-content profiles. This is a precise encoding, not a claim that all music follows the model.
+No knowledge of the author's previous projects is required. RGO is an open research notebook about finite structures, symmetry, phase retrieval, conditional identifiability and information-preserving observations. Music is a concrete test domain, not an assumption about the nature of reality.
 
-The project also studies a discrete penalty landscape (48 global and 192 non-global strict local minima), its transverse-field quantum Hamiltonian, exact observable-induced partitions, adaptive binary decision trees, and a personalized-PageRank example in which increased similarity between perspective-induced fields accompanies decreased mutual information about their origin. The latter motivates distinguishing nuisance invariance from task-relevant discriminability.
+[Interactive website (Spanish)](https://sgarcia87.github.io/relational-geometry-observability/) · [Standalone introduction (Spanish)](docs/INVESTIGACION.md) · [Technical note and proofs (Spanish)](docs/OBSERVABILIDAD_TEMPORAL.md)
 
-An exploratory test on 382 Bach chorales found no clear enrichment of exact Q48 states relative to pitch-permutation controls. Distance-to-Q48 effects substantially diminish when controlling for diatonicity. Musical relevance therefore remains unproven. The quantum calculations are static numerical ground states, not a demonstration of annealing performance, speedup, or consciousness effects.
+## Main findings
 
-See the [full Spanish research record](docs/INVESTIGACION.md), [main README](README.md), [roadmap](docs/ROADMAP.md), reproducible scripts in `audits/`, and standalone visualizations in `demos/`. The new collection's license is pending the author's decision. This is an evolving working record, not peer-reviewed research.
+- **Static observations:** the 4,096 binary pitch-class sets on Z₁₂ form 224 transposition/inversion classes. Power spectra distinguish 201. Two selected real cubic Fourier products, combined with the power spectrum, separate all 224 classes. Minimality is restricted to the tested dictionary of 12 nonconstant cubic products.
+- **A small structured example:** Q48 contains exactly the six-element sets satisfying F₄ = 0 and squared modulus of F₃ = 4. This is equivalent to the balanced, pairwise orthogonal sign rows of a 3 × 4 CRT array. A single bispectrum coefficient identifies the four Q48 set classes.
+- **Temporal identifiability:** given local translation orbits and selected complex cross-Fourier products, construct graphs at each prime-power divisor of n. Their connected components determine the exact number of compatible reconstructions modulo a common translation. The technical note states and proves the criterion.
+- **Corpus illustration:** among 382 JSB chorales, using four-quarter-note sliding unions, 377 pitch-class sequences are determined by consecutive full cross-correlations and known local orbits. Six additional nonconsecutive edges suffice for the remaining five pieces; the graph lower bound is attained. This does not reconstruct audio, register, voice leading or performance.
+- **Conditional observability:** a common diffusion can increase coherence while losing information about its source. When a channel is equivariant and the target is invariant, the appropriate orbit statistic can instead remove nuisance orientation without additional loss of target information.
+
+Phase retrieval, homometry, bispectral invariants and synchronization have extensive prior literature. Priority of the particular results reported here has not been established. Quantum phase synchronization is a mathematical analogue, not a demonstrated physical mechanism or quantum advantage. Testing semantic graphs is future work.
+
+## Reproduce
+
+Python 3.10+.
+
+```bash
+python audits/phase_temporal.py
+python audits/temporal_corpus.py jsb-chorales-quarter.json
+pip install numpy
+python audits/conditional_observability.py
+```
+
+The external corpus is not bundled. Recorded outputs and provenance are under `results/`. The historical experiments and earlier work are retained in [the appendix](docs/ANTECEDENTES.md) and [v0.1](docs/INVESTIGACION-v0.1.md), not presented as the main scientific claim.
+
+**Status:** working research, not peer-reviewed. License pending author decision.
