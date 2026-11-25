@@ -1,6 +1,6 @@
 # Registro de correcciones y alcance científico
 
-**RGO v0.5 · 26 de noviembre de 2026**
+**RGO v0.5.1 · 26 de noviembre de 2026**
 
 Las notas de trabajo anteriores se conservan íntegras como registro histórico. La referencia general vigente es [MARCO_GENERAL.md](MARCO_GENERAL.md); [INVESTIGACION.md](INVESTIGACION.md) conserva el fundamento matemático I–XI. Las siguientes precisiones prevalecen sobre formulaciones informales o interpretaciones más amplias de versiones anteriores.
 
@@ -29,7 +29,7 @@ Las notas de trabajo anteriores se conservan íntegras como registro histórico.
 
 [Detalles y reproducción](SEMANTICA.md). XII se volvió a ejecutar y el objeto JSON coincide. Las salidas de XIII–XVI son registros de cálculos sobre los archivos originales vía conector; no se repitieron todos los scripts descargando los corpus desde el contenedor local. XV pasó su self-test local. El script de XVI contiene la misma función de cálculo que la ejecución y verifica la dimensión del grafo y las huellas de los archivos.
 
-## Precisiones de v0.5 (XVII)
+## Precisiones de v0.5.1 (XVII)
 
 - La consulta de mediana de tres tiene tres resultados; una respuesta sí/no de intermediación sería un protocolo distinto. El orden estricto módulo inversión presupone pertenencia conocida y ausencia de empates. No recupera orientación ni distancias.
 - Los mínimos 7/10/16 se refieren a seis elementos y listas fijas sin repetición, no al diccionario musical 8h. La distancia n−2 se demuestra para la firma de todas las ternas. Los seis pasos adaptativos requieren lecturas exactas.
@@ -38,6 +38,15 @@ Las notas de trabajo anteriores se conservan íntegras como registro histórico.
 - Se corrigen enlaces bibliográficos de Cocos et al. (ACL D18-1202) y de Melo/Bansal (ACL Q13-1023). La prioridad bibliográfica de XVII no está establecida.
 
 [Nota de XVII](rgo_fase17_nota.md). Se conserva v0.4 en el historial; se reorganiza el marco general y se añaden resultados, demostración, auditoría exacta y piloto externo.
+
+## Precisiones de la ampliación XVII
+
+- Los mínimos adaptativos n=7 y n=8 son 8 y 10: el árbol minimax exhibido alcanza la cota de hojas. Los mínimos fijos para n>6 siguen abiertos.
+- El experimento de prior de extremo fijo es distinto del ensayo con una terna fijada de la nota original. Se conservan ambos y no se extrapola el máximo de dos consultas extra.
+- Los primeros pilotos EWT/transferencia directa siguen siendo negativos. La ampliación sí accede a JJGraph, extrae restricciones con una lista fija de 21 intensificadores y obtiene 190 parejas en 87 semiescalas. El orden de referencia puede quedar excluido; una certificación matemática no valida una hipótesis lingüística. No es el clasificador entrenado de Cocos et al.
+- Se conserva la v0.5 y sus auditorías; la ampliación aporta tres scripts, tres JSON, una nota y otro laboratorio. No se declara prioridad bibliográfica.
+
+[Ampliación](rgo_fase17_extension.md).
 
 ## Verificación de v0.3
 

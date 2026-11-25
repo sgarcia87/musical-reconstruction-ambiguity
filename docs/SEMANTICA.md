@@ -1,6 +1,6 @@
 # Observabilidad semántica: priors, pertenencia y orden (XII–XVII)
 
-**RGO v0.5 · Sergi Garcia Mecinas · 26 de noviembre de 2026**
+**RGO v0.5.1 · Sergi Garcia Mecinas · 26 de noviembre de 2026**
 
 [Informe matemático](INVESTIGACION.md) · [Correcciones](CORRECCIONES.md) · [Agenda](ROADMAP.md)
 
@@ -44,9 +44,19 @@ Para acercarse a un oráculo real se buscaron siete patrones de intensidad en 16
 
 [Nota y demostraciones](rgo_fase17_nota.md) · [Laboratorio XVII](../demos/rgo_fase17.html) · [Auditoría matemática](../audits/rgo_fase17_audit.mjs) · [Extracción](../audits/rgo_fase17_evidence.mjs) · [Resultados exactos](../results/rgo_fase17_resultados.json) · [Resultados del piloto](../results/rgo_fase17_evidence.json).
 
+### Ampliación XVII: observación ordinal con cobertura real
+
+La ampliación XVII extiende la optimalidad adaptativa exacta hasta ocho elementos (20.160 órdenes, 10 consultas en el peor caso), comprueba un prior de extremo fijo y evalúa JJGraph (Cocos et al., 2018). Con pertenencia dada, 190 comparaciones propuestas, 85 acuerdos estrictos, 62 desacuerdos y 43 empates; 22/87 escalas incompatibles y dos soluciones únicas, una equivocada. No se ha resuelto el descubrimiento de atributos ni la extracción fiable de comparaciones.
+
+En las doce escalas bipolares de Wilkinson, la misma regla, restringida a cadenas dirigidas de dos enlaces sin imponer orientación global, certifica condicionalmente 50 de 180 ternas, pero solo 12 coinciden con la referencia. El presupuesto de una violación evita muchas certezas, a costa de la cobertura. Los resultados son exploratorios, con pertenencia conocida y etiquetas no usadas para extraer los enlaces. No reproducen el modelo entrenado de Cocos et al. ni demuestran superioridad sobre métodos existentes.
+
+En el plano combinatorio, la ampliación construye árboles que alcanzan la cota de información para n=7 y n=8 (8 y 10 consultas en el peor caso). Con un prior de extremo fijo, 7.540/15.120 órdenes excluidos producen falsa unicidad en n=8; todos se rechazan al validar con el universo correcto y el oráculo exacto (máximo dos consultas extra para esa política). Es un segundo control sintético, no una garantía empírica.
+
+[Informe ampliado, demostración y fuentes](rgo_fase17_extension.md) · [Laboratorio de hasta ocho elementos](../demos/rgo_fase17_observador.html).
+
 ## Conclusión científica y reproducibilidad
 
-La asociación semántica puede informar pertenencia a una dimensión, pero no garantiza su orden. El observador ordinal ideal de XVII está verificado, pero obtener observaciones de una fuente distinta, suficientemente cubierta y con separación entre desarrollo y prueba, permanece pendiente. Esta línea no demuestra una teoría general del significado ni superioridad de un algoritmo. XII usa datos internos; XIII–XV reutilizan un banco externo y XVI cambia las etiquetas de referencia pero conserva el grafo. No se asume independencia de ternas, parejas ni perspectivas. Se publican también los resultados negativos.
+La asociación semántica puede informar pertenencia a una dimensión, pero no garantiza su orden. El observador ordinal ideal de XVII está verificado, pero obtener observaciones de una fuente distinta con cobertura y fiabilidad suficientes, y separar desarrollo y prueba por atributo y vocabulario, permanece pendiente. JJGraph ya se ha evaluado mediante una regla explícita y no supera ese obstáculo. Esta línea no demuestra una teoría general del significado ni superioridad de un algoritmo. XII usa datos internos; XIII–XV reutilizan un banco externo y XVI cambia las etiquetas de referencia pero conserva el grafo. No se asume independencia de ternas, parejas ni perspectivas. Se publican también los resultados negativos.
 
 ```bash
 pip install -r requirements-research.txt
@@ -58,8 +68,11 @@ node audits/rgo_fase15_audit.mjs --data ./rgo_data
 node audits/rgo_fase16_audit.mjs --data ./rgo_data
 node audits/rgo_fase17_audit.mjs
 node audits/rgo_fase17_evidence.mjs --data ./rgo_data
+node audits/rgo_fase17_math.mjs
+node audits/rgo_fase17_prior.mjs
+node audits/rgo_fase17_semantic.mjs --data ./rgo_data
 ```
 
-XII se reprodujo localmente. XIII–XVI fueron calculadas sobre los corpus originales mediante JavaScript en el entorno de investigación; los scripts XIII/XIV de Python y XV de Node se comprobaron con datos sintéticos en sesiones anteriores; XV pasó nuevamente su self-test. Los JSON compactos de XIII–XV registran esas ejecuciones, no equivalencias byte a byte con las salidas de scripts locales. XVI comparte la misma función de cálculo con el script local. El acceso de red local no permitió volver a descargar los corpus y repetir los cuatro experimentos enteros localmente. XVII se ejecutó exhaustivamente y sus mínimos principales se comprobaron también por programación entera en Python. El piloto de evidencia se ejecutó sobre los archivos originales recuperados; no se repitió su descarga desde Node local. Los corpus de terceros no se redistribuyen. Véanse las huellas, fuentes y limitaciones en las notas y resultados.
+XII se reprodujo localmente. XIII–XVI fueron calculadas sobre los corpus originales mediante JavaScript en el entorno de investigación; los scripts XIII/XIV de Python y XV de Node se comprobaron con datos sintéticos en sesiones anteriores; XV pasó nuevamente su self-test. Los JSON compactos de XIII–XV registran esas ejecuciones, no equivalencias byte a byte con las salidas de scripts locales. XVI comparte la misma función de cálculo con el script local. El acceso de red local no permitió volver a descargar los corpus y repetir los cuatro experimentos enteros localmente. XVII se ejecutó exhaustivamente y sus mínimos principales se comprobaron también por programación entera en Python. El piloto de evidencia se ejecutó sobre los archivos originales recuperados; no se repitió su descarga desde Node local. La ampliación se ejecutó también íntegramente mediante JavaScript, incluida la lectura de JJGraph y las dos referencias originales; no se repitió la descarga desde Node local. Los corpus de terceros no se redistribuyen. Véanse las huellas, fuentes y limitaciones en las notas y resultados.
 
 **Referencias principales:** USF (Nelson et al., 2004, DOI 10.3758/BF03195588); [Wilkinson y Oates, 2016](https://aclanthology.org/L16-1424/); [de Melo y Bansal, 2013](https://aclanthology.org/Q13-1023/); [Cocos et al., 2018](https://aclanthology.org/D18-1202/); [Garí Soler y Apidianaki, 2021](https://aclanthology.org/2021.naacl-main.370/).

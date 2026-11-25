@@ -1,0 +1,330 @@
+{
+  "results": [
+    {
+      "n": 3,
+      "orders": 3,
+      "queries": 1,
+      "entropyBits": 1.584962500721156,
+      "adaptiveLowerBound": 1,
+      "greedyWorst": 1,
+      "greedyMean": 1,
+      "adaptiveMinimum": 1,
+      "fixed": {
+        "minimum": 1,
+        "lowerBound": 1,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "tested": {
+          "1": 1
+        },
+        "distinctDifferenceMasks": 1,
+        "minimalMasks": 1,
+        "fullDictionaryMinDistance": 1
+      },
+      "certificate": {
+        "minimum": 1,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "truth": [
+          0,
+          1,
+          2
+        ]
+      },
+      "chainCertificateSize": 1,
+      "chainFiber": 1,
+      "fullMinDistance": 1,
+      "adjacentSwapAgreements": 0,
+      "detectErrors": 0,
+      "correctErrors": 0
+    },
+    {
+      "n": 4,
+      "orders": 12,
+      "queries": 4,
+      "entropyBits": 3.584962500721156,
+      "adaptiveLowerBound": 3,
+      "greedyWorst": 3,
+      "greedyMean": 2.5,
+      "adaptiveMinimum": 3,
+      "fixed": {
+        "minimum": 3,
+        "lowerBound": 3,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "tested": {
+          "3": 1
+        },
+        "distinctDifferenceMasks": 11,
+        "minimalMasks": 6,
+        "fullDictionaryMinDistance": 2
+      },
+      "certificate": {
+        "minimum": 2,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            3
+          ]
+        ],
+        "truth": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "chainCertificateSize": 2,
+      "chainFiber": 1,
+      "fullMinDistance": 2,
+      "adjacentSwapAgreements": 2,
+      "detectErrors": 1,
+      "correctErrors": 0
+    },
+    {
+      "n": 5,
+      "orders": 60,
+      "queries": 10,
+      "entropyBits": 5.906890595608519,
+      "adaptiveLowerBound": 4,
+      "greedyWorst": 4,
+      "greedyMean": 4,
+      "adaptiveMinimum": 4,
+      "fixed": {
+        "minimum": 5,
+        "lowerBound": 4,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4
+          ]
+        ],
+        "tested": {
+          "4": 210,
+          "5": 6
+        },
+        "distinctDifferenceMasks": 215,
+        "minimalMasks": 20,
+        "fullDictionaryMinDistance": 3
+      },
+      "certificate": {
+        "minimum": 3,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            3,
+            4
+          ]
+        ],
+        "truth": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "chainCertificateSize": 3,
+      "chainFiber": 1,
+      "fullMinDistance": 3,
+      "adjacentSwapAgreements": 7,
+      "detectErrors": 2,
+      "correctErrors": 1
+    },
+    {
+      "n": 6,
+      "orders": 360,
+      "queries": 20,
+      "entropyBits": 8.491853096329674,
+      "adaptiveLowerBound": 6,
+      "greedyWorst": 6,
+      "greedyMean": 5.625,
+      "adaptiveMinimum": 6,
+      "fixed": {
+        "minimum": 7,
+        "lowerBound": 6,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            2,
+            5
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            2,
+            4,
+            5
+          ]
+        ],
+        "tested": {
+          "6": 38760,
+          "7": 1651
+        },
+        "distinctDifferenceMasks": 8721,
+        "minimalMasks": 140,
+        "fullDictionaryMinDistance": 4
+      },
+      "certificate": {
+        "minimum": 4,
+        "witness": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            3,
+            4
+          ],
+          [
+            0,
+            4,
+            5
+          ]
+        ],
+        "truth": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "chainCertificateSize": 4,
+      "chainFiber": 1,
+      "fullMinDistance": 4,
+      "adjacentSwapAgreements": 16,
+      "detectErrors": 3,
+      "correctErrors": 1
+    },
+    {
+      "n": 7,
+      "orders": 2520,
+      "queries": 35,
+      "entropyBits": 11.29920801838728,
+      "adaptiveLowerBound": 8,
+      "greedyWorst": 8,
+      "greedyMean": 7.365079365079365,
+      "adaptiveMinimum": 8,
+      "fixed": null,
+      "certificate": null,
+      "chainCertificateSize": 5,
+      "chainFiber": 1,
+      "fullMinDistance": 5,
+      "adjacentSwapAgreements": 30,
+      "detectErrors": 4,
+      "correctErrors": 2
+    },
+    {
+      "n": 8,
+      "orders": 20160,
+      "queries": 56,
+      "entropyBits": 14.29920801838728,
+      "adaptiveLowerBound": 10,
+      "greedyWorst": 10,
+      "greedyMean": 9.38125,
+      "adaptiveMinimum": 10,
+      "fixed": null,
+      "certificate": null,
+      "chainCertificateSize": 6,
+      "chainFiber": 1,
+      "fullMinDistance": 6,
+      "adjacentSwapAgreements": 50,
+      "detectErrors": 5,
+      "correctErrors": 2
+    }
+  ]
+}

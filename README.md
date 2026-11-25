@@ -1,6 +1,6 @@
 # RGO — Geometría relacional y observabilidad
 
-**Relational Geometry and Observability · Sergi Garcia Mecinas · v0.5 · 26 de noviembre de 2026**
+**Relational Geometry and Observability · Sergi Garcia Mecinas · v0.5.1 · 26 de noviembre de 2026**
 
 🌐 **[Abrir RGO — investigación y laboratorios interactivos](https://sgarcia87.github.io/relational-geometry-observability/)** · [English overview](README.en.md)
 
@@ -24,18 +24,18 @@ Cada problema especifica un universo de candidatos, las simetrías que se consid
 | Consultas robustas | Para el diccionario de 19 tricordos y 43 tetracordos de Z₁₂, espectro/DC exactos y repetición permitida, el mínimo universal es 8h consultas para distancia h. [Demostración](docs/rgo_fase11_nota.md). |
 | Tiempo | Con órbitas locales conocidas y relaciones cross-Fourier especificadas, el criterio por conectividad determina la ambigüedad relativa. En 382 corales de Bach, 377 quedan identificadas con relaciones consecutivas y las otras cinco con seis conexiones adicionales. [Detalle](docs/OBSERVABILIDAD_TEMPORAL.md). |
 | Q48 y cuántica | La homometría Walsh, el cociente bent y la distinción teórica entre una copia y dos copias con traslación compartida son casos de estudio; no prueban una ventaja cuántica ni una unificación física. [Fase X](docs/rgo_fase10_nota.md). |
-| **Intermediación y orden (XVII)** | Para n elementos ordenados salvo inversión, la firma de todas las ternas tiene distancia mínima exactamente n−2. Para seis elementos: mínimos fijos 7, 10 y 16 para identificación, detección de un error y corrección de un error, respectivamente, sin repetición. Adaptativamente bastan seis consultas exactas. [Demostración y auditoría](docs/rgo_fase17_nota.md). |
+| **Intermediación y orden (XVII)** | Para n elementos ordenados salvo inversión, la firma de todas las ternas tiene distancia mínima exactamente n−2. Para seis elementos: mínimos fijos 7, 10 y 16 para identificación, detección de un error y corrección de un error, respectivamente, sin repetición. Adaptativamente bastan seis consultas exactas; con ocho elementos (20.160 órdenes), diez consultas exactas son óptimas en el peor caso. [Demostración](docs/rgo_fase17_nota.md) · [Ampliación y auditorías](docs/rgo_fase17_extension.md). |
 
 ## Contraste empírico: semántica
 
-Las fases XII–XVI separan asociación, pertenencia a una dimensión, intermediación y orientación. Los resultados no justifican identificar asociación con intensidad ni coherencia con verdad. El control XVII incorpora una primera búsqueda de observaciones ordinales externas, pero no obtiene cobertura suficiente.
+Las fases XII–XVI separan asociación, pertenencia a una dimensión, intermediación y orientación. Los resultados no justifican identificar asociación con intensidad ni coherencia con verdad. El control XVII incorpora una primera búsqueda de observaciones ordinales externas y una ampliación con evidencia de paráfrasis de JJGraph; hay cobertura parcial, pero no fiabilidad suficiente.
 
 - XII: el rechazo del prior fue en gran parte circular porque la referencia y las aristas reservadas tenían origen compartido.
 - XIII: difracción no supera de forma consistente a PPR mínimo; con pertenencia conocida y ablación, 58,70% frente a 65,22%.
 - XIV: 26/28 pares internos se ordenan con extremos conocidos y ablación informada por pertenencia.
 - XV: la agrupación entrante reúne 50/96 pares positivos anotados, pero la pertenencia y el orden conjuntos recuperan solo 19/106 ternas. Un óptimo geométrico puede ser semánticamente incorrecto.
 - XVI: segundo banco de semiescalas, 40/353 ternas cubiertas; Fiedler combinado 25,83%, PC1 entrante 39,17%, azar 33,33%.
-- XVII: el oráculo ideal de intermediación es verificable, pero las observaciones lingüísticas de las dos fuentes exploradas no cubren ninguna terna del banco objetivo.
+- XVII: los primeros dos pilotos no cubren ternas objetivo; la ampliación con JJGraph sí produce restricciones. En 87 semiescalas, la regla principal certifica solo dos ternas, una correcta; 22 escalas incompatibles. Se mantiene la distinción entre certificación matemática y validez empírica. [Ampliación XVII](docs/rgo_fase17_extension.md).
 
 [Informe completo XII–XVII](docs/SEMANTICA.md) · [Límites y correcciones](docs/CORRECCIONES.md) · [Agenda de investigación](docs/ROADMAP.md).
 
@@ -50,6 +50,8 @@ Las fases XII–XVI separan asociación, pertenencia a una dimensión, intermedi
 | [Fase XV — Emergencia de ejes](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase15.html) | Asociación sin anclajes y límites del orden. |
 | [Fase XVII — ¿Quién está entre quién?](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase17.html) | Fibras U/P, selección de consultas y reconstrucción con errores en un modelo ordinal ideal. |
 
+| [Fase XVII · ampliación: observador de hasta ocho elementos](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase17_observador.html) | Órdenes ocultos, prior de extremo y validación global. |
+
 ## Reproducibilidad
 
 ```bash
@@ -59,8 +61,10 @@ python audits/rgo_fase10_audit.py
 python audits/rgo_fase11_audit.py
 python audits/verify_robustness.py
 node audits/rgo_fase17_audit.mjs
+node audits/rgo_fase17_math.mjs
+node audits/rgo_fase17_prior.mjs
 ```
 
-Los JSON están en [results/](results/). Las auditorías matemáticas IX–XI se reprodujeron exactamente en v0.3; XVII se ejecutó exhaustivamente y sus mínimos principales se contrastaron mediante un procedimiento Python/SciPy independiente. Los resultados lingüísticos se calcularon sobre fuentes originales recuperadas, con límites específicos de reproducción. Véanse [comandos para los corpus externos](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad) y [procedencia de XVII](docs/rgo_fase17_nota.md#6-antecedentes-y-reproducción). Para el corpus de Bach: `python audits/phase_temporal.py` y `python audits/temporal_corpus.py jsb-chorales-quarter.json`; el corpus externo no se redistribuye.
+Los JSON están en [results/](results/). Las auditorías matemáticas IX–XI se reprodujeron exactamente en v0.3; XVII se ejecutó exhaustivamente y sus mínimos principales se contrastaron mediante un procedimiento Python/SciPy independiente. Los resultados lingüísticos se calcularon sobre fuentes originales recuperadas, con límites específicos de reproducción. Véanse [comandos para los corpus externos](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad) y [procedencia de XVII](docs/rgo_fase17_nota.md#6-antecedentes-y-reproducción) y [ampliación con JJGraph](docs/rgo_fase17_extension.md#6-reproducción). Para el corpus de Bach: `python audits/phase_temporal.py` y `python audits/temporal_corpus.py jsb-chorales-quarter.json`; el corpus externo no se redistribuye.
 
 **Estado científico:** investigación abierta, no revisada por pares; originalidad bibliográfica de los resultados particulares pendiente. Los problemas de fase, homometría, ordenación mediante consultas ternarias, códigos y recuperación de órbitas tienen antecedentes. No hay validación general de IA_m, de una teoría de la consciencia ni de una ventaja cuántica. Las versiones anteriores están en el historial y [antecedentes](docs/ANTECEDENTES.md). La licencia sigue pendiente de decisión del autor.

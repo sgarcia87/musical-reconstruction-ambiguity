@@ -1,0 +1,80 @@
+{
+  "protocol": "Synthetic exact oracle. Prior is fixed independently of truth: element 0 must be an endpoint. All orders up to reversal tested. Conditional observer splits the prior fiber until singleton/empty. Validator continues to split the full universe fiber until prior empty or full fiber unique. Both choose minimum largest branch then entropy. No empirical semantic claim.",
+  "results": [
+    {
+      "n": 4,
+      "universe": 12,
+      "priorSize": 6,
+      "trueInside": 6,
+      "trueOutside": 6,
+      "conditionalReject": 4,
+      "conditionalWrongUnique": 2,
+      "conditionalCorrectUnique": 6,
+      "conditionalQueriesMean": 2,
+      "validationReject": 6,
+      "validationCorrect": 6,
+      "validationQueriesAdditionalMean": 0.3333333333333333,
+      "validationQueriesAdditionalWorst": 1
+    },
+    {
+      "n": 5,
+      "universe": 60,
+      "priorSize": 24,
+      "trueInside": 24,
+      "trueOutside": 36,
+      "conditionalReject": 24,
+      "conditionalWrongUnique": 12,
+      "conditionalCorrectUnique": 24,
+      "conditionalQueriesMean": 3.3333333333333335,
+      "validationReject": 36,
+      "validationCorrect": 24,
+      "validationQueriesAdditionalMean": 0.4,
+      "validationQueriesAdditionalWorst": 1
+    },
+    {
+      "n": 6,
+      "universe": 360,
+      "priorSize": 120,
+      "trueInside": 120,
+      "trueOutside": 240,
+      "conditionalReject": 145,
+      "conditionalWrongUnique": 95,
+      "conditionalCorrectUnique": 120,
+      "conditionalQueriesMean": 4.7555555555555555,
+      "validationReject": 240,
+      "validationCorrect": 120,
+      "validationQueriesAdditionalMean": 0.46111111111111114,
+      "validationQueriesAdditionalWorst": 2
+    },
+    {
+      "n": 7,
+      "universe": 2520,
+      "priorSize": 720,
+      "trueInside": 720,
+      "trueOutside": 1800,
+      "conditionalReject": 960,
+      "conditionalWrongUnique": 840,
+      "conditionalCorrectUnique": 720,
+      "conditionalQueriesMean": 6.4337301587301585,
+      "validationReject": 1800,
+      "validationCorrect": 720,
+      "validationQueriesAdditionalMean": 0.5555555555555556,
+      "validationQueriesAdditionalWorst": 2
+    },
+    {
+      "n": 8,
+      "universe": 20160,
+      "priorSize": 5040,
+      "trueInside": 5040,
+      "trueOutside": 15120,
+      "conditionalReject": 7580,
+      "conditionalWrongUnique": 7540,
+      "conditionalCorrectUnique": 5040,
+      "conditionalQueriesMean": 8.185813492063492,
+      "validationReject": 15120,
+      "validationCorrect": 5040,
+      "validationQueriesAdditionalMean": 0.607390873015873,
+      "validationQueriesAdditionalWorst": 2
+    }
+  ]
+}

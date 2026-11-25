@@ -4,7 +4,7 @@
 
 [Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [Nota de ambigüedad espectral](AMBIGUEDAD_ESPECTRAL.md) · [Robustez](rgo_fase11_nota.md) · [Agenda](ROADMAP.md) · [Correcciones](CORRECCIONES.md)
 
-> **Actualización v0.5 (26/11/2026):** este informe conserva el fundamento matemático de v0.3 y sus condiciones. El [marco general y la trayectoria](MARCO_GENERAL.md) integran toda la investigación; [SEMANTICA.md](SEMANTICA.md) documenta las fases XII–XVII, con resultados negativos, y la [nota XVII](rgo_fase17_nota.md) demuestra resultados sobre observabilidad ordinal. No se transfieren automáticamente los teoremas a grafos semánticos.
+> **Actualización v0.5.1 (26/11/2026):** este informe conserva el fundamento matemático de v0.3 y sus condiciones. El [marco general y la trayectoria](MARCO_GENERAL.md) integran toda la investigación; [SEMANTICA.md](SEMANTICA.md) documenta las fases XII–XVII, con resultados negativos, y la [nota XVII](rgo_fase17_nota.md) demuestra resultados sobre observabilidad ordinal. La [ampliación XVII](rgo_fase17_extension.md) extiende el modelo combinatorio y evalúa evidencia de paráfrasis. No se transfieren automáticamente los teoremas a grafos semánticos.
 
 ## Resumen
 

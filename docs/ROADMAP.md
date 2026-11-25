@@ -1,4 +1,4 @@
-# Agenda de investigación · RGO v0.5
+# Agenda de investigación · RGO v0.5.1
 
 La prioridad es identificar estructuras bajo observaciones parciales, simetrías, priors y errores. Cada nueva hipótesis debe especificar el objeto, objetivo, espacio de candidatos, transformaciones irrelevantes, protocolo de medición, coste, referencia y criterio de rechazo.
 
@@ -6,15 +6,15 @@ La prioridad es identificar estructuras bajo observaciones parciales, simetrías
 
 [Marco general](MARCO_GENERAL.md) · [Fase XVII](rgo_fase17_nota.md) · [Contraste semántico](SEMANTICA.md).
 
-El fundamento matemático I–XI se conserva. XII muestra el riesgo de la coherencia circular; XIII–XVI delimitan el uso de asociaciones para inferir pertenencia y orden. XVII proporciona un observador ordinal exacto, una proposición de distancia mínima y censos de mínimos fijos/adaptativos hasta seis elementos. Dos pilotos de observaciones externas no dieron cobertura útil: no se ha resuelto el descubrimiento fiable de la dimensión ni su orden semántico.
+El fundamento matemático I–XI se conserva. XII muestra el riesgo de la coherencia circular; XIII–XVI delimitan el uso de asociaciones para inferir pertenencia y orden. XVII proporciona un observador ordinal exacto, una proposición de distancia mínima y censos de mínimos fijos hasta seis elementos y adaptativos hasta ocho. Los primeros dos pilotos no dieron cobertura útil; JJGraph aporta cobertura parcial, pero el filtro ordinal simple produce contradicciones y errores. No se ha resuelto el descubrimiento fiable de la dimensión ni su orden semántico. [Ampliación XVII](rgo_fase17_extension.md).
 
 ### Siguiente paso empírico: evidencia ordinal suficiente
 
-Localizar un corpus o diccionario amplio de observaciones comparativas, paráfrasis o cantidades por atributo (de Melo/Bansal, Cocos et al., DoQ son antecedentes y candidatos, no datos ya evaluados). Separar sentidos, atributos y escalas antes de fijar reglas de extracción; permitir empates, conflictos y abstenciones. Separar desarrollo y prueba por escala y vocabulario; medir cobertura, precisión condicionada, falsos certificados, coste y comparación con baselines de intensidad, similitud y frecuencia. No simular etiquetas como sustituto de observaciones externas.
+Obtener observaciones comparativas contextualizadas y mediciones por atributo (por ejemplo, DoQ). JJGraph ya se ha evaluado mediante una regla simple; falta comparar contra el método entrenado de Cocos et al. y la inferencia de de Melo/Bansal, sin convertir juicios de evaluación en observaciones. Separar sentidos, atributos y escalas antes de fijar reglas de extracción; permitir empates, conflictos y abstenciones. Separar desarrollo y prueba por escala y vocabulario; medir cobertura, precisión condicionada, falsos certificados, coste y comparación con baselines de intensidad, similitud y frecuencia. No simular etiquetas como sustituto de observaciones externas.
 
 ### Siguiente paso matemático
 
-Extender los mínimos fijos de XVII a tamaños mayores, estudiar certificados parciales, empates, órdenes parciales, consultas binarias vs ternarias, costes y oráculos ruidosos. Contrastar prioridad bibliográfica antes de reivindicar novedad. Comparar selección de máxima entropía con minimax, auditorías directas de restricciones y protocolos resistentes a errores. No transferir la garantía n−2 a un modelo distinto sin demostrarla.
+Extender los mínimos fijos de XVII a tamaños mayores, contrastar el límite adaptativo más allá de n=8 y estudiar certificados parciales, empates, órdenes parciales, consultas binarias vs ternarias, costes y oráculos ruidosos. Contrastar prioridad bibliográfica antes de reivindicar novedad. Comparar selección de máxima entropía con minimax, auditorías directas de restricciones y protocolos resistentes a errores. No transferir la garantía n−2 a un modelo distinto sin demostrarla.
 
 ## Prioridad 1 — Fragilidad del conocimiento previo
 

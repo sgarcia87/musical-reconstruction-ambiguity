@@ -1,6 +1,6 @@
 # RGO — Marco general y trayectoria
 
-**Sergi Garcia Mecinas · v0.5 · 26/11/2026**
+**Sergi Garcia Mecinas · v0.5.1 · 26/11/2026**
 
 [Inicio](../README.md) · [Informe matemático I–XI](INVESTIGACION.md) · [Informe semántico XII–XVII](SEMANTICA.md) · [Fase XVII: órdenes](rgo_fase17_nota.md)
 
@@ -33,7 +33,7 @@ Con datos finitos, este modelo permite verificar familias de candidatos, contar 
 | XIV | Perfiles entrantes/salientes y proyección sobre extremos conocidos. | Evidencia exploratoria, condicionada a anclajes y pertenencia. |
 | XV | Descubrimiento de familias sin anclajes y seriación. | La pertenencia emerge parcialmente, el orden no es fiable; óptimos geométricos incorrectos. |
 | XVI | Segundo banco de semiescalas. | La mejora de orden no se reproduce robustamente. |
-| XVII | Intermediación de tres resultados, distancia, listas mínimas y observador adaptativo. | Modelo ordinal exacto; piloto empírico sin cobertura útil. |
+| XVII | Intermediación de tres resultados, distancia, listas mínimas y observador adaptativo. | Modelo ordinal exacto; profundidad adaptativa óptima hasta n=8, pilotos iniciales sin cobertura, JJGraph con cobertura parcial y errores semánticos. [Ampliación](rgo_fase17_extension.md). |
 
 ## Correspondencia entre dominios
 
@@ -43,12 +43,12 @@ Con datos finitos, este modelo permite verificar familias de candidatos, contar 
 | Q48 / Walsh | Indicadores o señales reales, módulo traslación | Magnitudes y signos de relaciones de fase | Ambigüedad dependiente del prior, resultados algebraicos. |
 | Cuántica | Estado y preparación especificados | Esperanzas de observables, una/dos copias correlacionadas | Predicción teórica; no ejecución física ni equivalencia con el coste de consultas clásicas. |
 | Tiempo musical | Secuencia de órbitas locales | Productos cross-Fourier entre ventanas | Criterio de identificación relativo y condicionado. |
-| Orden ordinal | Orden total estricto, módulo inversión | Elemento intermedio de una terna | Distancia n−2, mínimos n≤6, prueba ideal de priors equivocados. |
+| Orden ordinal | Orden total estricto, módulo inversión | Elemento intermedio de una terna | Distancia n−2, mínimos fijos n≤6 y adaptativos n≤8, pruebas ideales de priors equivocados. |
 | Lenguaje | Palabras, sentidos y atributos, con empates/contextos posibles | Asociaciones, juicios, patrones u otras mediciones | Pruebas parciales: no se ha validado un oráculo general ni descubierto ejes fiables. |
 
 ## Qué queda abierto
 
-La fase XVII demuestra propiedades del observador ordinal, no que sea posible extraer todas las lecturas fiables del lenguaje. Queda estudiar el descubrimiento del atributo, la cobertura de fuentes independientes, los empates, órdenes parciales y contextos, la estimación de fiabilidad, el coste real y la selección robusta de consultas con modelo equivocado. Paralelamente, queda contrastar prioridad bibliográfica de los resultados matemáticos y extender protocolos a grupos, tamaños y mediciones distintos.
+La fase XVII demuestra propiedades del observador ordinal, no que sea posible extraer todas las lecturas fiables del lenguaje. JJGraph aporta restricciones pero también numerosas contradicciones y certificados incorrectos. Queda estudiar el descubrimiento del atributo, la fiabilidad y cobertura de fuentes independientes, los empates, órdenes parciales y contextos, la estimación de fiabilidad, el coste real y la selección robusta de consultas con modelo equivocado. Paralelamente, queda contrastar prioridad bibliográfica de los resultados matemáticos y extender protocolos a grupos, tamaños y mediciones distintos.
 
 La relación dualidad–intermediación–síntesis puede motivar preguntas, pero no es una conclusión general. La intermediación estricta no determina un punto medio métrico; la síntesis necesita definición y observaciones propias. Ninguna analogía se toma como prueba física o semántica.
 

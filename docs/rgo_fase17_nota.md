@@ -4,6 +4,8 @@
 
 [Volver al marco general](INVESTIGACION.md) · [Experimentos semánticos](SEMANTICA.md) · [Laboratorio XVII](../demos/rgo_fase17.html)
 
+> **Ampliación posterior (v0.5.1):** se ha completado la prueba de JJGraph, la optimalidad adaptativa hasta n=8 y un segundo ensayo de prior. Véase [la ampliación XVII](rgo_fase17_extension.md). Los pilotos originales y sus resultados se conservan aquí como registro histórico.
+
 ## 1. Objeto, hipótesis y observación
 
 Las fases IX–XI estudiaron la recuperación de señales, los priors y las consultas resistentes a errores. XII–XVI pusieron de manifiesto que la asociación no equivale a orden. XVII aísla matemáticamente esa segunda propiedad. No presupone que la semántica real sea un orden lineal.
