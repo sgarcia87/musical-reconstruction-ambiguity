@@ -1,0 +1,13 @@
+# Agenda de investigación
+
+1. **Auditar observabilidad condicionada.** Definir una variable objetivo T y una perturbación irrelevante N. Medir I(T;Y), I(N;Y|T) y error de reconstrucción; comparar con C y con la dominancia original. No maximizar C sobre perspectivas que deban distinguirse. Criterio: ventaja frente a referencias simples con evaluación fuera de muestra.
+2. **Música multigénero.** Corpus independiente, resolución temporal fijada antes del análisis, ventanas no solapadas y evaluación por pieza; modelos de referencia que conserven tonalidad, número de notas y estructura de conducción. Comparar contra otros conjuntos de 48 hexacordos de simetría equivalente. Criterio: mejora robusta y reproducible frente a controles tonales, no solo azar uniforme.
+3. **Firmas de composición.** Comparar matrices de autosimilitud, conducción de voces, Fourier complejo y persistencia. Probar transposición, cambio de tempo, instrumentación y versiones; contrastar contra chroma/DTW y métodos publicados de reconocimiento de versiones. Eliminar fuga entre conjuntos de entrenamiento y prueba. No confundir equivalencia espectral con identidad de obra.
+4. **Semántica.** Recuperar los grafos de Structural-Coherence-Audit y Semantic Diffraction; separar cambios irrelevantes de cambios semánticamente relevantes. Comparar PPR con difusión alternativa; analizar robustez frente a hubs, aristas puente y perturbaciones. Verificar si RIFD/FWRI añade información independiente.
+5. **Cuántica.** Medir brecha espectral y dinámica temporal de un protocolo de recocido especificado; comparar con búsqueda clásica, recocido simulado y Grover para las mismas restricciones. Costes de implementación, ruido y número de mediciones. No identificar el campo transversal con una ley física sin un modelo físico externo.
+6. **Geometría algebraica.** Investigar relación con GF(4), Walsh–Hadamard y Cubo64 mediante aplicaciones explícitas e invariantes; no inferir equivalencias por semejanza visual. Extender la construcción a bloques de tamaño múltiplo de cuatro.
+7. **Bibliografía y validación externa.** Revisar literatura de conjuntos musicales, marcos ajustados, códigos, diseños de Hadamard, tomografía y difusión de Markov; registrar si los resultados particulares se conocen. Publicar pruebas, versiones, datos autorizados y resultados negativos. Pedir revisión independiente.
+
+## Registro de una hipótesis nueva
+
+Cada hipótesis debe especificar estado, relación, observación, grupo de transformaciones, variable objetivo, predicción falsable, referencia de comparación, protocolo, datos y criterio de rechazo. Mantener separadas demostraciones, cálculos numéricos, resultados empíricos y analogías filosóficas.

@@ -1,0 +1,20 @@
+Filas CRT: [[0, 9, 6, 3], [4, 1, 10, 7], [8, 5, 2, 11]] Estados: 48
+6-Z37 (0, 1, 2, 3, 4, 8) (4, 3, 2, 3, 2, 1) Potencia DFT k=1..6: [7.464102, 4.0, 4.0, 0.0, 0.535898, 4.0] C: 6-Z4 M5: 6-Z48
+6-Z4 (0, 1, 2, 4, 5, 6) (4, 3, 2, 3, 2, 1) Potencia DFT k=1..6: [7.464102, 4.0, 4.0, 0.0, 0.535898, 4.0] C: 6-Z37 M5: 6-Z26
+6-Z48 (0, 1, 2, 5, 7, 9) (2, 3, 2, 3, 4, 1) Potencia DFT k=1..6: [0.535898, 4.0, 4.0, 0.0, 7.464102, 4.0] C: 6-Z26 M5: 6-Z37
+6-Z26 (0, 1, 3, 5, 7, 8) (2, 3, 2, 3, 4, 1) Potencia DFT k=1..6: [0.535898, 4.0, 4.0, 0.0, 7.464102, 4.0] C: 6-Z48 M5: 6-Z4
+Histograma por estado: Counter({6: 16, 4: 15, 8: 15, 0: 1, 12: 1})
+Grafo ortogonal: 2 K(8,8,8). Operador de marco: 64 P, rango 9.
+Grafo voz L1 <=2: 24 aristas; componentes: Counter({1: 24, 4: 6})
+6-Z37 triadas M,m,dim,aug: [1, 1, 0, 1]
+6-Z4 triadas M,m,dim,aug: [0, 0, 0, 0]
+6-Z48 triadas M,m,dim,aug: [1, 1, 0, 1]
+6-Z26 triadas M,m,dim,aug: [2, 2, 0, 0]
+diatonica subconjuntos con T/I: 72 coincidencias: 12 Counter({'6-Z26': 12})
+menor armonica subconjuntos con T/I: 144 coincidencias: 0 Counter()
+menor melodica subconjuntos con T/I: 84 coincidencias: 0 Counter()
+octatonica subconjuntos con T/I: 84 coincidencias: 0 Counter()
+tonos subconjuntos con T/I: 2 coincidencias: 0 Counter()
+Rips 4 simplices dimensiones 0..3: (48, 360, 576, 288) Betti 0..2: (1, 13, 6)
+Rips 6 simplices dimensiones 0..3: (48, 744, 5056, 16896) Betti 0..2: (1, 0, 0)
+Rips 8: esfera S^23. Rips 12: simplex completo. AUDITORIA OK

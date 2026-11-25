@@ -1,0 +1,21 @@
+{
+  "provenance": "Results calculated through GitHub connector on the original JSON during the preceding research, transcribed into this snapshot. Local full-corpus execution not repeated when packaging. Reproduction scripts provided.",
+  "source": "https://github.com/czhuang/JSB-Chorales-dataset/blob/master/jsb-chorales-quarter.json",
+  "git_blob_sha1": "ff93746647d1f5af2f719d235329c294267f3088",
+  "pieces": 382,
+  "time_steps": 23134,
+  "windows": [
+    {"quarter_steps":1,"n":23134,"hexachords":0,"Q48_hits":0},
+    {"quarter_steps":2,"n":22752,"hexachords":5036,"Q48_hits":193,"diatonic_hexachords":3757},
+    {"quarter_steps":4,"n":21988,"hexachords":5480,"Q48_hits":291,"diatonic_hexachords":4107,"pieces_with_hits":120,"permutation_mean_hits":283.7537688442211,"permutation_p_upper":0.415},
+    {"quarter_steps":8,"n":20460,"hexachords":1393,"Q48_hits":84,"diatonic_hexachords":1095,"permutation_mean_hits":72.47236180904522,"permutation_p_upper":0.295},
+    {"quarter_steps":16,"n":17404,"hexachords":138,"Q48_hits":0,"diatonic_hexachords":129}
+  ],
+  "all_hits_class": "6-Z26",
+  "distance": [
+    {"quarter_steps":2,"mean_E":2.176995428973277,"cardinality_residual":-0.3487367648759317,"diatonic_residual":-0.17345437578096784,"piece_weighted_residual":-0.3578589977442453,"permutation_p_lower":0.005,"last_vs_rest":0.24251256665648735},
+    {"quarter_steps":4,"mean_E":1.8022557758777515,"cardinality_residual":-0.5773483686891935,"diatonic_residual":-0.05442510427982002,"piece_weighted_residual":-0.580104642744867,"permutation_p_lower":0.005,"last_vs_rest":0.09614120335901147},
+    {"quarter_steps":8,"mean_E":2.0432551319648096,"cardinality_residual":-0.5560324654166575,"diatonic_residual":0.0706676959321107,"piece_weighted_residual":-0.5595617900546492,"permutation_p_lower":0.005,"last_vs_rest":0.22343683148284277}
+  ],
+  "notes": "199 Monte Carlo permutations per analyzed condition; p values are exploratory, unadjusted. Overlapping windows; same pitch-class permutation within each piece. Diatonic control is a descriptive conditional uniform baseline, not a fitted tonal model. Last windows are not labeled cadences."
+}
