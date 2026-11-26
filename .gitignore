@@ -1,4 +1,8 @@
 __pycache__/
 *.pyc
-.venv/
-jsb-chorales-quarter.json
+study/essen_data/
+study/rgo_data/
+study/abcjs-basic-min.js
+study/*_full.json
+study/*_replay.json
+study/sensitivity_*.json

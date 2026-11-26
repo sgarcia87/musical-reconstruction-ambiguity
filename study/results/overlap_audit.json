@@ -1,0 +1,20 @@
+{
+  "order": [
+    "Essen",
+    "Bach",
+    "The Session"
+  ],
+  "counts": [
+    740,
+    382,
+    51
+  ],
+  "unique": [
+    740,
+    344,
+    51
+  ],
+  "EssenBach": 0,
+  "EssenSession": 0,
+  "BachSession": 0
+}

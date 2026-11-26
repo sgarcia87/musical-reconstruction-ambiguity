@@ -1,0 +1,37 @@
+{
+  "abcjs": "abcjs-basic v6.7.3",
+  "blob": "0631d3b91887d149458989f5b37b8f19c09dc725",
+  "n": 740,
+  "notes": 33748,
+  "agree": 740,
+  "noteCount": 740,
+  "intervalAgree": 740,
+  "warnings": 0,
+  "byCollection": {
+    "altdeu10": {
+      "total": 223,
+      "exact": 223,
+      "intervalExact": 223,
+      "noteCount": 223
+    },
+    "ballad10": {
+      "total": 31,
+      "exact": 31,
+      "intervalExact": 31,
+      "noteCount": 31
+    },
+    "erk10": {
+      "total": 296,
+      "exact": 296,
+      "intervalExact": 296,
+      "noteCount": 296
+    },
+    "kinder0": {
+      "total": 190,
+      "exact": 190,
+      "intervalExact": 190,
+      "noteCount": 190
+    }
+  },
+  "errors": []
+}
