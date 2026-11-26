@@ -1,6 +1,8 @@
-# RGO — Musical sequence reconstruction
+# Musical Reconstruction Ambiguity
 
 **Sergi Garcia Mecinas · 2026**
+
+Exact combinatorial analysis of melodic reconstruction from interval fragments and repetition structures.
 
 [Manuscript](study/MANUSCRIPT.md) · [Reproduction](study/README.md) · [Results](study/results/) · [Español](README.md)
 

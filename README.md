@@ -1,6 +1,8 @@
-# RGO — Reconstrucción de secuencias musicales
+# Musical Reconstruction Ambiguity
 
 **Sergi Garcia Mecinas · 2026**
+
+Análisis combinatorio exacto de la reconstrucción melódica a partir de fragmentos de intervalos y estructuras de repetición.
 
 [Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [Manuscrito (EN)](study/MANUSCRIPT.md) · [English](README.en.md) · [Reproducción](study/README.md)
 
