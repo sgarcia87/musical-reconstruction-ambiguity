@@ -36,7 +36,6 @@ Con datos finitos, este modelo permite verificar familias de candidatos, contar 
 | XV | Descubrimiento de familias sin anclajes y seriación. | La pertenencia emerge parcialmente, el orden no es fiable; óptimos geométricos incorrectos. |
 | XVI | Segundo banco de semiescalas. | La mejora de orden no se reproduce robustamente. |
 | XVII | Intermediación de tres resultados, distancia, listas mínimas y observador adaptativo. | Modelo ordinal exacto; profundidad adaptativa óptima hasta n=8, pilotos iniciales sin cobertura, JJGraph con cobertura parcial y errores semánticos. [Ampliación](rgo_fase17_extension.md). |
-
 | XVIII | Identificación simbólica y órbitas conjuntas de ventanas. | Criterio de desplazamiento relativo y contraste con Fourier; alineación más eficaz en la condición difícil. |
 | XIX | Fourier, homología persistente y tiempo en Bach y variantes tradicionales. | Las relaciones temporales discriminan mejor que las firmas topológicas ensayadas; falta audio real. |
 
