@@ -42,7 +42,7 @@ Ensayo reforzado: propuestas por tripletas de posiciones con el mismo símbolo o
 | Bach | 6,5864 | 5,6294 | 6,6440 | 0,633 |
 | The Session | 11,0980 | 6,7108 | 11,4314 | 0,654 |
 
-10.392 evaluaciones de control. 432 piezas con alguna muestra distinta; 199 con algún cambio de k_min. La inversión de la curva desaparece prácticamente en las medias. [Agregados completos](../results/repeticiones.json).
+10.392 evaluaciones de control. 432 piezas con alguna muestra distinta; 199 con algún cambio de k_min. La inversión de la curva desaparece prácticamente en las medias. [Agregados completos](results/repeticiones.json).
 
 Las aceptaciones sobre propuestas no triviales son 14,4 % y 3,5 %. En The Session, k medio en las mitades de la cadena es 11,307/11,556: posible mezcla lenta. No son muestras independientes. La cercanía de las curvas no demuestra suficiencia causal del perfil ni ausencia de efectos en otros corpus. No se ha realizado validación externa ni prueba formal de significación.
 
@@ -54,9 +54,9 @@ El perfil de repeticiones no determina matemáticamente la reconstruibilidad, pe
 
 Node.js 18+:
 
-    node audits/auditoria_repeticiones.mjs --self-test
-    node audits/auditoria_repeticiones.mjs --data ./rgo_data --simple > simple.json
-    node audits/auditoria_repeticiones.mjs --data ./rgo_data > strict.json
+    node auditoria_repeticiones.mjs --self-test
+    node auditoria_repeticiones.mjs --data ./rgo_data --simple > simple.json
+    node auditoria_repeticiones.mjs --data ./rgo_data > strict.json
 
 Los corpus se verifican por SHA-1 de blob Git. Los resultados agregados proceden de las ejecuciones sobre los blobs originales; no son filas brutas. El código publicado reúne el protocolo de la auditoría de repeticiones y el parser de la investigación musical anterior. No se ha repetido localmente el ensayo completo.
 

@@ -57,13 +57,13 @@ La hipótesis de que la música necesita menos longitud para lograr unicidad no 
 - czhuang/JSB-Chorales-dataset: jsb-chorales-quarter.json, blob ff93746647d1f5af2f719d235329c294267f3088.
 - polifonia-project/folk_ngram_analysis: FoNN/SIATEC_comparison/data/thesession_subset_metadata_with_tune_family_annotation.csv, blob 9f172a30b41b48398d6aa0b0e48b40b94bf093dc.
 
-Los corpus externos no se redistribuyen. Los resultados originales se registraron como agregados. El ensayo final y el criterio de unicidad disponen de [auditoría](../audits/auditoria_repeticiones.mjs).
+Los corpus externos no se redistribuyen. Los resultados originales se registraron como agregados. El ensayo final y el criterio de unicidad disponen de [auditoría](auditoria_repeticiones.mjs).
 
 ## Reproducción
 
 ```bash
-node audits/auditoria_repeticiones.mjs --self-test
-node audits/auditoria_repeticiones.mjs --data ./rgo_data --fragments > fragmentos.json
+node auditoria_repeticiones.mjs --self-test
+node auditoria_repeticiones.mjs --data ./rgo_data --fragments > fragmentos.json
 ```
 
-El modo de fragmentos ejecuta los cuatro controles y el análisis de sensibilidad con las semillas documentadas. [Agregados de la primera ejecución](../results/fragmentos.json).
+El modo de fragmentos ejecuta los cuatro controles y el análisis de sensibilidad con las semillas documentadas. [Agregados de la primera ejecución](results/fragmentos.json).

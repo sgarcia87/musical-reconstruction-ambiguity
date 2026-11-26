@@ -18,6 +18,7 @@ Research-note draft and reproduction materials. Node.js 18+; Python 3 for the op
     node auditoria_repeticiones.mjs --self-test
     python verify_repetition_profiles.py
 
+    node auditoria_repeticiones.mjs --data ./rgo_data --fragments > fragments_full.json
     node auditoria_repeticiones.mjs --data ./rgo_data > exploratory_full.json
     node validate_essen.mjs --data ./essen_data > essen_full.json
     node graded_essen.mjs --data ./essen_data --full > graded_full.json
@@ -48,4 +49,4 @@ Place the ABC files in `essen_data`, the two exploratory data files in `rgo_data
 
 ## Verification status
 
-The recorded corpus computations and abcjs comparison used the pinned repository contents. The counter and ABC parser self-tests return 16,388 exact counter checks and two parser checks. The results are recorded aggregates; the scripts regenerate individual melody rows. Full standalone replay remains pending. Neither convergence of the MCMC chains nor publication priority has been certified. Independent source license and bibliographic review and human author verification are required before submission. 
+The recorded corpus computations and abcjs comparison used the pinned repository contents. The counter and ABC parser self-tests return 16,388 exact counter checks and two parser checks. The results are recorded aggregates; the scripts regenerate individual melody rows. Full standalone replay remains pending. Neither convergence of the MCMC chains nor publication priority has been certified. Source licenses, bibliographic records and the full standalone computations remain to be verified. 
