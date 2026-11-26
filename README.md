@@ -4,7 +4,7 @@
 
 Análisis combinatorio exacto de la reconstrucción melódica a partir de fragmentos de intervalos y estructuras de repetición.
 
-[Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [Manuscrito (EN)](study/MANUSCRIPT.md) · [English](README.en.md) · [Reproducción](study/README.md)
+[Web interactiva](https://sgarcia87.github.io/musical-reconstruction-ambiguity/) · [Manuscrito (EN)](study/MANUSCRIPT.md) · [English](README.en.md) · [Reproducción](study/README.md)
 
 ¿Cuántos fragmentos de una melodía hacen falta para determinarla de forma única?
 
@@ -36,7 +36,7 @@ La hipótesis exploratoria de menor entrelazamiento de las repeticiones no se co
 - [Prueba exacta y resultado negativo](study/EXACT_INTERLEAVING.md)
 - [Metodología y reproducción](study/README.md)
 - [Código](study/) y [resultados agregados](study/results/)
-- [Archivo de la investigación anterior](https://github.com/sgarcia87/relational-geometry-observability/tree/f0905323a98448229ff5504763987db97648f40b)
+- [Archivo de la investigación anterior](https://github.com/sgarcia87/musical-reconstruction-ambiguity/tree/f0905323a98448229ff5504763987db97648f40b)
 
 ## Alcance
 

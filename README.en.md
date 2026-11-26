@@ -22,4 +22,4 @@ An independent abcjs parser comparison agrees on all 33,748 pitch events in the 
 
 The exploratory hypothesis of reduced repetition interleaving was not supported by exact enumeration of a tractable 36-melody subset: the contrasts reverse to +1.52 and +0.93 percentage points at orders 4 and 5. This does not isolate sampling bias from subset effects. See the [exact control](study/EXACT_INTERLEAVING.md).
 
-[Historical research archive](https://github.com/sgarcia87/relational-geometry-observability/tree/f0905323a98448229ff5504763987db97648f40b).
+[Historical research archive](https://github.com/sgarcia87/musical-reconstruction-ambiguity/tree/f0905323a98448229ff5504763987db97648f40b).
