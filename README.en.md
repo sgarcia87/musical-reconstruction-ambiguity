@@ -1,53 +1,33 @@
 # Relational Geometry and Observability (RGO)
 
-**Sergi Garcia Mecinas · v0.6.1**
+**Sergi Garcia Mecinas · November 26, 2026**
 
-[**Interactive website**](https://sgarcia87.github.io/relational-geometry-observability/) · [Español](README.md) · [Introduction (Spanish)](docs/EMPEZAR.md)
+[Interactive overview (Spanish)](https://sgarcia87.github.io/relational-geometry-observability/) · [Español](README.md)
 
-## What makes a melody remain the same?
+RGO studies the structures compatible with an observation and the additional relations required to distinguish them.
 
-RGO grew from the geometry of musical frequencies and chords. Its central question is what information observations preserve, which alternative structures remain indistinguishable, and which additional relationships identify them. No knowledge of the author's earlier projects is required.
+## Six principles
 
-**Established under explicit mathematical assumptions:** phase-ambiguity criteria, conditional temporal reconstruction and minimum observation counts.
+1. Observation groups candidates into equivalence classes.
+2. Prior knowledge provides information.
+3. Coherence is not truth.
+4. Changing perspective means distinguishing new alternatives.
+5. Recognition is not reconstruction.
+6. Recording associations is not sufficient to discover meaning.
 
-**Limits:** temporal fingerprints are useful in symbolic music but have not generally outperformed chroma alignment. The tested topological and semantic discovery hypotheses were not validated.
+## Final study
 
-**Open question:** when do invariant temporal fingerprints provide better identification, robustness or cost than sequence alignment?
+For 382 Bach chorales and 51 traditional tunes, exact reconstruction counts were computed from multisets of consecutive pitch-class intervals and known boundaries.
 
-## Musical research
+| Corpus | Original | Bigram control | Repetition-profile control |
+|---|---:|---:|---:|
+| Bach | 6.586 | 5.629 | 6.644 |
+| The Session | 11.098 | 6.711 | 11.431 |
 
-| Experiment | Result |
-|---|---|
-| 382 Bach chorales, 462 synthetic queries | For quarter-length excerpts with edits and deletions, multilag temporal signatures achieve 75.32% top-1 versus 91.56% for chroma alignment. |
-| 297 traditional tune settings, 51 IDs, 10 annotated families | Invariant trigrams retrieve another setting of the same ID at 79.92% top-1 (288 queries; chance 3.33%). |
-| Family retrieval across different tune IDs | Trigrams reach 36.03% (297 queries; chance 7.53%). With one representative per ID, alignment reaches 48.04% vs 33.33% for trigrams. |
+Mean minimum fragment length. The original difference largely disappears under the stricter controls. Sampling is not proven to mix uniformly; no additional music-specific effect has been established.
 
-These are exploratory symbolic-music experiments, not audio recognition. See [musical research](docs/MUSICA.md), [phase XVIII](docs/rgo_fase18_nota.md) and [phase XIX](docs/rgo_fase19_nota.md) for protocols, comparisons and full results.
+The binary words 0000101 and 0001001 share endpoints, bigrams and factor multiplicity histograms at every length but require fragments of length 3 and 4 respectively for unique reconstruction. The BEST formula separates ambiguity into local permutations and a global connectivity correction.
 
-## Mathematical results
+[Scientific synthesis](docs/SINTESIS_RGO.md) · [Fragment study](docs/ESTUDIO_FRAGMENTOS.md) · [Final repetition study](docs/REPETICIONES.md) · [Audit code](audits/auditoria_repeticiones.mjs) · [Results](results/repeticiones.json) · [Historical archive](docs/ARCHIVO.md).
 
-| Result | Scope |
-|---|---|
-| Phase ambiguity | A lattice quotient and Smith normal form characterize residual ambiguity at fixed support and magnitudes, modulo translation. [Proof](docs/AMBIGUEDAD_ESPECTRAL.md). |
-| Model constraints | Of 4,096 initial pitch-class indicators, 262 need fourth-order observations over arbitrary real candidates, but only 24 over binary candidates. [Details](docs/rgo_fase11_nota.md). |
-| Robust reconstruction | Under the specified exact-spectrum music protocol, universal fixed lists of 8, 16 and 24 queries suffice and are minimal for identification, detection of one substitution and correction of one, respectively, with repetitions allowed. [Proof](docs/rgo_fase11_nota.md). |
-| Temporal reconstruction | A connectivity criterion counts ambiguity when local orbits are known. 377/382 Bach chorales are identified by consecutive four-quarter-window relations; six extra links resolve the remaining five. [Proof](docs/OBSERVABILIDAD_TEMPORAL.md). |
-| Relative information | Joint pair orbits can retain relative shifts lost by cross-Fourier observations: 32 of 18,094 Bach transitions. [Extension](docs/rgo_fase18_nota.md). |
-
-[General framework](docs/MARCO_GENERAL.md) · [Mathematical report](docs/INVESTIGACION.md) · [Secondary mathematical study: betweenness and orders](docs/rgo_fase17_nota.md).
-
-## Reproduce
-
-```bash
-pip install -r requirements-research.txt
-python audits/rgo_fase9_audit.py
-python audits/rgo_fase10_audit.py
-python audits/rgo_fase11_audit.py
-python audits/verify_robustness.py
-node audits/rgo_fase18_audit.mjs
-node audits/rgo_fase19_audit.mjs --data ./rgo_data
-```
-
-Python 3.10+, Node.js 18+. External datasets are not redistributed. Audits IX–XI were reproduced exactly in v0.3; XVIII–XIX were executed on the retrieved original datasets without repeating the full download in the local container. [Code](audits/) · [Results](results/) · [Research agenda](docs/ROADMAP.md) · [Corrections](docs/CORRECCIONES.md) · [Scientific archive, exploratory and negative results](docs/ARCHIVO.md).
-
-**Status:** open, not peer-reviewed research. Phase retrieval, homometry, musical geometry, codes and seriation have established prior literature. Priority of the specific results remains unresolved. Project license pending author decision.
+Exploratory research concluded; not peer reviewed. No claim of bibliographic priority.
