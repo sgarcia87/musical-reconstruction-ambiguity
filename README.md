@@ -8,6 +8,8 @@
 
 Se estudia la ambigüedad de reconstrucción a partir del multiconjunto completo de fragmentos consecutivos de intervalos de clase de altura, con fronteras conocidas. El recuento exacto emplea equivalencia k-abeliana, grafos de De Bruijn y recorridos eulerianos.
 
+**Estado:** investigación exploratoria cerrada; manuscrito pendiente de reproducción independiente y revisión académica.
+
 ## Resultados
 
 | Corpus | Secuencias | Original | Control de bigramas | Perfil completo |
@@ -22,9 +24,14 @@ En Essen, conservar el perfil hasta tres intervalos reduce un 94,6 % la diferenc
 
 La auditoría independiente con abcjs 6.7.3 coincide en los 33.748 eventos de las 740 melodías de Essen. No hay palabras de intervalos idénticas entre los tres corpus; Bach contiene 38 registros duplicados en esta representación.
 
+## Contraste exacto
+
+La hipótesis exploratoria de menor entrelazamiento de las repeticiones no se confirma al enumerar todas las alternativas en 36 melodías computacionalmente tratables. Las diferencias original–control exacto en los órdenes 4 y 5 son +1,52 y +0,93 puntos porcentuales, frente a las diferencias negativas observadas en el muestreo del corpus completo. La selección del subconjunto impide atribuir la inversión exclusivamente al muestreo. No se sostiene una regularidad musical de entrelazamiento.
+
 ## Documentación
 
 - [Manuscrito científico](study/MANUSCRIPT.md)
+- [Prueba exacta y resultado negativo](study/EXACT_INTERLEAVING.md)
 - [Metodología y reproducción](study/README.md)
 - [Código](study/) y [resultados agregados](study/results/)
 - [Archivo de la investigación anterior](https://github.com/sgarcia87/relational-geometry-observability/tree/f0905323a98448229ff5504763987db97648f40b)

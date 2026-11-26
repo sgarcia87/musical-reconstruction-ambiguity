@@ -11,10 +11,13 @@ Research-note draft and reproduction materials. Node.js 18+; Python 3 for the op
 - `results/parser_audit.json` and `results/overlap_audit.json`: recorded comparisons with abcjs and cross-corpus exact word overlap.
 - `results/repeticiones.json` and `ESTUDIO_FRAGMENTOS.md`: exploratory results and protocol.
 
+- `EXACT_INTERLEAVING.md` and `results/exact_interleaving.json`: exhaustive negative follow-up on the 36 tractable Essen classes.
+
 ## Reproduce
 
     node validate_essen.mjs --self-test
     node graded_essen.mjs --self-test
+    node exact_interleaving.mjs --self-test
     node auditoria_repeticiones.mjs --self-test
     python verify_repetition_profiles.py
 
@@ -22,6 +25,7 @@ Research-note draft and reproduction materials. Node.js 18+; Python 3 for the op
     node auditoria_repeticiones.mjs --data ./rgo_data > exploratory_full.json
     node validate_essen.mjs --data ./essen_data > essen_full.json
     node graded_essen.mjs --data ./essen_data --full > graded_full.json
+    node exact_interleaving.mjs --data ./essen_data > exact_interleaving_full.json
 
 Alternatively run the graduated analysis as four separate batches (`--offset 0`, `--offset 1`, `--offset 2`, `--offset 3`, omitting `--full`). Each returns 185 rows; the pooled mean is the average of the four batch means. A full local run also outputs the pooled bootstrap interval.
 
