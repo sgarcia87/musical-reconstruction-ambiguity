@@ -6,6 +6,8 @@
 
 La reconstrucción matemática de señales y la identificación de relaciones semánticas comparten una pregunta formal: ¿qué alternativas son compatibles con la evidencia observada y con el conocimiento previo? La analogía no traslada automáticamente las garantías de un dominio a otro. Los resultados siguientes son experimentos exploratorios; los resultados matemáticos de las fases anteriores conservan sus hipótesis específicas.
 
+**Lugar en RGO:** esta línea exploratoria es una aplicación del problema general de observabilidad, no un requisito para entender el origen musical ni una validación general de IA_m. Véanse [introducción](EMPEZAR.md) e [investigación musical XVIII–XIX](MUSICA.md).
+
 ## XII. Fragilidad del conocimiento previo: corrección de circularidad
 
 Se empleó una muestra del grafo IA_m (27 casos de equilibrio anotados), con aristas reservadas para validar la reconstrucción. En el conjunto, 18 priors erróneos eran estables; el validador rechazó 17 de ellos. Sin embargo, el rechazo de un prior erróneo coincidió exactamente con que el validador reprodujera la referencia (24/27). El prior erróneo excluye la referencia por diseño y tanto esta referencia como las aristas de validación fueron producidas por el mismo sistema de anotación. **No es una demostración de detección de errores semánticos externos.** La restricción a los 11 casos no automáticos no elimina necesariamente el origen compartido de las anotaciones. El contraejemplo de sesgo compartido, simulado en el grafo, muestra una corroboración errónea con validación alterada.

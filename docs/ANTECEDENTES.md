@@ -2,6 +2,10 @@
 
 Este apéndice explica de dónde procede RGO. **No forma parte de las hipótesis del teorema temporal.** El lector puede omitirlo. Para el registro completo de los primeros experimentos, véase [informe v0.1](INVESTIGACION-v0.1.md), conservado sin reescribir retrospectivamente sus resultados.
 
+## Origen musical
+
+El armonógrafo 3D, RESONANTIA y CONSONA partieron de las proporciones entre frecuencias, curvas de Lissajous y fases. Los trabajos de Foote, Tymoczko, Forte, Babbitt, Lewin, Bergomi/Baraté/Di Fabio, Yust, Amiot y Callet-Feltz aparecen en el apartado 2 y bibliografía del [informe original](INVESTIGACION-v0.1.md). XVIII–XIX retoman la pregunta de identificación musical con datos reales simbólicos y comparaciones explícitas. [Explicación inicial](EMPEZAR.md) · [Investigación musical](MUSICA.md).
+
 ## Experimentos que quedan en segundo plano
 
 | Línea | Resultado conservado | Límite |
@@ -19,8 +23,8 @@ Se mantienen los scripts y las salidas anteriores como resultados auditables. Lo
 - [Tríada Emergente](https://github.com/sgarcia87/Triada-emergente): construcción combinatoria a partir de filas equilibradas y ortogonales. Q48 es un caso de esa familia.
 - [Q-Reality-12D](https://github.com/sgarcia87/Q-Reality-12D): búsqueda cuántica con subconjuntos estructurados de estados. No debe identificarse sin más con la construcción temporal.
 - [Structural-Coherence-Audit](https://github.com/sgarcia87/Structural-Coherence-Audit): mide estabilidad de distribuciones entre perspectivas de un grafo. RGO añade la distinción entre estabilidad y observabilidad.
-- [Semantic Diffraction](https://github.com/sgarcia87/Semantic-Diffraction-in-Conceptual-Graphs): propagación en grafos desde dos polos, penalizando la influencia asimétrica. Su evaluación en el marco condicionado es trabajo futuro.
-- [Cubo64](https://github.com/sgarcia87/cubo-magico-64): construcción con álgebra de campos finitos. No existe todavía una aplicación explícita que identifique sus estructuras con las del presente modelo.
+- [Semantic Diffraction](https://github.com/sgarcia87/Semantic-Diffraction-in-Conceptual-Graphs): propagación en grafos desde dos polos, penalizando la influencia asimétrica. Su evaluación exploratoria en XII–XVII está documentada en [SEMANTICA.md](SEMANTICA.md).
+- [Cubo64](https://github.com/sgarcia87/cubo-magico-64): construcción con álgebra de campos finitos. La fase X establece una correspondencia algebraica de un núcleo de seis etiquetas, no un isomorfismo de las estructuras completas.
 
 ## Motivación conceptual
 
@@ -40,7 +44,7 @@ Para las afirmaciones actuales, consultar el [informe principal](INVESTIGACION.m
 - [Informe v0.1 — geometría y equilibrio](INVESTIGACION-v0.1.md).
 - [Informe v0.2 — fase y observabilidad temporal](INVESTIGACION-v0.2.md).
 - [Web archivada v0.2](https://sgarcia87.github.io/relational-geometry-observability/archive/v0.2/).
-- [Informe vigente v0.3 — ambigüedad y reconstrucción robusta](INVESTIGACION.md).
+- [Informe matemático v0.3 — ambigüedad y reconstrucción robusta](INVESTIGACION.md).
 - [Nota histórica X](rgo_fase10_nota.md) y [nota histórica XI](rgo_fase11_nota.md): se conservan como fueron redactadas antes de la publicación de v0.3. Las referencias a no haber actualizado GitHub describen su estado de entonces.
 - [Registro de correcciones y alcance](CORRECCIONES.md): especifica las precisiones vigentes respecto a las notas históricas.
 

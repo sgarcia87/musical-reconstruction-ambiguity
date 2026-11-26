@@ -1,10 +1,22 @@
 # Relational Geometry and Observability (RGO)
 
-**Sergi Garcia Mecinas · v0.5.1 · 26 November 2026**
+**Sergi Garcia Mecinas · v0.6 · 26 November 2026**
 
 🌐 **[Open the RGO website and interactive laboratories](https://sgarcia87.github.io/relational-geometry-observability/)** · [Español](README.md)
 
-RGO investigates the information lost when observing a structure, the residual ambiguity, and the additional observations needed for identification under partial measurements, prior constraints and errors. Music and finite groups provide exact test cases. Q48, Cubo64 and quantum phase observability are algebraic applications; semantic graphs are an exploratory test of the framework's limits, not its sole purpose.
+**Why do we recognize the same melody in a different key? What information makes it the same music?**
+
+RGO grew from audiovisual harmonographs, frequencies and chord geometry into a mathematical investigation of what observations preserve, which alternative structures remain compatible, and how additional observations can identify them. No knowledge of IA_m, Q48, or earlier projects is required. [Start from the beginning (Spanish)](docs/EMPEZAR.md) · [Musical research XVIII–XIX](docs/MUSICA.md).
+
+## Recent musical experiments
+
+| Experiment | Result and scope |
+|---|---|
+| XVIII · 382 Bach chorales | Synthetic retrieval from 77 test sources; temporal features outperform local magnitude bags, but chroma alignment is stronger in the hardest condition. Joint pair orbits can preserve relative displacement lost by cross-Fourier measurements (32 transitions). |
+| XIX · 297 Irish tune settings, 51 IDs, 10 annotated families | Transposition-invariant temporal trigrams retrieve another setting of the same ID at 79.92% top-1 (288 queries; chance 3.33%). Other-ID family retrieval: 36.03% (297 queries; chance 7.53%). |
+| XIX · one representative per ID | Chroma alignment 48.04%, temporal trigrams 33.33%, chance 9.65%. Topological summaries are less effective in this protocol. No audio or timbre experiment. |
+
+[Phase XVIII](docs/rgo_fase18_nota.md) · [Phase XIX](docs/rgo_fase19_nota.md). Distinguish catalog identification from exact reconstruction; these experiments do not establish superiority over existing methods.
 
 [General framework (Spanish)](docs/MARCO_GENERAL.md) · [Mathematical report](docs/INVESTIGACION.md) · [Corrections](docs/CORRECCIONES.md) · [Research agenda](docs/ROADMAP.md)
 
@@ -41,6 +53,8 @@ python audits/verify_robustness.py
 node audits/rgo_fase17_audit.mjs
 node audits/rgo_fase17_math.mjs
 node audits/rgo_fase17_prior.mjs
+node audits/rgo_fase18_audit.mjs
+node audits/rgo_fase19_audit.mjs --data ./rgo_data
 ```
 
 Mathematical audits IX–XI were reproduced exactly for v0.3. XVII was executed exhaustively and its main minima cross-checked with an independent Python/SciPy method. The extension also evaluates published JJGraph paraphrases and a second synthetic prior. External corpora are not bundled; [semantic reproduction commands](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad) and [XVII data provenance](docs/rgo_fase17_nota.md) describe what was and was not repeated.

@@ -6,6 +6,8 @@
 
 > **Actualización v0.5.1 (26/11/2026):** este informe conserva el fundamento matemático de v0.3 y sus condiciones. El [marco general y la trayectoria](MARCO_GENERAL.md) integran toda la investigación; [SEMANTICA.md](SEMANTICA.md) documenta las fases XII–XVII, con resultados negativos, y la [nota XVII](rgo_fase17_nota.md) demuestra resultados sobre observabilidad ordinal. La [ampliación XVII](rgo_fase17_extension.md) extiende el modelo combinatorio y evalúa evidencia de paráfrasis. No se transfieren automáticamente los teoremas a grafos semánticos.
 
+> **Actualización v0.6:** [Empezar desde la música](EMPEZAR.md) y [resultados XVIII–XIX](MUSICA.md). Este informe conserva el fundamento matemático anterior; las nuevas pruebas de reconocimiento y topología se documentan por separado.
+
 ## Resumen
 
 Este proyecto estudia cómo reconstruir estructuras finitas a partir de observaciones que conservan algunas relaciones y pierden otras. El espacio de candidatos admisibles, las simetrías, el orden de las observaciones y su fiabilidad determinan la ambigüedad residual. Se utiliza la música como laboratorio discreto: las doce clases de altura forman un grupo cíclico de doce posiciones, y cada conjunto de notas puede representarse mediante doce bits. Los resultados incluyen una formulación de la ambigüedad de fase mediante retículos, una comparación exacta del orden de reconstrucción con diferentes conocimientos previos, un diseño mínimo de consultas resistentes a errores y un criterio de reconstrucción temporal por conectividad. Se distingue lo demostrado de las simulaciones, los resultados condicionados y las preguntas abiertas.

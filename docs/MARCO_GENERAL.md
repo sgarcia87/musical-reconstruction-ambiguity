@@ -1,8 +1,10 @@
 # RGO — Marco general y trayectoria
 
-**Sergi Garcia Mecinas · v0.5.1 · 26/11/2026**
+**Sergi Garcia Mecinas · v0.6 · 26/11/2026**
 
 [Inicio](../README.md) · [Informe matemático I–XI](INVESTIGACION.md) · [Informe semántico XII–XVII](SEMANTICA.md) · [Fase XVII: órdenes](rgo_fase17_nota.md)
+
+[**Introducción desde la música, sin conocimientos previos**](EMPEZAR.md) · [Investigación musical XVIII–XIX](MUSICA.md)
 
 ## La pregunta común
 
@@ -35,6 +37,9 @@ Con datos finitos, este modelo permite verificar familias de candidatos, contar 
 | XVI | Segundo banco de semiescalas. | La mejora de orden no se reproduce robustamente. |
 | XVII | Intermediación de tres resultados, distancia, listas mínimas y observador adaptativo. | Modelo ordinal exacto; profundidad adaptativa óptima hasta n=8, pilotos iniciales sin cobertura, JJGraph con cobertura parcial y errores semánticos. [Ampliación](rgo_fase17_extension.md). |
 
+| XVIII | Identificación simbólica y órbitas conjuntas de ventanas. | Criterio de desplazamiento relativo y contraste con Fourier; alineación más eficaz en la condición difícil. |
+| XIX | Fourier, homología persistente y tiempo en Bach y variantes tradicionales. | Las relaciones temporales discriminan mejor que las firmas topológicas ensayadas; falta audio real. |
+
 ## Correspondencia entre dominios
 
 | Dominio | Objeto y equivalencia | Observación | Alcance |
@@ -47,6 +52,9 @@ Con datos finitos, este modelo permite verificar familias de candidatos, contar 
 | Lenguaje | Palabras, sentidos y atributos, con empates/contextos posibles | Asociaciones, juicios, patrones u otras mediciones | Pruebas parciales: no se ha validado un oráculo general ni descubierto ejes fiables. |
 
 ## Qué queda abierto
+
+En música, XVIII–XIX distinguen identificación en catálogo de reconstrucción exacta, y muestran que la topología sin tiempo pierde orden. La prioridad empírica siguiente es comparar versiones de audio reales con representaciones y costes equivalentes. [Música](MUSICA.md).
+
 
 La fase XVII demuestra propiedades del observador ordinal, no que sea posible extraer todas las lecturas fiables del lenguaje. JJGraph aporta restricciones pero también numerosas contradicciones y certificados incorrectos. Queda estudiar el descubrimiento del atributo, la fiabilidad y cobertura de fuentes independientes, los empates, órdenes parciales y contextos, la estimación de fiabilidad, el coste real y la selección robusta de consultas con modelo equivocado. Paralelamente, queda contrastar prioridad bibliográfica de los resultados matemáticos y extender protocolos a grupos, tamaños y mediciones distintos.
 

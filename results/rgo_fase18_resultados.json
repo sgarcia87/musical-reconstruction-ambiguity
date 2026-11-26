@@ -1,0 +1,570 @@
+{
+  "phase": "XVIII",
+  "provenance": "Compact record of full-data JavaScript calculations on the original corpus retrieved through GitHub; local reproduction script tested with synthetic data only, not rerun on full corpus due to unavailable container network. Source blob verified via GitHub metadata.",
+  "source": "https://github.com/czhuang/JSB-Chorales-dataset",
+  "git_blob_sha1": "ff93746647d1f5af2f719d235329c294267f3088",
+  "referenceCount": 382,
+  "testCount": 77,
+  "queryCount": 462,
+  "methods": [
+    "power_bag",
+    "shape_bag",
+    "self_similarity",
+    "pair_orbit",
+    "triple_orbit",
+    "phase_adjacent",
+    "phase_multilag",
+    "pair_multilag",
+    "chroma_alignment"
+  ],
+  "exact": {
+    "globalOrbitDistinct": 382,
+    "localPowerSequenceDistinct": 382,
+    "localShapeSequenceDistinct": 382,
+    "phasePathDistinct": 382,
+    "pairPathDistinct": 382,
+    "adjacentPairs": 18094,
+    "phaseLessThanPairOrbit": 32,
+    "counterexample": {
+      "a": [
+        0,
+        1
+      ],
+      "b": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "bShifted": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "crossCorrelationBoth": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "phaseModulus": 1,
+      "jointModulus": 2,
+      "globallySame": false
+    },
+    "phaseLostExamples": [
+      {
+        "id": "train-37",
+        "index": 25,
+        "a": 133,
+        "b": 1170,
+        "d": 1,
+        "g": 3
+      },
+      {
+        "id": "train-54",
+        "index": 44,
+        "a": 2340,
+        "b": 532,
+        "d": 1,
+        "g": 3
+      },
+      {
+        "id": "train-82",
+        "index": 4,
+        "a": 420,
+        "b": 2184,
+        "d": 1,
+        "g": 4
+      },
+      {
+        "id": "train-82",
+        "index": 19,
+        "a": 420,
+        "b": 2184,
+        "d": 1,
+        "g": 4
+      },
+      {
+        "id": "train-85",
+        "index": 7,
+        "a": 585,
+        "b": 133,
+        "d": 1,
+        "g": 3
+      }
+    ]
+  },
+  "controls": {
+    "independent": {
+      "n": 77,
+      "localShapesSame": 77,
+      "phasePathSame": 0,
+      "pairPathSame": 0,
+      "globalOrbitSame": 0
+    },
+    "block": {
+      "n": 77,
+      "localShapesSame": 77,
+      "phasePathSame": 1,
+      "pairPathSame": 1,
+      "globalOrbitSame": 0
+    }
+  },
+  "retrieval": [
+    {
+      "condition": "transpose_register",
+      "queries": 77,
+      "meanLength": 50.116883116883116,
+      "corrupted": 0,
+      "dropped": 0,
+      "methods": {
+        "power_bag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "shape_bag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "self_similarity": {
+          "top1": 1,
+          "top5": 1
+        },
+        "pair_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "triple_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_adjacent": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "pair_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "chroma_alignment": {
+          "top1": 1,
+          "top5": 1
+        }
+      }
+    },
+    {
+      "condition": "variable_duration",
+      "queries": 77,
+      "meanLength": 50.116883116883116,
+      "corrupted": 0,
+      "dropped": 0,
+      "methods": {
+        "power_bag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "shape_bag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "self_similarity": {
+          "top1": 1,
+          "top5": 1
+        },
+        "pair_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "triple_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_adjacent": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "pair_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "chroma_alignment": {
+          "top1": 1,
+          "top5": 1
+        }
+      }
+    },
+    {
+      "condition": "crop50",
+      "queries": 77,
+      "meanLength": 24.792207792207794,
+      "corrupted": 0,
+      "dropped": 0,
+      "methods": {
+        "power_bag": {
+          "top1": 0.45454545454545453,
+          "top5": 0.7012987012987013
+        },
+        "shape_bag": {
+          "top1": 0.4675324675324675,
+          "top5": 0.6753246753246753
+        },
+        "self_similarity": {
+          "top1": 0.4155844155844156,
+          "top5": 0.7012987012987013
+        },
+        "pair_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "triple_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_adjacent": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "pair_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "chroma_alignment": {
+          "top1": 1,
+          "top5": 1
+        }
+      }
+    },
+    {
+      "condition": "edit20",
+      "queries": 77,
+      "meanLength": 44.753246753246756,
+      "corrupted": 671,
+      "dropped": 389,
+      "methods": {
+        "power_bag": {
+          "top1": 0.3246753246753247,
+          "top5": 0.6623376623376623
+        },
+        "shape_bag": {
+          "top1": 0.4155844155844156,
+          "top5": 0.7272727272727273
+        },
+        "self_similarity": {
+          "top1": 0.12987012987012986,
+          "top5": 0.3116883116883117
+        },
+        "pair_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "triple_orbit": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_adjacent": {
+          "top1": 1,
+          "top5": 1
+        },
+        "phase_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "pair_multilag": {
+          "top1": 1,
+          "top5": 1
+        },
+        "chroma_alignment": {
+          "top1": 1,
+          "top5": 1
+        }
+      }
+    },
+    {
+      "condition": "crop50_edit20",
+      "queries": 77,
+      "meanLength": 22.12987012987013,
+      "corrupted": 373,
+      "dropped": 191,
+      "methods": {
+        "power_bag": {
+          "top1": 0.16883116883116883,
+          "top5": 0.4025974025974026
+        },
+        "shape_bag": {
+          "top1": 0.16883116883116883,
+          "top5": 0.38961038961038963
+        },
+        "self_similarity": {
+          "top1": 0.05194805194805195,
+          "top5": 0.11688311688311688
+        },
+        "pair_orbit": {
+          "top1": 0.8441558441558441,
+          "top5": 0.922077922077922
+        },
+        "triple_orbit": {
+          "top1": 0.8701298701298701,
+          "top5": 0.935064935064935
+        },
+        "phase_adjacent": {
+          "top1": 0.8441558441558441,
+          "top5": 0.922077922077922
+        },
+        "phase_multilag": {
+          "top1": 0.9090909090909091,
+          "top5": 0.948051948051948
+        },
+        "pair_multilag": {
+          "top1": 0.9090909090909091,
+          "top5": 0.948051948051948
+        },
+        "chroma_alignment": {
+          "top1": 0.987012987012987,
+          "top5": 1
+        }
+      }
+    },
+    {
+      "condition": "crop25_edit20",
+      "queries": 77,
+      "meanLength": 10.766233766233766,
+      "corrupted": 172,
+      "dropped": 102,
+      "methods": {
+        "power_bag": {
+          "top1": 0.06493506493506493,
+          "top5": 0.24675324675324675
+        },
+        "shape_bag": {
+          "top1": 0.1038961038961039,
+          "top5": 0.2727272727272727
+        },
+        "self_similarity": {
+          "top1": 0,
+          "top5": 0.03896103896103896
+        },
+        "pair_orbit": {
+          "top1": 0.6233766233766234,
+          "top5": 0.8311688311688312
+        },
+        "triple_orbit": {
+          "top1": 0.6364656286122256,
+          "top5": 0.7539955901326356
+        },
+        "phase_adjacent": {
+          "top1": 0.6233766233766234,
+          "top5": 0.8311688311688312
+        },
+        "phase_multilag": {
+          "top1": 0.7532467532467533,
+          "top5": 0.8441558441558441
+        },
+        "pair_multilag": {
+          "top1": 0.7532467532467533,
+          "top5": 0.8441558441558441
+        },
+        "chroma_alignment": {
+          "top1": 0.9155844155844156,
+          "top5": 0.935064935064935
+        }
+      }
+    }
+  ],
+  "temporal": [
+    {
+      "window": "collapsed",
+      "pieces": 382,
+      "frames": 18476,
+      "phaseAdj": {
+        "exact": 225,
+        "bits": 1.9905365840226044
+      },
+      "jointAdj": {
+        "exact": 225,
+        "bits": 1.8512459426122643
+      },
+      "phaseLags": {
+        "exact": 382,
+        "bits": 0
+      },
+      "jointLags": {
+        "exact": 382,
+        "bits": 0
+      },
+      "phaseRepair": {
+        "exact": 382,
+        "added": 299,
+        "optimal": 382,
+        "max": 8
+      },
+      "jointRepair": {
+        "exact": 382,
+        "added": 295,
+        "optimal": 382,
+        "max": 8
+      },
+      "jointStronger": 24
+    },
+    {
+      "window": 1,
+      "pieces": 382,
+      "frames": 23134,
+      "phaseAdj": {
+        "exact": 225,
+        "bits": 1.9905365840226044
+      },
+      "jointAdj": {
+        "exact": 225,
+        "bits": 1.8512459426122643
+      },
+      "phaseLags": {
+        "exact": 381,
+        "bits": 0.009384718588275278
+      },
+      "jointLags": {
+        "exact": 381,
+        "bits": 0.009384718588275278
+      },
+      "phaseRepair": {
+        "exact": 382,
+        "added": 299,
+        "optimal": 382,
+        "max": 8
+      },
+      "jointRepair": {
+        "exact": 382,
+        "added": 295,
+        "optimal": 382,
+        "max": 8
+      },
+      "jointStronger": 24
+    },
+    {
+      "window": 2,
+      "pieces": 382,
+      "frames": 22752,
+      "phaseAdj": {
+        "exact": 356,
+        "bits": 0.24459316101553066
+      },
+      "jointAdj": {
+        "exact": 356,
+        "bits": 0.23935755892128985
+      },
+      "phaseLags": {
+        "exact": 382,
+        "bits": 0
+      },
+      "jointLags": {
+        "exact": 382,
+        "bits": 0
+      },
+      "phaseRepair": {
+        "exact": 382,
+        "added": 41,
+        "optimal": 382,
+        "max": 6
+      },
+      "jointRepair": {
+        "exact": 382,
+        "added": 41,
+        "optimal": 382,
+        "max": 6
+      },
+      "jointStronger": 2
+    },
+    {
+      "window": 4,
+      "pieces": 382,
+      "frames": 21988,
+      "phaseAdj": {
+        "exact": 377,
+        "bits": 0.030771956811946253
+      },
+      "jointAdj": {
+        "exact": 378,
+        "bits": 0.026622840317911813
+      },
+      "phaseLags": {
+        "exact": 382,
+        "bits": 0
+      },
+      "jointLags": {
+        "exact": 382,
+        "bits": 0
+      },
+      "phaseRepair": {
+        "exact": 382,
+        "added": 6,
+        "optimal": 382,
+        "max": 2
+      },
+      "jointRepair": {
+        "exact": 382,
+        "added": 5,
+        "optimal": 382,
+        "max": 2
+      },
+      "jointStronger": 1
+    },
+    {
+      "window": 8,
+      "pieces": 382,
+      "frames": 20460,
+      "phaseAdj": {
+        "exact": 370,
+        "bits": 0.13247254583606027
+      },
+      "jointAdj": {
+        "exact": 370,
+        "bits": 0.12985474478893985
+      },
+      "phaseLags": {
+        "exact": 380,
+        "bits": 0.014620320682516116
+      },
+      "jointLags": {
+        "exact": 380,
+        "bits": 0.014620320682516116
+      },
+      "phaseRepair": {
+        "exact": 382,
+        "added": 16,
+        "optimal": 382,
+        "max": 2
+      },
+      "jointRepair": {
+        "exact": 382,
+        "added": 16,
+        "optimal": 382,
+        "max": 2
+      },
+      "jointStronger": 1
+    }
+  ]
+}

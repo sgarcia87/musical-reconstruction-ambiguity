@@ -3,6 +3,8 @@
 **RGO · v0.2 · Nota técnica (2026-11-25)**  
 Autor del proyecto: Sergi Garcia Mecinas. Documento de trabajo, no revisado por pares.
 
+> **Extensión XVIII:** la [nota sobre huella relacional musical](rgo_fase18_nota.md) distingue la observación cross-Fourier de la órbita conjunta, cuyo módulo es mcd(pᵢ,pⱼ). Se conservan las hipótesis del teorema original.
+
 ## Resumen
 
 Se caracteriza Q48 por dos condiciones de Fourier y se construye un procedimiento exacto para medir la ambigüedad de secuencias de conjuntos de clases de altura ante observaciones locales y relaciones de fase entre instantes. Para una introducción sin conocimientos previos, véase [INVESTIGACION.md](INVESTIGACION.md). La construcción se apoya en resultados conocidos de homometría, análisis armónico y sincronización de fase. No se reivindica prioridad científica sin una revisión bibliográfica adicional.

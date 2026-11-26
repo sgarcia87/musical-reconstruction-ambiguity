@@ -1,8 +1,16 @@
-# Agenda de investigación · RGO v0.5.1
+# Agenda de investigación · RGO v0.6
 
 La prioridad es identificar estructuras bajo observaciones parciales, simetrías, priors y errores. Cada nueva hipótesis debe especificar el objeto, objetivo, espacio de candidatos, transformaciones irrelevantes, protocolo de medición, coste, referencia y criterio de rechazo.
 
-## Estado de la investigación tras XVII
+## Estado de la investigación tras XIX
+
+[Resultados musicales XVIII–XIX](MUSICA.md). La música vuelve a ser la principal puerta de entrada. La órbita conjunta generaliza las mediciones de fase entre ventanas; las pruebas de recuperación simbólica muestran que la alineación cromática es competitiva y que la firma topológica ensayada pierde orden.
+
+### Prioridad musical inmediata
+
+Evaluar versiones de audio reales con familias de obras verificadas y separación de desarrollo/prueba. Usar cromas acústicos, control de tempo y transposición, ruido y timbre; comparar alineación, trigramas y topología con el mismo presupuesto y registrar coste, cobertura, top-1 y precisión media. Estudiar selección mínima y robusta de relaciones temporales; no imponer invariancia a cambios que alteran el objetivo.
+
+## Línea de observabilidad ordinal (XVII)
 
 [Marco general](MARCO_GENERAL.md) · [Fase XVII](rgo_fase17_nota.md) · [Contraste semántico](SEMANTICA.md).
 

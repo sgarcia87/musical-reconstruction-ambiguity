@@ -1,14 +1,29 @@
 # RGO — Geometría relacional y observabilidad
 
-**Relational Geometry and Observability · Sergi Garcia Mecinas · v0.5.1 · 26 de noviembre de 2026**
+**Relational Geometry and Observability · Sergi Garcia Mecinas · v0.6 · 26 de noviembre de 2026**
 
 🌐 **[Abrir RGO — investigación y laboratorios interactivos](https://sgarcia87.github.io/relational-geometry-observability/)** · [English overview](README.en.md)
 
-> ¿Qué información sobre una estructura se pierde al observarla, cuánta ambigüedad permanece y qué observaciones adicionales permiten resolverla, incluso si nuestro modelo es incorrecto o las medidas contienen errores?
+**¿Por qué reconocemos una melodía aunque se toque en otra tonalidad? ¿Qué información hace que siga siendo la misma música?**
 
-RGO es una investigación matemática sobre identificación de estructuras bajo observaciones parciales. La música proporciona un laboratorio finito verificable; los grupos binarios, Q48, Cubo64 y la formulación cuántica proporcionan casos algebraicos. Los grafos semánticos constituyen una aplicación exploratoria y una prueba de los límites del marco. No se presupone que todos esos dominios sean equivalentes.
+RGO nació estudiando la geometría de las frecuencias y de los acordes. La pregunta se convirtió en una investigación matemática: qué información conserva una observación, qué alternativas no distingue y qué relaciones adicionales permiten reconstruir una estructura. **No necesitas conocer IA_m, Q48, teoría cuántica ni ningún trabajo previo.**
 
-## Marco de investigación
+[**Empezar desde cero: explicación sin tecnicismos**](docs/EMPEZAR.md) · [**Investigación musical y resultados XVIII–XIX**](docs/MUSICA.md)
+
+## Música: la prueba más reciente
+
+En partituras simbólicas de 382 corales de Bach y 297 transcripciones de melodías tradicionales (51 IDs, diez familias), las relaciones temporales resultan más discriminantes que los resúmenes topológicos probados. No obstante, una referencia de alineación cromática supera a los trigramas en la prueba de 51 representantes (48,04% frente a 33,33%). No se ha probado reconocimiento desde audio ni superioridad general.
+
+| Resultado | Alcance |
+|---|---|
+| 79,92% | Identificación de otra transcripción del mismo ID (288 consultas, azar 3,33%). |
+| 36,03% | Identificación de otro ID de la misma familia (297 consultas, azar 7,53%). |
+| 32 transiciones | En Bach, la órbita conjunta conserva información que las correlaciones cruzadas pierden. |
+| 77/77 | Permutar ventanas no altera el resumen de PH sin tiempo; añadir tiempo cambia el resumen en estos controles, sin garantía de unicidad. |
+
+[Nota XVIII](docs/rgo_fase18_nota.md) · [Nota XIX](docs/rgo_fase19_nota.md) · [Auditorías](audits/) · [Resultados](results/)
+
+## Cómo se generalizó la pregunta musical
 
 [Leer el marco general desde cero](docs/MARCO_GENERAL.md) · [Informe matemático de las fases I–XI](docs/INVESTIGACION.md) · [Cronología de experimentos](docs/MARCO_GENERAL.md#trayectoria-y-evidencia)
 
@@ -26,7 +41,7 @@ Cada problema especifica un universo de candidatos, las simetrías que se consid
 | Q48 y cuántica | La homometría Walsh, el cociente bent y la distinción teórica entre una copia y dos copias con traslación compartida son casos de estudio; no prueban una ventaja cuántica ni una unificación física. [Fase X](docs/rgo_fase10_nota.md). |
 | **Intermediación y orden (XVII)** | Para n elementos ordenados salvo inversión, la firma de todas las ternas tiene distancia mínima exactamente n−2. Para seis elementos: mínimos fijos 7, 10 y 16 para identificación, detección de un error y corrección de un error, respectivamente, sin repetición. Adaptativamente bastan seis consultas exactas; con ocho elementos (20.160 órdenes), diez consultas exactas son óptimas en el peor caso. [Demostración](docs/rgo_fase17_nota.md) · [Ampliación y auditorías](docs/rgo_fase17_extension.md). |
 
-## Contraste empírico: semántica
+## Aplicación separada: semántica y órdenes
 
 Las fases XII–XVI separan asociación, pertenencia a una dimensión, intermediación y orientación. Los resultados no justifican identificar asociación con intensidad ni coherencia con verdad. El control XVII incorpora una primera búsqueda de observaciones ordinales externas y una ampliación con evidencia de paráfrasis de JJGraph; hay cobertura parcial, pero no fiabilidad suficiente.
 
@@ -49,7 +64,6 @@ Las fases XII–XVI separan asociación, pertenencia a una dimensión, intermedi
 | [Fase XIV — Una relación tiene dirección](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase14.html) | Proyección con extremos conocidos. |
 | [Fase XV — Emergencia de ejes](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase15.html) | Asociación sin anclajes y límites del orden. |
 | [Fase XVII — ¿Quién está entre quién?](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase17.html) | Fibras U/P, selección de consultas y reconstrucción con errores en un modelo ordinal ideal. |
-
 | [Fase XVII · ampliación: observador de hasta ocho elementos](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase17_observador.html) | Órdenes ocultos, prior de extremo y validación global. |
 
 ## Reproducibilidad
@@ -63,8 +77,11 @@ python audits/verify_robustness.py
 node audits/rgo_fase17_audit.mjs
 node audits/rgo_fase17_math.mjs
 node audits/rgo_fase17_prior.mjs
+# Música: las fuentes externas se descargan y se comprueban
+node audits/rgo_fase18_audit.mjs
+node audits/rgo_fase19_audit.mjs --data ./rgo_data
 ```
 
-Los JSON están en [results/](results/). Las auditorías matemáticas IX–XI se reprodujeron exactamente en v0.3; XVII se ejecutó exhaustivamente y sus mínimos principales se contrastaron mediante un procedimiento Python/SciPy independiente. Los resultados lingüísticos se calcularon sobre fuentes originales recuperadas, con límites específicos de reproducción. Véanse [comandos para los corpus externos](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad) y [procedencia de XVII](docs/rgo_fase17_nota.md#6-antecedentes-y-reproducción) y [ampliación con JJGraph](docs/rgo_fase17_extension.md#6-reproducción). Para el corpus de Bach: `python audits/phase_temporal.py` y `python audits/temporal_corpus.py jsb-chorales-quarter.json`; el corpus externo no se redistribuye.
+Los JSON están en [results/](results/). XVIII y XIX se ejecutaron en JavaScript sobre los corpus recuperados; XIX verifica la invariancia de las 77 transposiciones y la persistencia de un cuadrado. La descarga completa desde el contenedor local no se repitió. Las auditorías matemáticas IX–XI se reprodujeron exactamente en v0.3; XVII se ejecutó exhaustivamente y sus mínimos principales se contrastaron mediante un procedimiento Python/SciPy independiente. Los resultados lingüísticos se calcularon sobre fuentes originales recuperadas, con límites específicos de reproducción. Véanse [comandos para los corpus externos](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad) y [procedencia de XVII](docs/rgo_fase17_nota.md#6-antecedentes-y-reproducción) y [ampliación con JJGraph](docs/rgo_fase17_extension.md#6-reproducción). Para el corpus de Bach: `python audits/phase_temporal.py` y `python audits/temporal_corpus.py jsb-chorales-quarter.json`; el corpus externo no se redistribuye.
 
 **Estado científico:** investigación abierta, no revisada por pares; originalidad bibliográfica de los resultados particulares pendiente. Los problemas de fase, homometría, ordenación mediante consultas ternarias, códigos y recuperación de órbitas tienen antecedentes. No hay validación general de IA_m, de una teoría de la consciencia ni de una ventaja cuántica. Las versiones anteriores están en el historial y [antecedentes](docs/ANTECEDENTES.md). La licencia sigue pendiente de decisión del autor.
