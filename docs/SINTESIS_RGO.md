@@ -33,11 +33,17 @@ La recuperación de relaciones anotadas debe separarse de la predicción de rela
 | Orden estricto | Intermediación, orden salvo inversión, distancia mínima n−2 | [Nota](rgo_fase17_nota.md) |
 | Fragmentos | Recuento exacto de recorridos eulerianos; equivalencia k-abeliana | [Estudio](REPETICIONES.md) |
 
-## Estudio final
+## Reconstrucción musical
 
 En dos corpus musicales, la ambigüedad residual frente a controles de bigramas se reduce sustancialmente al preservar el perfil de repeticiones. Un contraejemplo binario demuestra que dicho perfil no determina por sí solo la unicidad. La separación local/global se obtiene de BEST. No hay evidencia suficiente de una propiedad adicional específica de la música.
 
 [Estudio de fragmentos](ESTUDIO_FRAGMENTOS.md) · [Estudio final](REPETICIONES.md) · [Archivo científico](ARCHIVO.md).
+
+## Reconstrucción de secuencias y selección de observaciones
+
+El ensayo mitocondrial reproduce descriptivamente la inversión de ambigüedad y su reducción bajo perfiles de repetición conservados. Se limita a una referencia y no establece una propiedad biológica adicional. [ADN](ADN.md).
+
+Para palabras binarias con espectros y fronteras conocidos, la programación dinámica proporciona marginales exactos y permite actualizar la fibra después de consultas posicionales y XOR. La memoria de componentes abiertos queda acotada por 2^b para relaciones de alcance b. Los resultados no establecen una ventaja general frente a las estrategias de referencia. [Consultas y reconstrucción adaptativa](CONSULTAS.md).
 
 ## Alcance
 
