@@ -1,6 +1,6 @@
 # RGO — Marco general y trayectoria
 
-**Sergi Garcia Mecinas · v0.6 · 26/11/2026**
+**Sergi Garcia Mecinas · v0.6.1 · 26/11/2026**
 
 [Inicio](../README.md) · [Informe matemático I–XI](INVESTIGACION.md) · [Informe semántico XII–XVII](SEMANTICA.md) · [Fase XVII: órdenes](rgo_fase17_nota.md)
 
@@ -23,6 +23,8 @@ Una estructura desconocida no se identifica por la coherencia de una representac
 Con datos finitos, este modelo permite verificar familias de candidatos, contar alternativas, elegir preguntas y certificar o rechazar hipótesis. Se inscribe en teoría de la información, problemas inversos, diseño de experimentos y códigos. No se reclama la originalidad del marco general.
 
 ## Trayectoria y evidencia
+
+Registro histórico: la agenda activa prioriza música y fundamentos matemáticos. Las líneas exploratorias no validadas se mantienen para trazabilidad en el [archivo científico](ARCHIVO.md).
 
 | Fases | Qué se investigó | Qué permanece |
 |---|---|---|

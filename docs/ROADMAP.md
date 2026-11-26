@@ -1,58 +1,27 @@
-# Agenda de investigación · RGO v0.6
+# RGO — Agenda de investigación · v0.6.1
 
-La prioridad es identificar estructuras bajo observaciones parciales, simetrías, priors y errores. Cada nueva hipótesis debe especificar el objeto, objetivo, espacio de candidatos, transformaciones irrelevantes, protocolo de medición, coste, referencia y criterio de rechazo.
+[Inicio](../README.md) · [Investigación musical](MUSICA.md) · [Archivo de líneas anteriores](ARCHIVO.md)
 
-## Estado de la investigación tras XIX
+## Prioridad 1: invariantes frente a alineación musical
 
-[Resultados musicales XVIII–XIX](MUSICA.md). La música vuelve a ser la principal puerta de entrada. La órbita conjunta generaliza las mediciones de fase entre ventanas; las pruebas de recuperación simbólica muestran que la alineación cromática es competitiva y que la firma topológica ensayada pierde orden.
+**Pregunta:** ¿cuándo una representación relacional temporal ofrece una ventaja medible sobre la alineación de secuencias, ya sea en precisión, robustez o coste?
 
-### Prioridad musical inmediata
+El resultado XIX de 79,92% para recuperar otra transcripción del mismo ID no se debe comparar directamente con el 48,04% de alineación para recuperar melodías de otro ID en el subconjunto de 51 representantes: son tareas diferentes. La comparación directa de este último control es 33,33% de trigramas frente a 48,04% de alineación. El próximo experimento debe usar los mismos candidatos, consultas y etiquetas para todos los métodos.
 
-Evaluar versiones de audio reales con familias de obras verificadas y separación de desarrollo/prueba. Usar cromas acústicos, control de tempo y transposición, ruido y timbre; comparar alineación, trigramas y topología con el mismo presupuesto y registrar coste, cobertura, top-1 y precisión media. Estudiar selección mínima y robusta de relaciones temporales; no imponer invariancia a cambios que alteran el objetivo.
+- Separar identificación de otra versión de la misma obra y parentesco entre obras distintas.
+- Comparar trigramas invariantes, relaciones multilag, alineación cromática y un método híbrido con igual entrada y protocolos de evaluación comunes. Registrar también tiempo, memoria y tamaño de firma.
+- Aplicar niveles controlados de transposición global, cambios de duración, ornamentación, inserción/borrado de notas, fragmentación y ruido; separar controles simbólicos de grabaciones reales.
+- Reservar obras o familias para prueba, escoger parámetros únicamente en desarrollo, contabilizar empates y comparar por obra, no tratar versiones de una misma obra como muestras independientes.
+- Obtener un corpus de audio con versiones verificadas y permiso de uso; medir la extracción de cromas, timbre y tempo. Si no se consigue, declarar el límite y no sustituir grabaciones por partituras.
 
-## Línea de observabilidad ordinal (XVII)
+El criterio de éxito debe fijarse antes de evaluar y no presupone que los invariantes ganen. Si no hay ventaja, se conserva la conclusión y se estudia cuándo una firma compacta permite un filtro previo útil sin perjudicar la recuperación.
 
-[Marco general](MARCO_GENERAL.md) · [Fase XVII](rgo_fase17_nota.md) · [Contraste semántico](SEMANTICA.md).
+## Prioridad 2: fundamento matemático
 
-El fundamento matemático I–XI se conserva. XII muestra el riesgo de la coherencia circular; XIII–XVI delimitan el uso de asociaciones para inferir pertenencia y orden. XVII proporciona un observador ordinal exacto, una proposición de distancia mínima y censos de mínimos fijos hasta seis elementos y adaptativos hasta ocho. Los primeros dos pilotos no dieron cobertura útil; JJGraph aporta cobertura parcial, pero el filtro ordinal simple produce contradicciones y errores. No se ha resuelto el descubrimiento fiable de la dimensión ni su orden semántico. [Ampliación XVII](rgo_fase17_extension.md).
+Extender el criterio temporal a relaciones incompletas o ruidosas, órbitas locales desconocidas y costes desiguales. Estudiar ambigüedad residual, mínimos de consultas, corrección de errores, selección adaptativa y verificación de modelos. No confundir un acierto dentro de un catálogo con la identificación exacta de una estructura.
 
-### Siguiente paso empírico: evidencia ordinal suficiente
+Contrastar con literatura de fase y homometría (Jaming, Kolountzakis, Keleti, Mandereau, Amiot, Yust), recuperación de órbitas, códigos y sincronización. La originalidad de los resultados concretos no está establecida.
 
-Obtener observaciones comparativas contextualizadas y mediciones por atributo (por ejemplo, DoQ). JJGraph ya se ha evaluado mediante una regla simple; falta comparar contra el método entrenado de Cocos et al. y la inferencia de de Melo/Bansal, sin convertir juicios de evaluación en observaciones. Separar sentidos, atributos y escalas antes de fijar reglas de extracción; permitir empates, conflictos y abstenciones. Separar desarrollo y prueba por escala y vocabulario; medir cobertura, precisión condicionada, falsos certificados, coste y comparación con baselines de intensidad, similitud y frecuencia. No simular etiquetas como sustituto de observaciones externas.
+## Líneas secundarias
 
-### Siguiente paso matemático
-
-Extender los mínimos fijos de XVII a tamaños mayores, contrastar el límite adaptativo más allá de n=8 y estudiar certificados parciales, empates, órdenes parciales, consultas binarias vs ternarias, costes y oráculos ruidosos. Contrastar prioridad bibliográfica antes de reivindicar novedad. Comparar selección de máxima entropía con minimax, auditorías directas de restricciones y protocolos resistentes a errores. No transferir la garantía n−2 a un modelo distinto sin demostrarla.
-
-## Prioridad 1 — Fragilidad del conocimiento previo
-
-Hasta ahora los protocolos principales conocen el espectro inicial y admiten el objeto verdadero dentro de su espacio de candidatos. Probar qué sucede cuando alguna de esas hipótesis es incorrecta.
-
-- Definir compatibilidad exacta y aproximada con la imagen del modelo observado.
-- Distinguir una fibra vacía, una fibra ambigua y una solución única dentro de un modelo equivocado.
-- Introducir candidatos no binarios, errores de magnitudes y soporte espectral incorrecto; medir rechazo correcto de modelos inválidos y falsas certezas.
-- Contrastar identificación posterior con certificados de distancia al modelo. Una distancia pequeña a algún candidato no es prueba de identidad.
-- Diseñar observaciones de validación no utilizadas en la reconstrucción; evaluar con casos independientes.
-- Comparar rechazo, cobertura, precisión y coste de consultas con referencias fijas sencillas y sin prior restrictivo.
-
-No se declara ninguna garantía general frente a priors erróneos. XII muestra un caso interno circular; XVII verifica rechazo bajo un universo correcto y un oráculo exacto. Falta validación con observaciones independientes suficientemente cubiertas.
-
-## Prioridad 2 — Selección robusta y observabilidad condicionada
-
-Generalizar el problema de cobertura de pares a otros tamaños, otros diccionarios y costes por consulta. Buscar testigos de minimalidad, casos donde la repetición sea ineficiente, protocolos con borrados y errores simultáneos y contraejemplos a la selección voraz. Comparar adaptación con una referencia fija diversa y evaluar incertidumbre estadística, no solo aciertos medios.
-
-En grafos semánticos: definir el objetivo mediante etiquetas externas; verificar que las perturbaciones conservan el significado. Comparar PPR convencional, centralidad y otros métodos pertinentes con el mismo presupuesto. Medir información sobre el objetivo, estabilidad ante perturbaciones irrelevantes y capacidad de detectar cambios reales. Separar selección y evaluación. Si no hay ventaja robusta, reformular o descartar el método. Las fases XIII–XVII aportan pruebas externas exploratorias, no una validación general de la difracción, de la seriación geométrica ni de un oráculo lingüístico.
-
-## Prioridad 3 — Teoremas y revisión de antecedentes
-
-Estudiar el cociente de retículos y las cotas de orden con ceros espectrales, priors discretos y mediciones parciales. Contrastar con Jaming–Kolountzakis, Keleti–Kolountzakis, Bandeira et al., Agulnick–Busick-Warner y Casper–Orozco. Determinar si los mínimos 8h y los recuentos de Z₁₂ se conocen. Publicar como reproducción cuando corresponda; no inferir novedad por falta de coincidencias de terminología.
-
-## Prioridad 4 — Tiempo y aplicaciones independientes
-
-Extender el criterio temporal a medidas de correlación incompletas y ruidosas, órbitas locales desconocidas y costes no uniformes. Buscar contraejemplos a optimalidad de la selección voraz de aristas. En música, comparar reconocimiento de versiones con métodos establecidos, manteniendo separadas la identificación condicionada y la reconstrucción desde audio.
-
-## Secundario
-
-Q48, Cubo64, funciones bent y predicciones cuánticas son ejemplos que permiten comprobar la teoría, no objetivos de unificación por sí solos. No ampliar la interpretación física ni simbólica sin una predicción verificable. Una prueba de hardware solo tendría sentido con protocolo, presupuesto y comparación claros.
-
-[Correcciones](CORRECCIONES.md) · [Informe matemático I–XI](INVESTIGACION.md) · [Marco general](MARCO_GENERAL.md).
+El estudio matemático de intermediación XVII se conserva como problema combinatorio independiente. Revisar los antecedentes de betweenness, seriación y ordenación por mediana de tres antes de darle peso como contribución original. Los experimentos semánticos XII–XVII quedan en pausa: las pruebas no han establecido descubrimiento fiable. La topología musical queda como referencia comparativa y fuente de contraejemplos, no como hipótesis principal. Q48, Cubo64 y cuántica se conservan como casos particulares. No se elimina ningún registro previo; véase el [archivo científico](ARCHIVO.md).

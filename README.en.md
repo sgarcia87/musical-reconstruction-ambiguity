@@ -1,46 +1,40 @@
 # Relational Geometry and Observability (RGO)
 
-**Sergi Garcia Mecinas · v0.6 · 26 November 2026**
+**Sergi Garcia Mecinas · v0.6.1**
 
-🌐 **[Open the RGO website and interactive laboratories](https://sgarcia87.github.io/relational-geometry-observability/)** · [Español](README.md)
+[**Interactive website**](https://sgarcia87.github.io/relational-geometry-observability/) · [Español](README.md) · [Introduction (Spanish)](docs/EMPEZAR.md)
 
-**Why do we recognize the same melody in a different key? What information makes it the same music?**
+## What makes a melody remain the same?
 
-RGO grew from audiovisual harmonographs, frequencies and chord geometry into a mathematical investigation of what observations preserve, which alternative structures remain compatible, and how additional observations can identify them. No knowledge of IA_m, Q48, or earlier projects is required. [Start from the beginning (Spanish)](docs/EMPEZAR.md) · [Musical research XVIII–XIX](docs/MUSICA.md).
+RGO grew from the geometry of musical frequencies and chords. Its central question is what information observations preserve, which alternative structures remain indistinguishable, and which additional relationships identify them. No knowledge of the author's earlier projects is required.
 
-## Recent musical experiments
+**Established under explicit mathematical assumptions:** phase-ambiguity criteria, conditional temporal reconstruction and minimum observation counts.
 
-| Experiment | Result and scope |
+**Limits:** temporal fingerprints are useful in symbolic music but have not generally outperformed chroma alignment. The tested topological and semantic discovery hypotheses were not validated.
+
+**Open question:** when do invariant temporal fingerprints provide better identification, robustness or cost than sequence alignment?
+
+## Musical research
+
+| Experiment | Result |
 |---|---|
-| XVIII · 382 Bach chorales | Synthetic retrieval from 77 test sources; temporal features outperform local magnitude bags, but chroma alignment is stronger in the hardest condition. Joint pair orbits can preserve relative displacement lost by cross-Fourier measurements (32 transitions). |
-| XIX · 297 Irish tune settings, 51 IDs, 10 annotated families | Transposition-invariant temporal trigrams retrieve another setting of the same ID at 79.92% top-1 (288 queries; chance 3.33%). Other-ID family retrieval: 36.03% (297 queries; chance 7.53%). |
-| XIX · one representative per ID | Chroma alignment 48.04%, temporal trigrams 33.33%, chance 9.65%. Topological summaries are less effective in this protocol. No audio or timbre experiment. |
+| 382 Bach chorales, 462 synthetic queries | For quarter-length excerpts with edits and deletions, multilag temporal signatures achieve 75.32% top-1 versus 91.56% for chroma alignment. |
+| 297 traditional tune settings, 51 IDs, 10 annotated families | Invariant trigrams retrieve another setting of the same ID at 79.92% top-1 (288 queries; chance 3.33%). |
+| Family retrieval across different tune IDs | Trigrams reach 36.03% (297 queries; chance 7.53%). With one representative per ID, alignment reaches 48.04% vs 33.33% for trigrams. |
 
-[Phase XVIII](docs/rgo_fase18_nota.md) · [Phase XIX](docs/rgo_fase19_nota.md). Distinguish catalog identification from exact reconstruction; these experiments do not establish superiority over existing methods.
-
-[General framework (Spanish)](docs/MARCO_GENERAL.md) · [Mathematical report](docs/INVESTIGACION.md) · [Corrections](docs/CORRECCIONES.md) · [Research agenda](docs/ROADMAP.md)
+These are exploratory symbolic-music experiments, not audio recognition. See [musical research](docs/MUSICA.md), [phase XVIII](docs/rgo_fase18_nota.md) and [phase XIX](docs/rgo_fase19_nota.md) for protocols, comparisons and full results.
 
 ## Mathematical results
 
-- **Phase ambiguity:** invariant phase relations generate a lattice; its quotient and Smith normal form characterize residual ambiguity modulo translation at fixed support and magnitudes. [Details](docs/AMBIGUEDAD_ESPECTRAL.md).
-- **Prior-dependent identification:** among 4,096 initial binary indicators on Z₁₂, 262 require order four over arbitrary real admissible signals, but only 24 over binary candidates. Enumeration extends to cyclic groups of sizes 2–16. Complete moments through order three (nonnegative signals) or four (real signals) certify binary membership and bound distance to some indicator, not identity. [Phase XI](docs/rgo_fase11_nota.md).
-- **Robust queries:** given exact spectrum/DC and the specified 19 three-point and 43 four-point translated patterns, universal fixed lists with repetitions require 8h queries for minimum Hamming distance h. [Phase XI](docs/rgo_fase11_nota.md).
-- **Temporal reconstruction:** prime-power connectivity determines relative ambiguity when local orbits and selected cross-Fourier products are known. Among 382 Bach chorales, 377 are identified from consecutive relations; six extra links resolve the remaining five. Not reconstruction from audio. [Details](docs/OBSERVABILIDAD_TEMPORAL.md).
-- **Q48:** bent-function quotient, GF(4) correspondence and a shared-translation two-copy quantum observable are mathematical case studies, not demonstrations of quantum advantage. [Phase X](docs/rgo_fase10_nota.md).
-- **Ordinal observability (XVII):** the full three-outcome median-of-three signature of a strict total order on n≥3 elements, modulo reversal, has exact minimum Hamming distance n−2. Exhaustive minima for six elements: seven fixed queries for identification, ten to detect one substitution and sixteen to correct one, without repetitions. Six adaptive queries suffice in the worst case with an exact oracle; the extension verifies an optimal depth of ten for all 20,160 orders on eight elements. [Proof and audit](docs/rgo_fase17_nota.md) · [Extension](docs/rgo_fase17_extension.md).
-
-## Semantic experiments: evidence and limitations
-
-| Phase | Main result |
+| Result | Scope |
 |---|---|
-| XII | Internal prior-rejection experiment is substantially circular: reserved edges and reference share the annotation source. |
-| XIII | Diffraction does not consistently outperform minimum PPR on USF associations with external human rankings. |
-| XIV | Incoming-profile projection orders 26/28 internal pairs with known endpoints and gold-membership-informed ablation. |
-| XV | Unanchored clustering recovers 50/96 annotated positive pairs, but joint membership and order recovery is only 19/106 triples. A perfect geometric optimum may contradict human order. |
-| XVI | Second benchmark, 40/353 strict triples covered: incoming PC1 39.17%, combined Fiedler 25.83%, chance 33.33%. No robust transfer. |
-| XVII | The first two pilots yield no covered target triples. The JJGraph extension yields partial coverage but poor validity: with gold membership, 22/87 half-scales are incompatible and only two triples are certified by the main rule, one correct. Empirical axis discovery remains open. |
+| Phase ambiguity | A lattice quotient and Smith normal form characterize residual ambiguity at fixed support and magnitudes, modulo translation. [Proof](docs/AMBIGUEDAD_ESPECTRAL.md). |
+| Model constraints | Of 4,096 initial pitch-class indicators, 262 need fourth-order observations over arbitrary real candidates, but only 24 over binary candidates. [Details](docs/rgo_fase11_nota.md). |
+| Robust reconstruction | Under the specified exact-spectrum music protocol, universal fixed lists of 8, 16 and 24 queries suffice and are minimal for identification, detection of one substitution and correction of one, respectively, with repetitions allowed. [Proof](docs/rgo_fase11_nota.md). |
+| Temporal reconstruction | A connectivity criterion counts ambiguity when local orbits are known. 377/382 Bach chorales are identified by consecutive four-quarter-window relations; six extra links resolve the remaining five. [Proof](docs/OBSERVABILIDAD_TEMPORAL.md). |
+| Relative information | Joint pair orbits can retain relative shifts lost by cross-Fourier observations: 32 of 18,094 Bach transitions. [Extension](docs/rgo_fase18_nota.md). |
 
-[Full report and reproducibility details](docs/SEMANTICA.md). These are exploratory tests; association, scale membership, betweenness and orientation are distinct. No claim of general semantic performance.
+[General framework](docs/MARCO_GENERAL.md) · [Mathematical report](docs/INVESTIGACION.md) · [Secondary mathematical study: betweenness and orders](docs/rgo_fase17_nota.md).
 
 ## Reproduce
 
@@ -50,17 +44,10 @@ python audits/rgo_fase9_audit.py
 python audits/rgo_fase10_audit.py
 python audits/rgo_fase11_audit.py
 python audits/verify_robustness.py
-node audits/rgo_fase17_audit.mjs
-node audits/rgo_fase17_math.mjs
-node audits/rgo_fase17_prior.mjs
 node audits/rgo_fase18_audit.mjs
 node audits/rgo_fase19_audit.mjs --data ./rgo_data
 ```
 
-Mathematical audits IX–XI were reproduced exactly for v0.3. XVII was executed exhaustively and its main minima cross-checked with an independent Python/SciPy method. The extension also evaluates published JJGraph paraphrases and a second synthetic prior. External corpora are not bundled; [semantic reproduction commands](docs/SEMANTICA.md#conclusión-científica-y-reproducibilidad) and [XVII data provenance](docs/rgo_fase17_nota.md) describe what was and was not repeated.
+Python 3.10+, Node.js 18+. External datasets are not redistributed. Audits IX–XI were reproduced exactly in v0.3; XVIII–XIX were executed on the retrieved original datasets without repeating the full download in the local container. [Code](audits/) · [Results](results/) · [Research agenda](docs/ROADMAP.md) · [Corrections](docs/CORRECCIONES.md) · [Scientific archive, exploratory and negative results](docs/ARCHIVO.md).
 
-[Phase X demo](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase10.html) · [Phase XI demo](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase11.html) · [Phase XV demo](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase15.html) · [Phase XVII demo](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase17.html).
-
-**Status:** open research, not peer-reviewed. The specific results' bibliographic priority is unresolved. Phase retrieval, higher-order correlations, group-action recovery, error-correcting codes and ternary comparison sorting are established areas. No claim of a unified physical theory, quantum advantage, or reliable general semantic-axis discovery. Earlier releases remain in history and [background](docs/ANTECEDENTES.md). License pending author decision.
-
-[Extended ordinal observer](https://sgarcia87.github.io/relational-geometry-observability/demos/rgo_fase17_observador.html) · [JJGraph and eight-element study](docs/rgo_fase17_extension.md).
+**Status:** open, not peer-reviewed research. Phase retrieval, homometry, musical geometry, codes and seriation have established prior literature. Priority of the specific results remains unresolved. Project license pending author decision.

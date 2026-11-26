@@ -2,6 +2,8 @@
 
 Este apéndice explica de dónde procede RGO. **No forma parte de las hipótesis del teorema temporal.** El lector puede omitirlo. Para el registro completo de los primeros experimentos, véase [informe v0.1](INVESTIGACION-v0.1.md), conservado sin reescribir retrospectivamente sus resultados.
 
+[Archivo científico y laboratorios históricos](ARCHIVO.md).
+
 ## Origen musical
 
 El armonógrafo 3D, RESONANTIA y CONSONA partieron de las proporciones entre frecuencias, curvas de Lissajous y fases. Los trabajos de Foote, Tymoczko, Forte, Babbitt, Lewin, Bergomi/Baraté/Di Fabio, Yust, Amiot y Callet-Feltz aparecen en el apartado 2 y bibliografía del [informe original](INVESTIGACION-v0.1.md). XVIII–XIX retoman la pregunta de identificación musical con datos reales simbólicos y comparaciones explícitas. [Explicación inicial](EMPEZAR.md) · [Investigación musical](MUSICA.md).

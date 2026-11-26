@@ -1,6 +1,6 @@
 # RGO — Empezar por la música
 
-**Geometría relacional y observabilidad · Sergi Garcia Mecinas · v0.6 · 26 de noviembre de 2026**
+**Geometría relacional y observabilidad · Sergi Garcia Mecinas · v0.6.1 · 26 de noviembre de 2026**
 
 [Web interactiva](https://sgarcia87.github.io/relational-geometry-observability/) · [English overview](../README.en.md) · [Marco matemático](MARCO_GENERAL.md)
 
@@ -32,7 +32,7 @@ Una composición tampoco es simplemente una bolsa de acordes. Si cada acorde se 
 
 El conocimiento previo restringe las posibilidades: saber que una señal representa presencia o ausencia de notas ayuda, pero una hipótesis equivocada puede excluir la respuesta verdadera. Una observación adicional resulta útil si distingue alternativas todavía compatibles. La robustez indica si esa distinción sobrevive a errores. **Coherencia significa que las observaciones concuerdan; no significa necesariamente que sean verdaderas.**
 
-La formalización está en [MARCO_GENERAL.md](MARCO_GENERAL.md). No es necesario conocer IA_m, Q48 ni ningún proyecto anterior del autor.
+La formalización está en [MARCO_GENERAL.md](MARCO_GENERAL.md). No es necesario conocer ningún proyecto anterior del autor.
 
 ## 4. Qué se ha encontrado
 
@@ -54,4 +54,4 @@ Estos trabajos son antecedentes, no resultados de RGO. La propuesta de RGO es us
 
 ## 6. Seguir leyendo
 
-[Investigación musical XVIII–XIX](MUSICA.md) · [Demostraciones matemáticas](INVESTIGACION.md) · [Historia del proyecto](ANTECEDENTES.md) · [Experimentos semánticos](SEMANTICA.md) · [Correcciones y límites](CORRECCIONES.md) · [Agenda](ROADMAP.md).
+[Investigación musical XVIII–XIX](MUSICA.md) · [Demostraciones matemáticas](INVESTIGACION.md) · [Archivo científico y antecedentes](ARCHIVO.md) · [Correcciones y límites](CORRECCIONES.md) · [Agenda](ROADMAP.md).

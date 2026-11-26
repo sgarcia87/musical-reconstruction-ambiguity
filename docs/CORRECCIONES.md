@@ -55,6 +55,10 @@ Las notas de trabajo anteriores se conservan íntegras como registro histórico.
 - La invariancia exacta de los histogramas a transposición no obliga a identificar la pieza: los empates cuentan fraccionalmente. Los resultados negativos de topología y la referencia de alineación se conservan. No se reivindica una huella intrínseca universal ni superioridad sobre métodos existentes.
 - XVIII–XIX: cálculos ejecutados sobre fuentes originales vía conector; descarga local completa no repetida. Véanse [MUSICA.md](MUSICA.md) y las notas respectivas.
 
+## Reorganización editorial v0.6.1
+
+Se priorizan música y resultados matemáticos. Los resultados negativos y las líneas secundarias siguen disponibles en el [archivo científico](ARCHIVO.md), con las mismas notas, auditorías y datos. No hay nuevos experimentos ni cambios de resultados en esta revisión.
+
 ## Verificación de v0.3
 
 Se ejecutaron nuevamente `rgo_fase9_audit.py`, `rgo_fase10_audit.py` y `rgo_fase11_audit.py`, usando NumPy 2.3.5 y SymPy 1.14.0 en el entorno de verificación. Las tres salidas JSON coincidieron byte por byte con los archivos originales.
