@@ -71,6 +71,12 @@ const raw=await Promise.all(sources.map(async s=>{let f=path.join(root,path.base
 const bach=Object.entries(JSON.parse(raw[0])).flatMap(([split,pieces])=>pieces.map((p,i)=>({id:split+'-'+i,a:p.filter(n=>n.length).map(n=>Math.max(...n)%12)})));
 const {folk,excluded}=parseFolk(raw[1]),F=folk.sort((a,b)=>Number(a.id)-Number(b.id)).filter((r,i,A)=>A.findIndex(x=>x.tune===r.tune)===i).map(r=>({id:r.tune,family:r.family,a:r.a.map(m=>Math.log2(m))}));
 if(bach.length!==382||F.length!==51||folk.length!==297)throw Error('unexpected source population');
+if(process.argv.includes('--fragments')){
+const checks=selfTest();
+if(checks!==16388)throw Error('self test');
+console.log(JSON.stringify({sources,checks,rep,orders,excluded,bach:run(bach,220011),folk:run(F,440021),sensitivity:{bachRaw:sensitivity(bach,780011,false),bachCollapsed:sensitivity(bach,780011,true),folkRaw:sensitivity(F,880021,false),folkCollapsed:sensitivity(F,880021,true)}},null,2));
+process.exit(0);
+}
 const mode=process.argv.includes('--simple')?'simple':'strict';
 const results=mode==='simple'?{orders:simpleOrders,bach:simpleRun(bach,100001),folk:simpleRun(F,200003)}:{orders:strictOrders,bach:strictRun(bach,330001),folk:strictRun(F,440003)};
 console.log(JSON.stringify({mode,sources,...results},null,2));

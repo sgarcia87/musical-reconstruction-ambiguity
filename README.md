@@ -47,6 +47,7 @@ Node.js 18+ y Python 3.
 ```bash
 python audits/verify_repetition_profiles.py
 node audits/auditoria_repeticiones.mjs --self-test
+node audits/auditoria_repeticiones.mjs --data ./rgo_data --fragments > fragmentos.json
 node audits/auditoria_repeticiones.mjs --data ./rgo_data --simple > simple.json
 node audits/auditoria_repeticiones.mjs --data ./rgo_data > strict.json
 ```
